@@ -40,7 +40,33 @@ const HelpSection = () => {
                             Learn about health tips and educational content to stay protected.
                         </p>
                     </div>
-                   
+                    <div className="flex flex-col items-center text-center">
+                        <div className="bg-purple-500 text-white p-4 rounded-full mb-4">
+                            <FaCloudSun className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-800 ">Real-Time Weather Data</h3>
+                        <p className="mt-2 text-gray-600 dark:text-gray-400">
+                            Get real-time weather data to stay informed about current conditions.
+                        </p>
+                    </div>
+                    <div className="flex flex-col items-center text-center">
+                        <div className="bg-yellow-500 text-white p-4 rounded-full mb-4">
+                            <FaInfoCircle className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-800 ">Detailed Information</h3>
+                        <p className="mt-2 text-gray-600 dark:text-gray-400">
+                            Get detailed information on the impact of pollution and weather.
+                        </p>
+                    </div>
+                    <div className="flex flex-col items-center text-center">
+                        <div className="bg-yellow-500 text-white p-4 rounded-full mb-4">
+                            <FaSmog className="w-6 h-6" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-gray-800 ">Real-Time Pollution Data</h3>
+                        <p className="mt-2 text-gray-600 dark:text-gray-400">
+                            Access real-time pollution data to make informed decisions about your health.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
