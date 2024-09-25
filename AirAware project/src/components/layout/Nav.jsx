@@ -1,15 +1,125 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { CiSearch } from "react-icons/ci";
+import toast from 'react-hot-toast';
 import { IoMdSettings } from "react-icons/io";
 import { VscBell } from "react-icons/vsc";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setInputValue } from '../../redux/Searchvalue';
 import Notifications from '../setting/Notifications';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { RxCross1 } from 'react-icons/rx';
-
+import ProtectJsonData from "../../json/TempData.json";
+import AQIjsondata from "../../json/AQI.json";
+import { addNotification, clearNotifications } from '../../redux/notificationsSlice';
 
 const Nav = () => {
-   
+    const [openpermistionmodal, setOpenpermistionmodal] = useState(false);
+    const [openNotification, setOpenNotification] = useState(false);
+    const [input, setInput] = useState('');
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const weatherStatus = useSelector((state) => state.weather.status);
+    const pollustiondata = useSelector((state) => state.pollustion.data);
+    const weatherData = useSelector((state) => state.weather.data);
+    const notifications = useSelector((state) => state.notifications);
+
+    const kelvinToCelsius = (kelvin) => kelvin - 273.15;
+    const temp = kelvinToCelsius(weatherData?.main?.temp).toFixed(0);
+    const cityName = weatherData?.name;
+
+    const notificationExists = useCallback((newNotification) => {
+        return notifications.some(not =>
+            not.message === newNotification.message &&
+            not.type === newNotification.type &&
+            new Date(not.date).toDateString() === new Date(newNotification.date).toDateString()
+        );
+    }, [notifications]);
+
+    useEffect(() => {
+        const range = ProtectJsonData?.temperature_ranges?.find(teprenge =>
+            (temp >= teprenge.min && temp <= teprenge.max) || (temp >= teprenge.min && teprenge.max === Infinity)
+        );
+
+        if (range) {
+            const notification = {
+                id: Date.now(),
+                message: range.day_info.alert.title,
+                temp,
+                date: new Date().toISOString(),
+                type: 'temperature',
+                cityName // Add cityName here
+            };
+
+            if (!notificationExists(notification)) {
+                dispatch(addNotification(notification));
+            }
+        } else {
+            console.log('No range found for temperature:', temp);
+        }
+    }, [temp, dispatch, notificationExists, cityName]);
+
+    useEffect(() => {
+        if (!pollustiondata?.list?.[0]) return;
+        const AQI = pollustiondata?.list[0]?.main?.aqi;
+
+        const range = AQIjsondata?.aqi_ranges?.find(teprenge =>
+            (AQI >= teprenge.min && AQI <= teprenge.max)
+        );
+
+        if (range) {
+            const notification = {
+                id: Date.now(),
+                title: range.alert.title,
+                message: range.alert,
+                date: new Date().toISOString(),
+                type: 'pollution',
+                cityName // Add cityName here
+            };
+
+            if (!notificationExists(notification)) {
+                dispatch(addNotification(notification));
+            }
+        } else {
+            console.log('No range found for AQI:', AQI);
+        }
+    }, [pollustiondata, dispatch, notificationExists, cityName]);
+
+    useEffect(() => {
+        if (weatherStatus === 'loading') {
+            toast.loading('Loading...');
+        } else {
+            toast.dismiss();
+        }
+
+        if (weatherStatus === 'failed') {
+            toast.error('Not found!');
+        }
+
+        if (weatherStatus === 'succeeded') {
+            toast.success('Data loaded successfully!');
+        }
+    }, [weatherStatus]);
+
+    const handleChange = (e) => {
+        setInput(e.target.value);
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            dispatch(setInputValue(input));
+            navigate('/dashboard/weather');
+        }
+    };
+
+    const Permissionsnotifications = () => {
+        setOpenpermistionmodal(true);
+    };
+
+    const OpenNotifications = () => {
+        setOpenNotification(true);
+    };
+    /* sing in dashboard  */
 
     return (
         <>
