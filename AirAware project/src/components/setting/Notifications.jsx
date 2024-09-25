@@ -33,7 +33,14 @@ const Notifications = ({ setOpenpermistionmodal }) => {
         }
     }, []);
 
-  
+    // Handle location access request
+    const locationHandler = () => {
+        if (locationAccess) {
+            toast.success('Location access revoked.');
+            setLocationAccess(false);
+            // setLocationState({ lat: null, lng: null }); // Clear location if access is revoked
+            return;
+        }
 
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
