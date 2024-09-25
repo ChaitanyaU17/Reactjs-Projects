@@ -37,7 +37,49 @@ const Header = ({ setTopics, setLang }) => {
 
     return (
         <>
-            
+            <div className='w-full h-[80px] bg-white border-b-2 flex justify-between px-4 items-center gap-4'>
+
+
+                <div className="xl:w-[20%] lg:w-[20%] md:w-[20%]  sm:w-[50%] w-[50%]  flex  items-center ">
+                    <label htmlFor="language" className="mr-2 text-sm font-medium text-gray-700">
+                        Topics
+                    </label>
+                    <select
+                        id="language"
+                        name="language"
+                        className="mt-1 bg-gray-100 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                        onChange={(e) => setTopics(e.target.value)}
+                    >
+                        {
+                            Content.map((content, index) => (
+                                <>
+                                    <option key={index} value={content}>{content}</option>
+                                </>
+                            ))
+                        }
+
+
+                    </select>
+                </div>
+
+                <div className="max-w-xs flex  items-center">
+                    <label htmlFor="language" className="w-[80%] text-sm font-medium text-gray-700">
+                        Language
+                    </label>
+                    <select
+                        id="language"
+                        name="language"
+                        className="mt-1 bg-gray-100 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                        onChange={(e) => setLang(e.target.value)}
+                    >
+                        {Language?.languages.map((language, index) => (
+                            <option key={index} value={language}>
+                                {language}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            </div>
         </>
     )
 }
