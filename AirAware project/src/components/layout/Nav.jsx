@@ -1,8 +1,15 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React from 'react';
+import { CiSearch } from "react-icons/ci";
+import { IoMdSettings } from "react-icons/io";
+import { VscBell } from "react-icons/vsc";
+import { useSelector } from 'react-redux';
+import Notifications from '../setting/Notifications';
+import { NavLink } from 'react-router-dom';
+import { RxCross1 } from 'react-icons/rx';
 
 
 const Nav = () => {
-  
+   
 
     return (
         <>
@@ -65,6 +72,46 @@ const Nav = () => {
     );
 };
 
+const NotificationList = () => {
+    const notifications = useSelector((state) => state.notifications);
 
+    const groupNotificationsByDay = (notifications) => {
+        const grouped = notifications.reduce((acc, notification) => {
+            const date = new Date(notification.date);
+            const day = date.toDateString();
+            if (!acc[day]) acc[day] = [];
+            acc[day].push(notification);
+            return acc;
+        }, {});
+        return grouped;
+    };
+
+    const groupedNotifications = groupNotificationsByDay(notifications);
+
+    // Convert the grouped notifications to an array of entries and sort by date descending
+    const sortedGroupedNotifications = Object.entries(groupedNotifications).sort(
+        (a, b) => new Date(b[0]) - new Date(a[0])
+    );
+
+    return (
+        <div className='w-full h-[88vh] overflow-hidden overflow-y-scroll scrollbaarhide'>
+            {sortedGroupedNotifications.map(([day, notifications]) => (
+                <div key={day} className='mt-2'>
+                    <p className='font-semibold '>{day}</p>
+                    {notifications.map((notification) => (
+                        <div key={notification.id} className="border-b border-gray-200 py-2">
+                            <p className="font-bold">{notification.title}</p>
+                            <p>{notification.message}</p>
+                            <p className="text-sm text-gray-500">{new Date(notification.date).toLocaleTimeString()}</p>
+                            <p className="text-sm text-gray-500">{notification.cityName}</p>
+                            {notification.temp && <p className="text-sm">Temperature: {notification.temp}°C</p>}
+                            {notification.AQI && <p className="text-sm">AQI: {notification.AQI}</p>}
+                        </div>
+                    ))}
+                </div>
+            ))}
+        </div>
+    );
+};
 
 export default Nav;
