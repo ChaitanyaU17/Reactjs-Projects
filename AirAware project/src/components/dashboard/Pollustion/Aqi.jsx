@@ -15,7 +15,27 @@ const Aqi = ({ datauserprotectaqi }) => {
 
     return (
         <>
-           
+            {/* AQI */}
+            <div className='w-full h-auto flex justify-center items-center p-4'>
+                <div
+                    className='xl:w-[30%] lg:w-[30%] md:w-[50%] sm:w-[50%] w-full rounded-md shadow-sm p-6 text-center'
+                    style={{ backgroundColor: datauserprotectaqi?.bg_color }}
+                >
+                    <p
+                        className='text-6xl font-bold'
+                        style={{ color: datauserprotectaqi?.text_color }}
+                    >
+                        {pollustiondata?.list && pollustiondata?.list[0]?.main?.aqi}
+                    </p>
+                    <div className="text-xl font-semibold mt-2">Air Quality Index (AQI)</div>
+                    <div className="text-gray-600 mt-1">
+                        {datauserprotectaqi?.category}
+                    </div>
+                    <p>{WeatherCityname}</p>
+                </div>
+            </div>
+
+         
         </>
     )
 }
