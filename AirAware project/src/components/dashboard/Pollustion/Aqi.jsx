@@ -35,7 +35,65 @@ const Aqi = ({ datauserprotectaqi }) => {
                 </div>
             </div>
 
-         
+            {/* all */}
+            <div className="air-quality grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-blue-500"><FaCloud /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">Carbon Monoxide</div>
+                        <div className="value text-gray-600">{datapollution?.co} µg/m³</div>
+                    </div>
+                </div>
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-red-500"><FaSmog /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">Nitric Oxide</div>
+                        <div className="value text-gray-600">{datapollution?.no} µg/m³</div>
+                    </div>
+                </div>
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-yellow-500"><FaWind /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">Nitrogen Dioxide</div>
+                        <div className="value text-gray-600">{datapollution?.no2} µg/m³</div>
+                    </div>
+                </div>
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-orange-500"><FaSun /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">Ozone</div>
+                        <div className="value text-gray-600">{datapollution?.o3} µg/m³</div>
+                    </div>
+                </div>
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-purple-500"><FaCloudSun /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">Sulfur Dioxide</div>
+                        <div className="value text-gray-600">{datapollution?.so2} µg/m³</div>
+                    </div>
+                </div>
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-green-500"><FaCloudMoon /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">PM2.5</div>
+                        <div className="value text-gray-600">{datapollution?.pm2_5}µg/m³</div>
+                    </div>
+                </div>
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-indigo-500"><FaCloudMoon /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">PM10</div>
+                        <div className="value text-gray-600">{datapollution?.pm10} µg/m³</div>
+                    </div>
+                </div>
+                <div className="pollutant flex items-center p-4 border border-gray-300 rounded-lg shadow-sm">
+                    <div className="icon text-3xl mr-4 text-teal-500"><FaLeaf /></div>
+                    <div className="details">
+                        <div className="name font-semibold text-lg">Ammonia</div>
+                        <div className="value text-gray-600">{datapollution?.nh3} µg/m³</div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
