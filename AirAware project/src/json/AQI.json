@@ -1,0 +1,244 @@
+{
+  "aqi_ranges": [
+    {
+      "min": 0,
+      "max": 50,
+      "category": "Good",
+      "alert": "Air quality is considered satisfactory.",
+      "advice": "Air quality poses little or no risk.",
+      "health_recommendations": [
+        "Enjoy your usual outdoor activities.",
+        "Maintain a healthy lifestyle."
+      ],
+      "detailed_health_impacts": "No health impacts expected.",
+      "precautionary_measures": {
+        "exercise": "No restrictions on outdoor exercise.",
+        "commuting": "No restrictions on commuting.",
+        "daily_chores": "No restrictions on daily chores."
+      },
+      "advice_for_specific_groups": {
+        "children": "No special precautions necessary.",
+        "pregnant_women": "No special precautions necessary.",
+        "elderly": "No special precautions necessary.",
+        "pre_existing_conditions": "No special precautions necessary."
+      },
+      "local_resources": {
+        "nearest_healthcare_facility": "Not applicable.",
+        "shelters": "Not applicable."
+      },
+      "notifications": [
+        {
+          "type": "info",
+          "message": "Air quality is currently good. Enjoy your day as usual!"
+        }
+      ],
+      "visual_indicator": "Green",
+      "additional_protection": "Continue with normal activities and monitor local updates for any changes in air quality.",
+      "title": "Air Quality: Good",
+      "msg": "The air quality is currently at a good level. It poses little or no risk, and you can continue with your usual activities without concern.",
+      "bg_color": "#d4f0d1", 
+      "text_color": "#2c6b2f" 
+    },
+    {
+      "min": 51,
+      "max": 100,
+      "category": "Moderate",
+      "alert": "Air quality is acceptable.",
+      "advice": "For some pollutants, there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution.",
+      "health_recommendations": [
+        "Unusually sensitive people should consider reducing prolonged or heavy exertion.",
+        "Monitor symptoms and reduce exposure if needed."
+      ],
+      "detailed_health_impacts": "Minor health impacts possible for sensitive individuals, such as mild respiratory irritation.",
+      "precautionary_measures": {
+        "exercise": "Sensitive individuals should limit outdoor exercise.",
+        "commuting": "No restrictions on commuting.",
+        "daily_chores": "No restrictions on daily chores."
+      },
+      "advice_for_specific_groups": {
+        "children": "Sensitive children should avoid prolonged outdoor activities.",
+        "pregnant_women": "Pregnant women should limit prolonged outdoor activities.",
+        "elderly": "Elderly individuals should avoid prolonged outdoor activities.",
+        "pre_existing_conditions": "People with respiratory conditions should limit prolonged outdoor activities."
+      },
+      "local_resources": {
+        "nearest_healthcare_facility": "Not applicable.",
+        "shelters": "Not applicable."
+      },
+      "notifications": [
+        {
+          "type": "warning",
+          "message": "Air quality is moderate. Sensitive individuals should reduce outdoor activities."
+        }
+      ],
+      "visual_indicator": "Yellow",
+      "additional_protection": "Consider reducing time spent outdoors, especially if you belong to a sensitive group. Regularly check air quality updates.",
+      "title": "Air Quality: Moderate",
+      "msg": "The air quality is acceptable but may be a concern for some sensitive individuals. Consider reducing outdoor activities if you are unusually sensitive to air pollution.",
+      "bg_color": "#fef3c7", 
+      "text_color": "#7d4c0f" 
+    },
+    {
+      "min": 101,
+      "max": 150,
+      "category": "Unhealthy for Sensitive Groups",
+      "alert": "Members of sensitive groups may experience health effects.",
+      "advice": "Sensitive groups: Avoid prolonged exertion.",
+      "health_recommendations": [
+        "People with respiratory or heart conditions, children, and older adults should limit prolonged outdoor exertion.",
+        "Consider moving activities indoors or rescheduling.",
+        "Monitor for symptoms such as coughing, throat irritation, and shortness of breath."
+      ],
+      "detailed_health_impacts": "Increased likelihood of respiratory or cardiovascular symptoms in sensitive individuals, including increased coughing and wheezing.",
+      "precautionary_measures": {
+        "exercise": "Sensitive individuals should avoid outdoor exercise.",
+        "commuting": "Minimize outdoor commuting if possible.",
+        "daily_chores": "Perform indoor chores instead of outdoor ones."
+      },
+      "advice_for_specific_groups": {
+        "children": "Children should avoid prolonged outdoor activities.",
+        "pregnant_women": "Pregnant women should avoid prolonged outdoor activities.",
+        "elderly": "Elderly individuals should avoid prolonged outdoor activities.",
+        "pre_existing_conditions": "People with respiratory or heart conditions should avoid prolonged outdoor activities."
+      },
+      "local_resources": {
+        "nearest_healthcare_facility": "Contact nearest healthcare provider for guidance.",
+        "shelters": "Not applicable."
+      },
+      "notifications": [
+        {
+          "type": "alert",
+          "message": "Air quality is unhealthy for sensitive groups. Sensitive individuals should avoid outdoor activities."
+        }
+      ],
+      "visual_indicator": "Orange",
+      "additional_protection": "Stay indoors as much as possible, particularly if you belong to a sensitive group. Keep track of air quality updates and seek medical advice if experiencing symptoms.",
+      "title": "Air Quality: Unhealthy for Sensitive Groups",
+      "msg": "Air quality is unhealthy for sensitive groups, including children and people with respiratory conditions. Limit outdoor exertion and stay indoors if necessary.",
+      "bg_color": "#ffedc0", 
+      "text_color": "#ff6f00" 
+    },
+    {
+      "min": 151,
+      "max": 200,
+      "category": "Unhealthy",
+      "alert": "Everyone may begin to experience health effects.",
+      "advice": "Sensitive groups: Avoid prolonged exertion. Everyone else: Limit prolonged exertion.",
+      "health_recommendations": [
+        "Sensitive groups should avoid prolonged outdoor exertion.",
+        "Everyone else should limit prolonged outdoor exertion.",
+        "Monitor symptoms closely and seek medical advice if experiencing symptoms like shortness of breath, chest tightness, or significant coughing."
+      ],
+      "detailed_health_impacts": "Increased likelihood of respiratory or cardiovascular symptoms in the general population, including shortness of breath and irritation of the airways.",
+      "precautionary_measures": {
+        "exercise": "Avoid outdoor exercise.",
+        "commuting": "Minimize outdoor commuting if possible.",
+        "daily_chores": "Perform indoor chores instead of outdoor ones."
+      },
+      "advice_for_specific_groups": {
+        "children": "Children should avoid outdoor activities.",
+        "pregnant_women": "Pregnant women should avoid outdoor activities.",
+        "elderly": "Elderly individuals should avoid outdoor activities.",
+        "pre_existing_conditions": "People with respiratory or heart conditions should avoid outdoor activities."
+      },
+      "local_resources": {
+        "nearest_healthcare_facility": "Contact nearest healthcare provider for guidance.",
+        "shelters": "Not applicable."
+      },
+      "notifications": [
+        {
+          "type": "warning",
+          "message": "Air quality is unhealthy. Limit outdoor activities and monitor symptoms."
+        }
+      ],
+      "visual_indicator": "Red",
+      "additional_protection": "Limit all outdoor activities and monitor your health. Seek medical attention if necessary and stay updated on air quality conditions.",
+      "title": "Air Quality: Unhealthy",
+      "msg": "Air quality is unhealthy. Everyone may begin to experience health effects. Limit outdoor activities and monitor your health closely.",
+      "bg_color": "#fddfdf", 
+      "text_color": "#d32f2f" 
+    },
+    {
+      "min": 201,
+      "max": 300,
+      "category": "Very Unhealthy",
+      "alert": "Health alert: everyone may experience more serious health effects.",
+      "advice": "Everyone: Avoid prolonged outdoor exertion.",
+      "health_recommendations": [
+        "Avoid all outdoor exertion.",
+        "Sensitive groups should remain indoors and keep activity levels low.",
+        "Consider using an air purifier if available.",
+        "Seek medical attention if experiencing severe symptoms like difficulty breathing, persistent coughing, or chest pain."
+      ],
+      "detailed_health_impacts": "High likelihood of serious respiratory or cardiovascular symptoms, such as severe breathing difficulties and heightened risk of heart attacks.",
+      "precautionary_measures": {
+        "exercise": "Avoid all outdoor exercise.",
+        "commuting": "Avoid outdoor commuting if possible.",
+        "daily_chores": "Perform only essential indoor chores."
+      },
+      "advice_for_specific_groups": {
+        "children": "Children should stay indoors and avoid physical activities.",
+        "pregnant_women": "Pregnant women should stay indoors and avoid physical activities.",
+        "elderly": "Elderly individuals should stay indoors and avoid physical activities.",
+        "pre_existing_conditions": "People with respiratory or heart conditions should stay indoors and avoid physical activities."
+      },
+      "local_resources": {
+        "nearest_healthcare_facility": "Contact nearest healthcare provider for guidance.",
+        "shelters": "Not applicable."
+      },
+      "notifications": [
+        {
+          "type": "alert",
+          "message": "Air quality is very unhealthy. Avoid all outdoor activities and stay indoors."
+        }
+      ],
+      "visual_indicator": "Purple",
+      "additional_protection": "Remain indoors, minimize all physical activity, and use air purifiers if available. Seek medical attention if experiencing severe symptoms.",
+      "title": "Air Quality: Very Unhealthy",
+      "msg": "Air quality is very unhealthy. Everyone may experience more serious health effects. Stay indoors, avoid all physical activities, and monitor your health closely.",
+      "bg_color": "#f3e5f5", 
+      "text_color": "#6a1b9a" 
+    },
+    {
+      "min": 301,
+      "max": 500,
+      "category": "Hazardous",
+      "alert": "Health warnings of emergency conditions.",
+      "advice": "Everyone: Avoid all outdoor activities and stay indoors.",
+      "health_recommendations": [
+        "Avoid all outdoor activities.",
+        "Stay indoors with windows and doors closed.",
+        "Use air purifiers if available.",
+        "Seek medical attention immediately if experiencing symptoms such as severe breathing difficulties, chest pain, or persistent coughing."
+      ],
+      "detailed_health_impacts": "Serious health effects or emergencies for the entire population, including respiratory and cardiovascular emergencies.",
+      "precautionary_measures": {
+        "exercise": "Avoid all outdoor exercise.",
+        "commuting": "Avoid outdoor commuting completely.",
+        "daily_chores": "Perform only essential indoor chores."
+      },
+      "advice_for_specific_groups": {
+        "children": "Children should stay indoors at all times.",
+        "pregnant_women": "Pregnant women should stay indoors at all times.",
+        "elderly": "Elderly individuals should stay indoors at all times.",
+        "pre_existing_conditions": "People with respiratory or heart conditions should stay indoors at all times."
+      },
+      "local_resources": {
+        "nearest_healthcare_facility": "Contact nearest healthcare provider immediately if experiencing symptoms.",
+        "shelters": "Not applicable."
+      },
+      "notifications": [
+        {
+          "type": "alert",
+          "message": "Air quality is hazardous. Avoid all outdoor activities and seek medical attention if experiencing severe symptoms."
+        }
+      ],
+      "visual_indicator": "Maroon",
+      "additional_protection": "Stay indoors, use air purifiers, and seek medical attention if necessary. Limit all activities to ensure safety.",
+      "title": "Air Quality: Hazardous",
+      "msg": "Air quality is hazardous and poses serious health risks. Avoid all outdoor activities, stay indoors, and monitor your health closely.",
+      "bg_color": "#fbe9e7", 
+      "text_color": "#c62828" 
+    }
+  ]
+}
