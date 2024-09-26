@@ -61,7 +61,37 @@ const Map_Forcast = () => {
                 )}
             </div>
 
-           
+            {/* Forecast Details Section */}
+            <div className="w-full lg:w-2/3 p-4">
+                <h1 className="text-3xl font-semibold mb-6 text-blue-800">{weatherforcast?.city?.name} Weather Forecast</h1>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+                    {uniqueDates.slice(0, 5).map(date => (
+                        <div key={date} className='bg-white p-4 rounded-lg shadow-sm border border-gray-200'>
+                            <h2 className="text-xl font-semibold mb-2">
+                                {new Date(date).toLocaleDateString('en-US', { weekday: 'long' })}
+                            </h2>
+                            {aggregatedData[date][0] && (
+                                <div className="flex items-center mb-4">
+                                    <img
+                                        src={`http://openweathermap.org/img/wn/${aggregatedData[date][0].weather[0].icon}@2x.png`}
+                                        alt={aggregatedData[date][0].weather[0].description}
+                                        className="w-16 h-16 mr-4"
+                                    />
+                                    <div>
+                                        <p className="text-2xl font-bold">
+                                            {Math.round(aggregatedData[date][0].main.temp - 273.15)}°C
+                                        </p>
+                                        <p className="text-gray-700">{aggregatedData[date][0].weather[0].description}</p>
+                                        <p className="text-gray-600 text-[13px]">
+                                            Max: {Math.round(aggregatedData[date][0].main.temp_max - 273.15)}°C Min: {Math.round(aggregatedData[date][0].main.temp_min - 273.15)}°C
+                                        </p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 };
