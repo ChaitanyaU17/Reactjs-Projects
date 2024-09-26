@@ -58,8 +58,64 @@ const WeatherData = () => {
                     </div>
                 </div>
 
-                
-            
+                {/* card 2 */}
+                <div className='xl:w-[40%] lg:w-[40%] md:w-[40%] sm:w-full w-full h-[200px] rounded-md bg-blue-100 shadow-sm p-2'>
+                    <h2 className='text-5xl  text-center'>{weatherData?.name}</h2>
+                    <div className=" flex items-center gap-4 mt-2 px-4">
+                        <FaTemperatureHigh />
+                        <span>Feels Like: {kelvinToCelsius(weatherData?.main?.feels_like).toFixed(2)}°C</span>
+                    </div>
+                    <div className=" flex items-center gap-4 px-4">
+                        <FaTachometerAlt />
+                        <span>Pressure: {weatherData?.main?.pressure} hPa</span>
+                    </div>
+                    <div className=" flex items-center gap-4 px-4">
+                        <FaTint />
+                        <span>Humidity: {weatherData?.main?.humidity}%</span>
+                    </div>
+                    <div className=" flex items-center gap-4 px-4">
+                        <FaTachometerAlt />
+                        <span>Sea Level Pressure: {weatherData?.main?.sea_level} hPa</span>
+                    </div>
+                    <div className=" flex items-center gap-4 px-4">
+                        <FaTachometerAlt />
+                        <span>Ground Level Pressure: {weatherData?.main?.grnd_level} hPa</span>
+                    </div>
+
+                </div>
+                {/* card3 */}
+                <div className='xl:w-[40%] lg:w-[40%] md:w-[40%] sm:w-full w-full h-[200px] rounded-md bg-green-100 p-2 shadow-sm flex flex-wrap '>
+                    <div className="w-[50%] h-auto cursor-pointer flex items-center gap-4 px-4" title='Visibility'>
+                        <FaEye className="text-xl" />
+                        <span >Visibility {weatherData?.visibility} m</span>
+                    </div>
+                    <div className="w-[50%] h-auto cursor-pointer  flex items-center gap-4 px-4" title='Wind Speed'>
+                        <FaWind className='text-xl' />
+                        <span > Speed {weatherData?.wind?.speed} m/s</span>
+                    </div>
+                    <div className="w-[50%] h-auto cursor-pointer  flex items-center gap-4 px-4" title='Wind Direction'>
+                        <TiCompass className='text-xl' />
+                        <span >Wind Dire. {weatherData?.wind?.deg}°</span>
+                    </div>
+                    {/* <div className="w-[50%] h-auto cursor-pointer  flex items-center gap-4 px-4 " title='Wind Gusts'>
+                        <MdStorm className='text-xl' />
+                        <span > 62.2 m/s</span>
+                    </div> */}
+                    <div className="w-[50%] h-auto cursor-pointer  flex items-center gap-4 px-4" title='Cloud Cover'>
+                        <FaCloud className='text-xl' />
+                        <span >Cloud Cover {weatherData?.clouds?.all}%</span>
+                    </div>
+                    <div className="w-[50%] h-auto cursor-pointer  flex items-center gap-4 px-4 " title='Sunrise'>
+                        <IoSunny className='text-xl' />
+                        <span >Sunrise {sunriseTime}</span>
+                    </div>
+                    <div className="w-[50%] h-auto cursor-pointer  flex  items-center gap-4 px-4 " title='Sunset'>
+                        <GiSunrise className='text-xl' />
+                        <span >Sunset {sunsetTime}</span>
+                    </div>
+
+                    {/* Add weather data here ... */}
+                </div>
             </div>
 
 
