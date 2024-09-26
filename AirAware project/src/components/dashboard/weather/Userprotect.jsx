@@ -88,7 +88,72 @@ const Userprotect = () => {
                     <FaMoon className='mr-2 text-blue-400' /> Night
                 </button>
             </div>
-            
+            <div className="bg-gray-700 p-4 rounded">
+                {/* Day Information */}
+                <h2 className="text-xl font-semibold mb-2">{daynighttimeprotection ? datauserprotect?.day_info?.alert?.title : datauserprotect?.night_info?.alert?.title} ({datauserprotect?.range})</h2>
+                <p className="mb-4">{daynighttimeprotection ? datauserprotect?.day_info?.alert?.message : datauserprotect?.night_info?.alert?.message}</p>
+
+                <h3 className="text-lg font-semibold mb-2 flex items-center">
+                    <FaInfoCircle className="mr-2 text-blue-400" />
+                    Actions:
+                </h3>
+                <ul className="list-disc pl-5 mb-4">
+                    {
+                        (daynighttimeprotection ? datauserprotect?.day_info?.alert.actions : datauserprotect?.night_info?.alert?.actions)?.map((action, index) => (
+                            <li key={index}>{action}</li>
+                        ))
+                    }
+                </ul>
+
+                <h3 className="text-lg font-semibold mb-2 flex items-center">
+                    <FaSnowflake className="mr-2 text-teal-400" />
+                    User Protection Tips:
+                </h3>
+                <ul className="list-disc pl-5 mb-4">
+                    {
+                        (daynighttimeprotection ? datauserprotect?.day_info?.user_protection?.tips : datauserprotect?.night_info?.user_protection?.tips)?.map((tips, index) => (
+                            <li key={index}>{tips}</li>
+                        ))
+                    }
+
+                </ul>
+
+                <h3 className="text-lg font-semibold mb-2 flex items-center">
+                    <FaExclamationTriangle className="mr-2 text-yellow-400" />
+                    Precautions:
+                </h3>
+                <ul className="list-disc pl-5 mb-4">
+                    {
+                        (daynighttimeprotection ? datauserprotect?.day_info?.user_protection?.precautions : datauserprotect?.night_info?.user_protection?.precautions)?.map((precautions, index) => (
+                            <li key={index}>{precautions}</li>
+                        ))
+                    }
+                </ul>
+
+                <h3 className="text-lg font-semibold mb-2 flex items-center">
+                    <FaHeart className="mr-2 text-red-400" />
+                    Health Impacts:
+                </h3>
+                <ul className="list-disc pl-5 mb-4">
+                    {
+                        (daynighttimeprotection ? datauserprotect?.day_info?.health_impacts : datauserprotect?.night_info?.health_impacts)?.map((health, index) => (
+                            <li key={index}>{health}</li>
+                        ))
+                    }
+                </ul>
+
+                <h3 className="text-lg font-semibold mb-2 flex items-center">
+                    <FaFirstAid className="mr-2 text-green-400" />
+                    First Aid Kit:
+                </h3>
+                <ul className="list-disc pl-5 mb-4">
+                    {
+                        (daynighttimeprotection ? datauserprotect?.day_info?.first_aid_kit : datauserprotect?.night_info?.first_aid_kit)?.map((health, index) => (
+                            <li key={index}>{health}</li>
+                        ))
+                    }
+                </ul>
+            </div>
         </div>
     );
 };
