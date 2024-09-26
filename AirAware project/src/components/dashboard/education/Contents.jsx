@@ -31,7 +31,14 @@ const Contents = ({ topics, lang }) => {
 
 
 
+    const Playvideoshandler = (url) => {
+        setPlayvideo(url)
 
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 
 
 
