@@ -24,7 +24,15 @@ const notificationsSlice = createSlice({
   name: "notifications",
   initialState: loadFromLocalStorage(),
   reducers: {
-    
+    addNotification: (state, action) => {
+      state.push(action.payload);
+      saveToLocalStorage(state);
+    },
+    clearNotifications: (state) => {
+      const newState = [];
+      saveToLocalStorage(newState);
+      return newState;
+    },
   },
 });
 
