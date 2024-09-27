@@ -20,7 +20,21 @@ const pollustionSlice = createSlice({
     status: "idle",
     error: null,
   },
- 
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchpollustionData.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchpollustionData.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload;
+      })
+      .addCase(fetchpollustionData.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
+  },
 });
 
 export default pollustionSlice.reducer;
