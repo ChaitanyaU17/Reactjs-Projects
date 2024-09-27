@@ -1,0 +1,579 @@
+{
+  "temperature_ranges": [
+    {
+      "range": "0-10°C",
+      "min": 0,
+      "max": 10,
+      "day_info": {
+        "alert": {
+          "title": "Cold Weather Alert",
+          "message": "The daytime temperature is between 0°C and 10°C. It's quite cold outside. Please dress warmly and avoid exposure to the cold for extended periods.",
+          "actions": [
+            "Wear layers of clothing",
+            "Stay indoors if possible",
+            "Use heating devices safely"
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Keep your home heated to a comfortable level.",
+            "Avoid prolonged exposure to cold weather.",
+            "Check on vulnerable individuals, such as the elderly and children.",
+            "Wear insulated and waterproof footwear."
+          ],
+          "precautions": [
+            "Ensure that you have sufficient fuel for heating.",
+            "Be aware of the risk of hypothermia and frostbite.",
+            "Avoid alcohol as it can lower body temperature."
+          ]
+        },
+        "health_impacts": [
+          "Risk of hypothermia and frostbite.",
+          "Increased risk of respiratory issues due to cold air.",
+          "Potential for aggravating pre-existing conditions like arthritis.",
+          "Reduced immune function leading to increased susceptibility to illness."
+        ],
+        "first_aid_kit": [
+          "Thermal blanket",
+          "Hand warmers",
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes"
+        ]
+      },
+      "night_info": {
+        "alert": {
+          "title": "Freezing Night Alert",
+          "message": "The night-time temperature is between 0°C and 10°C. Be aware of potential freezing conditions. Ensure your home is properly heated and avoid going out in the cold.",
+          "actions": [
+            "Keep your home heated to a comfortable level.",
+            "Check for drafts and seal windows and doors.",
+            "Wear warm clothing, even indoors."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Ensure your home is well insulated.",
+            "Use space heaters safely if necessary.",
+            "Monitor vulnerable individuals, especially at night.",
+            "Keep extra blankets and warm clothing accessible."
+          ],
+          "precautions": [
+            "Check the functionality of your heating system.",
+            "Be cautious of potential carbon monoxide from heating devices.",
+            "Have a backup heating plan in case of power outages."
+          ]
+        },
+        "health_impacts": [
+          "Increased risk of hypothermia during the night.",
+          "Possible disruption of sleep due to cold temperatures.",
+          "Higher risk of cold-related illnesses if sleeping in unheated environments.",
+          "Possible increase in joint pain or stiffness."
+        ],
+        "first_aid_kit": [
+          "Thermal blanket",
+          "Hand warmers",
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes"
+        ]
+      }
+    },
+    {
+      "range": "11-20°C",
+      "min": 11,
+      "max": 20,
+      "day_info": {
+        "alert": {
+          "title": "Cool Weather Alert",
+          "message": "The daytime temperature is between 11°C and 20°C. It's cool outside. You may need a light jacket or sweater.",
+          "actions": [
+            "Dress in layers",
+            "Prepare for potential temperature changes",
+            "Enjoy outdoor activities while dressed appropriately"
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Layer your clothing to adjust easily to changing temperatures.",
+            "Stay hydrated.",
+            "Be mindful of the weather forecast for any sudden changes.",
+            "Avoid prolonged exposure to cool or windy conditions."
+          ],
+          "precautions": [
+            "Avoid sudden exposure to very cold or hot environments.",
+            "Monitor weather updates regularly.",
+            "Prepare for unexpected weather changes."
+          ]
+        },
+        "health_impacts": [
+          "Mild risk of respiratory discomfort if exposed for long periods.",
+          "Potential for mild cold-related illnesses if not dressed appropriately.",
+          "Can affect those with sensitive respiratory systems or chronic conditions.",
+          "Minor risk of exacerbating joint pain or stiffness in colder weather."
+        ],
+        "first_aid_kit": [
+          "Warm blanket",
+          "Heat packs",
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes"
+        ]
+      },
+      "night_info": {
+        "alert": {
+          "title": "Cool Night Alert",
+          "message": "The night-time temperature is between 11°C and 20°C. The temperature may feel chilly. Dress warmly if needed and ensure your sleeping environment is comfortable.",
+          "actions": [
+            "Use extra blankets or a fan if needed.",
+            "Keep windows closed at night to maintain warmth.",
+            "Consider a light sweater or thermal wear if needed."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Use additional bedding to stay warm at night.",
+            "Ensure that your bedroom is comfortably warm.",
+            "Check weather conditions before going to bed.",
+            "Avoid heavy meals before sleeping to prevent discomfort."
+          ],
+          "precautions": [
+            "Keep an eye on indoor temperatures.",
+            "Be prepared for any sudden temperature drops.",
+            "Have extra warm clothing and bedding available."
+          ]
+        },
+        "health_impacts": [
+          "Potential for mild cold-related discomfort during the night.",
+          "Risk of disrupted sleep due to temperature fluctuations.",
+          "May affect those with respiratory or cardiovascular conditions.",
+          "Possible minor dehydration if fluid intake is insufficient."
+        ],
+        "first_aid_kit": [
+          "Warm blanket",
+          "Heat packs",
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes"
+        ]
+      }
+    },
+    {
+      "range": "21-29°C",
+      "min": 21,
+      "max": 29,
+      "day_info": {
+        "alert": {
+          "title": "Moderate Temperature Alert",
+          "message": "The daytime temperature is between 21°C and 29°C. The weather is mild. Enjoy your day but be prepared for any weather changes.",
+          "actions": [
+            "Wear comfortable clothing",
+            "Stay hydrated",
+            "Keep an eye on the weather forecast"
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Maintain a balanced routine of outdoor and indoor activities.",
+            "Stay hydrated and protect yourself from the sun.",
+            "Monitor the weather for any upcoming changes.",
+            "Use sunscreen and wear sunglasses if outdoors."
+          ],
+          "precautions": [
+            "Be aware of any upcoming weather changes.",
+            "Prepare for potential fluctuations in temperature.",
+            "Keep track of UV index levels to avoid overexposure to sunlight."
+          ]
+        },
+        "health_impacts": [
+          "Generally low risk, but be mindful of individual health conditions.",
+          "Mild risk of heat-related issues if exposed to direct sunlight for extended periods.",
+          "Can affect those with cardiovascular or respiratory conditions.",
+          "Minor risk of dehydration if fluid intake is not adequate."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Water bottle"
+        ]
+      },
+      "night_info": {
+        "alert": {
+          "title": "Mild Night Alert",
+          "message": "The night-time temperature is between 21°C and 29°C. The temperature should be comfortable, but keep an eye on the forecast for any changes.",
+          "actions": [
+            "Use light bedding or a fan if needed.",
+            "Ensure your sleeping environment is well-ventilated.",
+            "Monitor weather changes that might affect your sleep."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Use light bedding and ventilation to stay comfortable.",
+            "Monitor indoor temperatures to avoid overheating.",
+            "Be prepared for any changes in temperature.",
+            "Avoid heavy meals before sleeping to prevent discomfort."
+          ],
+          "precautions": [
+            "Adjust bedding as needed for comfort.",
+            "Consider using a fan or keeping windows open for airflow.",
+            "Keep an eye on temperature changes and adjust accordingly."
+          ]
+        },
+        "health_impacts": [
+          "Generally comfortable, but can cause minor discomfort if temperatures are not regulated.",
+          "Risk of disrupted sleep if the temperature fluctuates significantly.",
+          "May affect those with heat sensitivity or respiratory issues.",
+          "Possible minor dehydration if fluid intake is insufficient."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Water bottle"
+        ]
+      }
+    },
+    {
+      "range": "30-35°C",
+      "min": 30,
+      "max": 35,
+      "day_info": {
+        "alert": {
+          "title": "High Temperature Alert",
+          "message": "The daytime temperature is between 30°C and 35°C. It's quite hot outside. Be cautious of heat-related issues and stay hydrated.",
+          "actions": [
+            "Avoid strenuous activities during peak heat hours.",
+            "Stay in air-conditioned or shaded areas.",
+            "Drink plenty of water and avoid alcohol."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Stay in cool, shaded environments as much as possible.",
+            "Wear light, breathable clothing.",
+            "Keep hydrated and avoid caffeine and alcohol.",
+            "Use sunscreen and wear a hat when outdoors."
+          ],
+          "precautions": [
+            "Monitor for signs of heat exhaustion and heat stroke.",
+            "Be mindful of the UV index and take appropriate precautions.",
+            "Adjust indoor temperatures with fans or air conditioning."
+          ]
+        },
+        "health_impacts": [
+          "Increased risk of heat exhaustion and heat stroke.",
+          "Possible dehydration if fluid intake is insufficient.",
+          "Potential aggravation of cardiovascular conditions.",
+          "Higher risk of sunburn and related issues if outdoors."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)"
+        ]
+      },
+      "night_info": {
+        "alert": {
+          "title": "Warm Night Alert",
+          "message": "The night-time temperature is between 30°C and 35°C. The night may be warm. Ensure good ventilation and stay hydrated.",
+          "actions": [
+            "Use fans or air conditioning to cool the room.",
+            "Wear lightweight sleepwear.",
+            "Keep hydrated and avoid heavy meals before bed."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Use fans or air conditioning to maintain a comfortable temperature.",
+            "Keep windows open for airflow if safe to do so.",
+            "Wear light and breathable sleepwear.",
+            "Drink water before bed and avoid caffeine and alcohol."
+          ],
+          "precautions": [
+            "Monitor for signs of heat-related illnesses.",
+            "Ensure proper ventilation to avoid overheating.",
+            "Be prepared for potential fluctuations in temperature."
+          ]
+        },
+        "health_impacts": [
+          "Risk of sleep discomfort due to high temperatures.",
+          "Increased risk of dehydration and heat-related illnesses.",
+          "Potential aggravation of respiratory conditions.",
+          "Minor risk of overheating if proper precautions are not taken."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)"
+        ]
+      }
+    },
+    {
+      "range": "36-40°C",
+      "min": 36,
+      "max": 40,
+      "day_info": {
+        "alert": {
+          "title": "Extreme Heat Alert",
+          "message": "The daytime temperature is between 36°C and 40°C. It's extremely hot. Limit outdoor activities and take measures to stay cool.",
+          "actions": [
+            "Avoid going outside during peak heat hours.",
+            "Stay in air-conditioned environments.",
+            "Drink water frequently and avoid dehydration."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Stay indoors as much as possible during peak heat.",
+            "Use air conditioning or fans to stay cool.",
+            "Wear light, loose-fitting clothing.",
+            "Hydrate regularly and avoid alcohol and caffeine."
+          ],
+          "precautions": [
+            "Watch for signs of heat stroke or heat exhaustion.",
+            "Ensure good ventilation indoors.",
+            "Avoid strenuous activities and rest frequently."
+          ]
+        },
+        "health_impacts": [
+          "High risk of heat exhaustion and heat stroke.",
+          "Significant risk of dehydration.",
+          "Potential for heat-related illnesses affecting cardiovascular and respiratory health.",
+          "Increased risk of heat-induced complications."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)"
+        ]
+      },
+      "night_info": {
+        "alert": {
+          "title": "Very Warm Night Alert",
+          "message": "The night-time temperature is between 36°C and 40°C. Expect a very warm night. Ensure proper ventilation and stay hydrated.",
+          "actions": [
+            "Use fans or air conditioning to maintain a cool environment.",
+            "Wear light sleepwear and keep hydrated.",
+            "Avoid heavy meals and drink plenty of water."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Use air conditioning or fans to cool down.",
+            "Keep windows open for airflow if possible.",
+            "Stay hydrated and avoid caffeine and alcohol.",
+            "Wear lightweight and breathable sleepwear."
+          ],
+          "precautions": [
+            "Be vigilant for signs of overheating.",
+            "Ensure your environment remains cool and well-ventilated.",
+            "Prepare for any sudden temperature changes."
+          ]
+        },
+        "health_impacts": [
+          "Risk of significant sleep discomfort due to high temperatures.",
+          "High risk of dehydration and heat-related health issues.",
+          "Increased risk of heat stroke and heat exhaustion.",
+          "Potential exacerbation of pre-existing health conditions."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)"
+        ]
+      }
+    },
+    {
+      "range": "41-50°C",
+      "min": 41,
+      "max": 50,
+      "day_info": {
+        "alert": {
+          "title": "Severe Heat Alert",
+          "message": "The daytime temperature is between 41°C and 50°C. Extreme caution is required. Limit exposure to the heat and take all necessary precautions to stay safe.",
+          "actions": [
+            "Avoid outdoor activities as much as possible.",
+            "Stay in a cool, air-conditioned environment.",
+            "Drink water frequently and avoid dehydration.",
+            "Check on vulnerable individuals, including the elderly and young children."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Stay indoors with air conditioning or fans running.",
+            "Wear light, breathable clothing and use a hat or umbrella for protection.",
+            "Stay hydrated with water or electrolyte solutions.",
+            "Monitor for signs of heat exhaustion or heat stroke."
+          ],
+          "precautions": [
+            "Ensure proper ventilation indoors.",
+            "Avoid alcohol and caffeine, which can increase dehydration.",
+            "Have a plan in place for potential power outages or cooling system failures."
+          ]
+        },
+        "health_impacts": [
+          "Very high risk of heat exhaustion and heat stroke.",
+          "Severe dehydration if fluid intake is inadequate.",
+          "Increased risk of serious heat-related health issues, including cardiovascular and respiratory conditions.",
+          "Potential for heat-induced complications and exacerbation of existing health issues."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)",
+          "Cooling packs"
+        ]
+      },
+      "night_info": {
+        "alert": {
+          "title": "Extremely Warm Night Alert",
+          "message": "The night-time temperature is between 41°C and 50°C. The night will be extremely warm. Ensure you have access to a cool environment and stay hydrated.",
+          "actions": [
+            "Use air conditioning or fans to keep the room cool.",
+            "Wear light and breathable sleepwear.",
+            "Stay hydrated and avoid heavy meals before bed."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Stay in an air-conditioned room or use a fan.",
+            "Wear lightweight, breathable clothing to sleep.",
+            "Keep hydrated and avoid caffeine and alcohol.",
+            "Ensure proper ventilation to prevent overheating."
+          ],
+          "precautions": [
+            "Be vigilant for signs of heat-related illnesses.",
+            "Have a backup cooling plan in case of power failures.",
+            "Prepare for any sudden temperature fluctuations."
+          ]
+        },
+        "health_impacts": [
+          "Extreme risk of heat-related health issues, including heat exhaustion and heat stroke.",
+          "High risk of dehydration and severe health complications.",
+          "Potential exacerbation of pre-existing health conditions.",
+          "Severe discomfort and potential risk of overheating during sleep."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)",
+          "Cooling packs"
+        ]
+      }
+    },
+    {
+      "range": "51°C and above",
+      "min": 51,
+      "max": "Infinity",
+      "day_info": {
+        "alert": {
+          "title": "Extreme Heat Emergency Alert",
+          "message": "The daytime temperature is 51°C and above. This is an extreme heat emergency. Take all possible measures to protect yourself and limit exposure to the heat.",
+          "actions": [
+            "Avoid going outside unless absolutely necessary.",
+            "Stay in a well-ventilated, air-conditioned environment.",
+            "Drink water continuously and avoid dehydration.",
+            "Check on vulnerable individuals regularly and ensure they are safe."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Remain indoors in a cool, air-conditioned space.",
+            "Wear minimal clothing and use cool compresses if necessary.",
+            "Stay hydrated with water and electrolyte solutions.",
+            "Monitor for signs of heat exhaustion or heat stroke and seek medical attention if needed."
+          ],
+          "precautions": [
+            "Ensure you have access to emergency cooling methods.",
+            "Be prepared for potential power outages or cooling system failures.",
+            "Avoid alcohol and caffeine to reduce dehydration risk."
+          ]
+        },
+        "health_impacts": [
+          "Extreme risk of heat stroke, heat exhaustion, and severe dehydration.",
+          "High risk of serious health complications affecting cardiovascular and respiratory systems.",
+          "Potential for life-threatening conditions if appropriate measures are not taken.",
+          "Significant discomfort and risk of heat-induced complications."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)",
+          "Cooling packs",
+          "Emergency contact numbers"
+        ]
+      },
+      "night_info": {
+        "alert": {
+          "title": "Extreme Warm Night Emergency Alert",
+          "message": "The night-time temperature is 51°C and above. This is an extreme heat emergency during the night. Ensure you have access to cooling and stay hydrated.",
+          "actions": [
+            "Use air conditioning or fans to keep the room as cool as possible.",
+            "Wear light and minimal sleepwear.",
+            "Stay hydrated and monitor for any signs of heat-related health issues."
+          ]
+        },
+        "user_protection": {
+          "tips": [
+            "Stay in a well-ventilated, air-conditioned environment.",
+            "Use cool compresses or take a cool bath if needed.",
+            "Wear minimal clothing and ensure hydration.",
+            "Be vigilant for signs of heat-related illnesses and seek medical attention if needed."
+          ],
+          "precautions": [
+            "Have a backup plan for cooling in case of power outages.",
+            "Monitor indoor temperatures and adjust cooling methods as necessary.",
+            "Be prepared for potential health emergencies."
+          ]
+        },
+        "health_impacts": [
+          "Extreme risk of severe health issues due to high nighttime temperatures.",
+          "High risk of dehydration and heat-related complications.",
+          "Increased potential for heat stroke and other heat-induced conditions.",
+          "Severe discomfort and potential life-threatening risks."
+        ],
+        "first_aid_kit": [
+          "First aid manual",
+          "Bandages and gauze",
+          "Pain relievers (e.g., aspirin, ibuprofen)",
+          "Antiseptic wipes",
+          "Sunscreen",
+          "Hydration solutions (e.g., oral rehydration salts)",
+          "Cooling packs",
+          "Emergency contact numbers"
+        ]
+      }
+    }
+  ]
+}
