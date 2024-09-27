@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import Weather from "./pages/Weather";
+import Pollustion from "./pages/Pollustion";
+import Education from "./pages/Education";
 import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
 
@@ -36,6 +39,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="weather" element={<Weather />} />
+            <Route path="pollution" element={<Pollustion />} />
+            <Route path="education" element={<Education />} />
           </Route>
         </Routes>
       </Router>
