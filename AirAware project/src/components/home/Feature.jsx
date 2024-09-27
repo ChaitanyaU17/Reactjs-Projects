@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudSun, faSmog, faExclamationTriangle, faHeartbeat, faBook, faCalendarDay, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Feature = () => {
@@ -41,7 +42,40 @@ const Feature = () => {
     ];
 
     return (
-        <></>
+        <section className="bg-white  py-12">
+            <div className="container mx-auto px-6">
+                <div className="lg:flex lg:flex-col lg:items-center">
+                    <div className="w-full mb-8">
+                        <h1 className="text-3xl font-semibold text-gray-800  lg:text-4xl">
+                            Features
+                        </h1>
+                        <p className="mt-4 text-gray-500 dark:text-gray-400">
+                            Explore the various features we offer to keep you informed and safe.
+                        </p>
+                    </div>
+
+                    <div className="w-full">
+                        <div className="w-full grid grid-cols-1 gap-8 md:grid-cols-4">
+                            {features.map((feature, index) => (
+                                <div key={index} className="p-6 rounded-md shadow-sm border">
+                                    <div className="flex items-center mb-4">
+                                        <span className="text-3xl text-green-800 dark:text-green-400 mr-4">
+                                            <FontAwesomeIcon icon={feature.icon} />
+                                        </span>
+                                        <h2 className="text-lg font-medium text-gray-800 ">
+                                            {feature.title}
+                                        </h2>
+                                    </div>
+                                    <p className="text-gray-500 dark:text-gray-400">
+                                        {feature.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };
 
