@@ -6,7 +6,7 @@
 A comprehensive web application providing real-time weather updates, air quality index (AQI) data, pollution protection tips, and educational content related to environmental health. AirAware aims to keep users informed of environmental conditions that impact their health.
 
 ## 🚀 Live Demo
-[Live Demo](#) - *(Add the link to the live demo here)*
+[Live Demo](#) - *(https://reactjs-projects-gold.vercel.app/)*
 
 ## 📸 Screenshots
 1. **Home Page**:
