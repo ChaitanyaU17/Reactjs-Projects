@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FaCloudSun, FaIndustry, FaGraduationCap } from 'react-icons/fa';
 import { IoIosArrowForward, IoIosArrowBack } from 'react-icons/io';
 
 const Sidebaar = () => {
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
 
     const closesidebaar = () => {
         setOpen(false);
@@ -33,7 +34,7 @@ const Sidebaar = () => {
 
               
                     <div className='w-full h-auto'>
-                        <h2 className='text-2xl font-bold mb-6'>Dashboard</h2>
+                        <h2 onClick={() => navigate('/')} className='text-2xl font-bold mb-6 cursor-pointer'>Dashboard</h2>
                     </div>
                 
                 <ul className='space-y-4'>
