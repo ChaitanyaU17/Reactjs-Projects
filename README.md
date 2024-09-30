@@ -1,7 +1,7 @@
 
 ---
 
-# AirAware Weather Update
+# AirAware Real Time Weather Updates
 
 A comprehensive web application providing real-time weather updates, air quality index (AQI) data, pollution protection tips, and educational content related to environmental health. AirAware aims to keep users informed of environmental conditions that impact their health.
 
