@@ -4,71 +4,86 @@
         {
             "id":1,
             "src":"https://cdn-icons-png.flaticon.com/128/3291/3291670.png",
-            "title":"HTML",
-            "description": "Expertise in HTML5"
+            "title":"HTML5",
+            "description": "Expertise"
 
         },
         {
             "id":2,
             "src":"https://cdn-icons-png.flaticon.com/128/16845/16845736.png",
-            "title":"CSS",
-            "description": "Expertise in CSS3"
+            "title":"CSS3",
+            "description": "Expertise"
 
         },
         {
             "id":3,
-            "src":"https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
-            "title":"Javascript",
-            "description": "Proficient in Javascript"
+            "src":"./img/plus-tailwind-removebg-preview.png",
+            "title":"Tailwind",
+            "description": "Proficient"
 
         },
         {
             "id":4,
-            "src":"https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png",
-            "title":"Reactjs Library",
-            "description": "Proficient in React Js"
+            "src":"https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+            "title":"Javascript",
+            "description": "Proficient"
 
         },
         {
             "id":5,
-            "src":"./img/plus-tailwind-removebg-preview.png",
-            "title":"CSS Framework",
-            "description": "Proficient in Tailwind CSS"
+            "src":"https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png",
+            "title":"Reactjs",
+            "description": "Proficient"
 
         },
         {
             "id":6,
-            "src":"https://img.icons8.com/?size=96&id=jD-fJzVguBmw&format=png",
-            "title":"Redux",
-            "description": "Proficient in State Management"
+            "src":"https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000",
+            "title":"Node Js",
+            "description": "Intermediate "
 
         },
         {
             "id":7,
+            "src":"https://img.icons8.com/?size=100&id=kg46nzoJrmTR&format=png&color=FFFFFF",
+            "title":"Express Js",
+            "description": "Intermediate "
+
+        },
+        {
+            "id":8,
+            "src":"https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000",
+            "title":"MongoDB",
+            "description": "Intermediate "
+
+        },
+        
+        {
+            "id":9,
+            "src":"https://img.icons8.com/?size=96&id=jD-fJzVguBmw&format=png",
+            "title":"Redux",
+            "description": "Proficient"
+
+        },
+        {
+            "id":10,
             "src":"https://img.icons8.com/?size=128&id=55497&format=png",
             "title":"Rest API",
             "description": "Proficient"
 
         },
         {
-            "id":8,
+            "id":11,
             "src":"https://img.icons8.com/?size=96&id=62452&format=png",
             "title":"Firebase",
             "description": "Proficient"
 
         },
         {
-            "id":8,
+            "id":12,
             "src":"https://img.icons8.com/?size=128&id=FRRACRKRsw2s&format=png",
             "title":"Java DSA",
-            "description": "Data structures and OOP concepts"
-
-        },
-        {
-            "id":8,
-            "src":"https://img.icons8.com/?size=96&id=UFXRpPFebwa2&format=png",
-            "title":"MySQL",
-            "description": "Intermediate "
+            "description": "DSA and OOP's concept"
 
         }
 
