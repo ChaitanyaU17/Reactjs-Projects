@@ -26,7 +26,7 @@ export default function HeroSection() {
                     </h1>
                     <p className="hero--section--description">
 
-                        A Frontend Developer.
+                        A Full-Stack Developer.
 
                     </p>
 
