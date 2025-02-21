@@ -33,7 +33,7 @@ export default function HeroSection() {
 
                 </div>
                 <button className="btn btn-github">
-                    <a  href="https://drive.google.com/file/d/17bZHLAyRNL1ajZwQWQz7tZRo4EPFluP_/view?usp=sharing">Resume</a>
+                    <a  href="https://drive.google.com/file/d/1dtxrraI3xpF_pv7mvuSk0p5ftpxeoaSG/view?usp=drive_link">Resume</a>
                 </button>
 
             </div>
