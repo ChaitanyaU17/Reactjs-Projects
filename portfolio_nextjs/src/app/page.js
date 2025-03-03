@@ -190,8 +190,8 @@ export default function Home() {
                 Passionate Web Developer dedicated to crafting seamless,
                 user-centric web applications with precision and innovation,
                 leveraging the MERN stack to deliver impactful solutions. <br />{" "}
-                As a full-stack developer, I've had the privilege of working on
-                the user-facing aspects of projects. I'm fueled by a deep
+                As a full-stack developer, I&rsquo;ve had the privilege of working on
+                the user-facing aspects of projects. I&rsquo;m fueled by a deep
                 passion for problem-solving and thrive in collaborative
                 environments where I can transform ideas into visually appealing
                 and functional interfaces.
