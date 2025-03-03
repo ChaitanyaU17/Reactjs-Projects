@@ -103,7 +103,8 @@ export default function Home() {
   };
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      <div className="mx-auto max-w-4xl px-4 py-20 ">
+      <div className="mx-auto max-w-4xl px-4 py-10 "> 
+        {/* py-20 */}
         <motion.header
           id="home"
           initial={{ opacity: 0, x: -100 }}
@@ -111,14 +112,16 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="flex items-center justify-between mb-12"
         >
-          <div className="w-20 h-20 rounded-full overflow-hidden">
+          <div className="w-35 h-35 rounded-full overflow-hidden">
+            {/* w-20 h-20 */}
             <Image
               src="/profile.jpeg"
               className="cursor-pointer transition-all duration-300 hover:scale-110"
               alt="Profile Picture"
-              width={100}
-              height={100}
+              width={200}
+              height={150}
             />
+            {/* width={100} height={100} */}
           </div>
 
           {/* <nav>
