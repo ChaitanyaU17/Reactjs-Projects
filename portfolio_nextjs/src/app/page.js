@@ -280,12 +280,12 @@ export default function Home() {
                 </p>
 
                 <p>
-                  <span className="text-gray-100">• Job Listing Portal:</span>
+                  <span className="text-gray-800 dark:text-white font-medium">• Job Listing Portal:</span>
                   Job Listing Portal: A dynamic platform designed to connect job
                   seekers with opportunities, built with the MERN stack.
                 </p>
                 <p>
-                  <span className="text-gray-100">
+                  <span className="text-gray-800 dark:text-white font-medium">
                     • Result Management System:
                   </span>{" "}
                   A robust application streamlining academic result processing
