@@ -26,10 +26,10 @@ const projects = [
   },
   {
     id: 2,
-    title: "TrainWise - Fitness Trainer Appointment Booking Platform",
+    title: "TrainWise",
     image: "/trainwise thumbnail.png",
     description:
-      "TrainWise is a MERN stack-based fitness trainer booking platform that allows users to book appointments with personal trainers based on their availability and expertise.",
+      "TrainWise is a MERN stack-based fitness trainer appointment booking platform featuring user authentication, appointment booking, profile management, and online payments. It includes dashboards for users, trainers, and admins.",
     liveDemo: "https://train-wise-fitness-appointment-app-yzjx.vercel.app/",
     github: "https://github.com/ChaitanyaU17/TrainWise-fitness-appointment-app",
   },
@@ -38,7 +38,7 @@ const projects = [
     title: "Foodie Restaurant Management Website",
     image: "/foodie thumbnail.png",
     description:
-      "Foodie is a restaurant management system that enables users to browse restaurant menus, order food, and track deliveries in real time.",
+      "Foodie is a front-end clone of Swiggy built with React, Redux, and Tailwind CSS. It features API calls for fetching real-time menus, state management for cart operations, and a responsive UI for smooth navigation.",
     liveDemo: "https://shimmering-griffin-9ad94c.netlify.app/",
     github: "https://github.com/ChaitanyaU17/Foodie_Restaurant-App",
   },
@@ -47,7 +47,7 @@ const projects = [
     title: "Air-Aware Real-Time Weather Update",
     image: "/wheather thumbnail.png",
     description:
-      "Air-Aware is a real-time weather forecasting web application that provides weather details, air quality index, and climate trends.",
+      "Air-Aware is a real-time weather and AQI tracking app offering weather updates, pollution protection tips, and environmental health education. Built with React, it ensures accurate and timely information.",
     liveDemo: "https://reactjs-projects-gold.vercel.app/",
     github: "https://github.com/ChaitanyaU17/Reactjs-Projects",
   },
@@ -56,7 +56,7 @@ const projects = [
     title: "Result Management System",
     image: "/reusultmanagement thumbnail.png",
     description:
-      "A student result management system that enables administrators to upload student marks and allows students to check their results securely.",
+      "This MERN stack-based Result Management System simplifies student result tracking for educational institutions. Admins can upload and update results, while students can securely access their performance data.",
     liveDemo: "https://resultmanagement.netlify.app/",
     github:
       "https://github.com/ChaitanyaU17/Internship-Projects/tree/main/Result-Management",
@@ -66,7 +66,7 @@ const projects = [
     title: "Joblia - Job Listing Portal",
     image: "/job portal thumbnail.png",
     description:
-      "Joblia is a job listing portal where job seekers can explore job opportunities and apply directly, while recruiters can post job openings.",
+      "Joblia is a job portal connecting job seekers and recruiters. Users can search and apply for jobs, manage applications, and track their status. It includes authentication, filtering, and an employer dashboard.",
     liveDemo: "https://warm-churros-ee1a88.netlify.app/",
     github:
       "https://github.com/ChaitanyaU17/Internship-Projects/tree/main/Job-Listing-Portal",
@@ -76,7 +76,7 @@ const projects = [
     title: "Generics Ecommerce Website",
     image: "/ecommerce thumbnail.png",
     description:
-      "An eCommerce platform that allows users to browse products, add them to the cart, and complete purchases securely.",
+      "Generics is a React-based e-commerce app with Firebase authentication, dynamic routing, cart management, and profile features. It ensures secure user access and an optimized shopping experience.",
     liveDemo: "https://sharpner-frontend-react-gx86.vercel.app/user-auth",
     github:
       "https://github.com/ChaitanyaU17/Sharpner_Frontend_React/tree/main/EcommerceProject",
@@ -86,7 +86,7 @@ const projects = [
     title: "YouTube 2.0",
     image: "/youtube thumbnail.png",
     description:
-      "A YouTube clone built with React that allows users to search, watch videos, and explore trending content.",
+      "A YouTube clone built with React, Redux, and Tailwind CSS. It features dynamic search suggestions, live API fetching, real-time chat, and nested comments for an enhanced video streaming experience.",
     liveDemo: "https://youtube-clone-brown-psi.vercel.app/",
     github: "https://github.com/ChaitanyaU17/Youtube_2.0",
   },
@@ -103,7 +103,7 @@ export default function Home() {
   };
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      <div className="mx-auto max-w-4xl px-4 py-10 "> 
+      <div className="mx-auto max-w-4xl px-4 py-10 ">
         {/* py-20 */}
         <motion.header
           id="home"
@@ -172,7 +172,7 @@ export default function Home() {
               className="space-y-3"
             >
               <h2 className="text-lg font-semibold ">
-                Building Scalable Solutions for tomorrow
+                Crafting the Future, One Line of Code at a Time
               </h2>
               {/* <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl ">
                 Expert in MERN Stack with{" "}
@@ -187,14 +187,18 @@ export default function Home() {
               </p> */}
 
               <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl">
-                Passionate Web Developer dedicated to crafting seamless,
-                user-centric web applications with precision and innovation,
-                leveraging the MERN stack to deliver impactful solutions. <br />{" "}
-                As a full-stack developer, I&rsquo;ve had the privilege of working on
-                the user-facing aspects of projects. I&rsquo;m fueled by a deep
-                passion for problem-solving and thrive in collaborative
-                environments where I can transform ideas into visually appealing
-                and functional interfaces.
+                I’m a passionate and detail-oriented Full-Stack Web Developer
+                specializing in the MERN stack, dedicated to building scalable,
+                user-centric web applications that solve real-world problems.
+                With a strong foundation in both front-end and back-end
+                development, I thrive on turning complex ideas into intuitive,
+                functional, and visually stunning digital experiences.
+              </p>
+              <p className="space-y-1 text-gray-600 text-sm dark:text-gray-400 max-w-2xl">
+                Driven by a love for innovation and problem-solving, I excel in
+                collaborative environments where creativity meets technology. My
+                goal is to create solutions that not only meet user needs but
+                also push the boundaries of what’s possible in web development.
               </p>
             </motion.div>
 
@@ -205,7 +209,7 @@ export default function Home() {
               className="flex items-center gap-3"
             >
               <Button className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105">
-                <Link href="https://drive.google.com/file/d/1csDb2_4mwVPiBusDEx29j9siTpJAkWVK/view?usp=drive_link">
+                <Link href="https://drive.google.com/file/d/1csDb2_4mwVPiBusDEx29j9siTpJAkWVK/view?usp=sharing">
                   Resume
                 </Link>
               </Button>
@@ -268,21 +272,39 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                I had the privilege of working with an incredible group of 7
-                interns, where we tackled two challenging projects:{" "}
-                <span className="text-black dark:text-white">
-                  a Job Listing Portal
-                </span>{" "}
-                and{" "}
-                <span className="text-black dark:text-white">
-                  a Result Management System
-                </span>{" "}
-                , both built with the MERN stack. We collaborated to plan our
-                approach, optimize functionalities, and enhance our applications
-                together. The journey was filled with learning, hands-on
-                experience, and fantastic support from our mentors, who were
-                always there to guide us through problem-solving sessions.
+              <p className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                <p>
+                  During my internship at Zidio Development, I collaborated with
+                  a talented team of 7 interns to develop two impactful
+                  projects:
+                </p>
+
+                <p>
+                  <span className="text-gray-100">• Job Listing Portal:</span>
+                  Job Listing Portal: A dynamic platform designed to connect job
+                  seekers with opportunities, built with the MERN stack.
+                </p>
+                <p>
+                  <span className="text-gray-100">
+                    • Result Management System:
+                  </span>{" "}
+                  A robust application streamlining academic result processing
+                  and management.
+                </p>
+                <p>
+                  This experience was a deep dive into team collaboration,
+                  problem-solving, and technical optimization. From planning and
+                  development to debugging and deployment, I gained hands-on
+                  experience in building scalable solutions while receiving
+                  invaluable mentorship from industry experts.
+                </p>
+                <p>
+                  Working on these projects not only honed my technical skills
+                  but also taught me the importance of clear communication,
+                  iterative improvement, and user-focused design. It was a
+                  rewarding journey that solidified my passion for creating
+                  impactful web applications.
+                </p>
               </p>
             </div>
           </motion.section>
