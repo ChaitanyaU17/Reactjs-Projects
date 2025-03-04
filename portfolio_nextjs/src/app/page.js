@@ -280,8 +280,8 @@ export default function Home() {
                 </p>
 
                 <p>
-                  <span className="text-gray-800 dark:text-white font-medium">• Job Listing Portal:</span>
-                  Job Listing Portal: A dynamic platform designed to connect job
+                  <span className="text-gray-800 dark:text-white font-medium">• Job Listing Portal:</span>{" "}
+                  A dynamic platform designed to connect job
                   seekers with opportunities, built with the MERN stack.
                 </p>
                 <p>
