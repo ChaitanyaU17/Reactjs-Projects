@@ -159,9 +159,9 @@ export default function Home() {
               <h1 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
                 Chaitanya Umbarkar
               </h1>
-              <p className="text-gray-600 dark:text-gray-400">Web Developer</p>
+              <p className="text-gray-600 dark:text-gray-400">Full Stack Developer</p>
               <p className="text-gray-600 dark:text-gray-400">
-                Sangamner, Ahilya Nagar, Maharashtra
+                Pune, Maharashtra
               </p>
             </motion.div>
 
