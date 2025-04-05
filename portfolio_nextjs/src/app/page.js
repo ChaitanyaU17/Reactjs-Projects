@@ -282,7 +282,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <p className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+              <div className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
                 <p>
                   During my internship at Zidio Development, I collaborated with
                   a talented team of 7 interns to develop two impactful
@@ -317,7 +317,7 @@ export default function Home() {
                   rewarding journey that solidified my passion for creating
                   impactful web applications.
                 </p>
-              </p>
+              </div>
             </div>
           </motion.section>
 
