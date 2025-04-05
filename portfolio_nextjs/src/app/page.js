@@ -159,9 +159,19 @@ export default function Home() {
               <h1 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
                 Chaitanya Umbarkar
               </h1>
-              <p className="text-gray-600 dark:text-gray-400">Full Stack Developer</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                Full Stack Developer
+              </p>
               <p className="text-gray-600 dark:text-gray-400">
                 Pune, Maharashtra
+              </p>
+              <p>
+                <a
+                  href="mailto:chaitanyaumbarkar2002@gmail.com"
+                  className="text-gray-600 dark:text-gray-400 hover:text-blue-400 dark:hover:text-blue-400"
+                >
+                  chaitanyaumbarkar2002@gmail.com
+                </a>
               </p>
             </motion.div>
 
@@ -263,12 +273,12 @@ export default function Home() {
             <div className="space-y-8">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    July 2024, September 2024
-                  </p>
-                  <p>Web Developer Intern</p>
+                  <p className="text-xl">Web Developer Intern</p>
                   <p className="text-blue-600 dark:text-blue-400">
                     Zidio Development
+                  </p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    July 2024, September 2024
                   </p>
                 </div>
               </div>
@@ -280,9 +290,11 @@ export default function Home() {
                 </p>
 
                 <p>
-                  <span className="text-gray-800 dark:text-white font-medium">• Job Listing Portal:</span>{" "}
-                  A dynamic platform designed to connect job
-                  seekers with opportunities, built with the MERN stack.
+                  <span className="text-gray-800 dark:text-white font-medium">
+                    • Job Listing Portal:
+                  </span>{" "}
+                  A dynamic platform designed to connect job seekers with
+                  opportunities, built with the MERN stack.
                 </p>
                 <p>
                   <span className="text-gray-800 dark:text-white font-medium">
