@@ -167,7 +167,7 @@ export default function Home() {
                   <span className="text-gray-900 dark:text-white font-medium">
                     Nandhar Technologies
                   </span>
-                  . I don't just write code I architect solutions that are
+                  . I dont just write code I architect solutions that are
                   fast, scalable, and built to last.
                 </p>
                 <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl leading-relaxed">
