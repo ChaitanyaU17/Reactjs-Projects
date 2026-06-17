@@ -130,5 +130,10 @@ html {
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

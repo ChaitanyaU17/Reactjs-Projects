@@ -1,100 +1,218 @@
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 
-const skills = [
+const skillCategories = [
   {
-    id: 1,
-    src: "https://cdn-icons-png.flaticon.com/128/3291/3291670.png",
-    title: "HTML5",
-    description: "Expertise",
+    category: "Programming Languages",
+    color: "from-rose-500 to-pink-500",
+    bgColor: "bg-rose-50 dark:bg-rose-950/20",
+    borderColor: "border-rose-200 dark:border-rose-800",
+    skills: [
+      {
+        src: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+        title: "JavaScript",
+      },
+      {
+        src: "https://img.icons8.com/?size=128&id=FRRACRKRsw2s&format=png",
+        title: "Java",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=uJM6fQYqDaZK&format=png&color=000000",
+        title: "TypeScript",
+      },
+    ],
   },
   {
-    id: 2,
-    src: "https://cdn-icons-png.flaticon.com/128/16845/16845736.png",
-    title: "CSS3",
-    description: "Expertise",
+    category: "Frontend",
+    color: "from-indigo-500 to-violet-500",
+    bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
+    borderColor: "border-indigo-200 dark:border-indigo-800",
+    skills: [
+      {
+        src: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png",
+        title: "React.js",
+      },
+      {
+        src: "https://img.icons8.com/?size=96&id=jD-fJzVguBmw&format=png",
+        title: "Redux",
+      },
+      {
+        src: "https://cdn-icons-png.flaticon.com/128/3291/3291670.png",
+        title: "HTML",
+      },
+      {
+        src: "https://cdn-icons-png.flaticon.com/128/16845/16845736.png",
+        title: "CSS",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=WoopfRcDj3RF&format=png&color=000000",
+        title: "Tailwind CSS",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000",
+        title: "Material UI",
+      },
+    ],
   },
   {
-    id: 3,
-    src: "https://img.icons8.com/?size=100&id=WoopfRcDj3RF&format=png&color=000000",
-    title: "Tailwind",
-    description: "Proficient",
+    category: "Backend",
+    color: "from-sky-500 to-cyan-500",
+    bgColor: "bg-sky-50 dark:bg-sky-950/20",
+    borderColor: "border-sky-200 dark:border-sky-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000",
+        title: "Node.js",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000",
+        title: "Express.js",
+      },
+      {
+        src: "https://img.icons8.com/?size=128&id=55497&format=png",
+        title: "REST APIs",
+      },
+    ],
   },
   {
-    id: 4,
-    src: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
-    title: "Javascript",
-    description: "Proficient",
+    category: "Database",
+    color: "from-emerald-500 to-teal-500",
+    bgColor: "bg-emerald-50 dark:bg-emerald-950/20",
+    borderColor: "border-emerald-200 dark:border-emerald-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000",
+        title: "MongoDB",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000",
+        title: "MySQL",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=59952&format=png&color=000000",
+        title: "SQL",
+      },
+      {
+        src: "https://img.icons8.com/?size=96&id=62452&format=png",
+        title: "Firebase",
+      },
+    ],
   },
   {
-    id: 5,
-    src: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png",
-    title: "Reactjs",
-    description: "Proficient",
+    category: "Tools & Platforms",
+    color: "from-orange-500 to-amber-500",
+    bgColor: "bg-orange-50 dark:bg-orange-950/20",
+    borderColor: "border-orange-200 dark:border-orange-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
+        title: "Git",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=62856&format=png&color=000000",
+        title: "GitHub",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=EPbEfEa7o3WY&format=png&color=000000",
+        title: "Postman",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=33039&format=png&color=000000",
+        title: "AWS",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=22813&format=png&color=000000",
+        title: "Cloudinary",
+      },
+    ],
   },
   {
-    id: 6,
-    src: "https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000",
-    title: "Node Js",
-    description: "Intermediate ",
-  },
-  {
-    id: 7,
-    src: "https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000",
-    title: "Express Js",
-    description: "Intermediate ",
-  },
-  {
-    id: 8,
-    src: "https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000",
-    title: "MongoDB",
-    description: "Intermediate ",
-  },
-  {
-    id: 9,
-    src: "https://img.icons8.com/?size=96&id=jD-fJzVguBmw&format=png",
-    title: "Redux",
-    description: "Proficient",
-  },
-  {
-    id: 10,
-    src: "https://img.icons8.com/?size=128&id=55497&format=png",
-    title: "Rest API",
-    description: "Proficient",
-  },
-  {
-    id: 11,
-    src: "https://img.icons8.com/?size=96&id=62452&format=png",
-    title: "Firebase",
-    description: "Proficient",
-  },
-  {
-    id: 12,
-    src: "https://img.icons8.com/?size=128&id=FRRACRKRsw2s&format=png",
-    title: "Java DSA",
-    description: "DSA and OOP's concept",
+    category: "Core Concepts",
+    color: "from-purple-500 to-fuchsia-500",
+    bgColor: "bg-purple-50 dark:bg-purple-950/20",
+    borderColor: "border-purple-200 dark:border-purple-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000",
+        title: "Authentication",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=103461&format=png&color=000000",
+        title: "CRUD Operations",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=55497&format=png",
+        title: "API Integration",
+      }
+    ],
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
 export default function Skills() {
   return (
-    <section className="py-12 px-6 max-w-6xl mx-auto text-center">
-      {/* <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block mb-8">
-        Skills
-      </h2> */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {skills.map((skill) => (
+    <section className="py-4 space-y-8">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="space-y-4"
+      >
+        {skillCategories.map((cat) => (
           <motion.div
-            key={skill.id}
-            className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg shadow-lg flex flex-col items-center space-y-3"
-            whileHover={{ scale: 1.05 }}
+            key={cat.category}
+            variants={cardVariants}
+            className={`rounded-xl border ${cat.borderColor} ${cat.bgColor} p-5`}
           >
-            <img src={skill.src} alt={skill.title} className="w-16 h-16 object-contain" />
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-white">{skill.title}</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">{skill.description}</p>
+            <div className="flex items-center gap-2 mb-4">
+              <div
+                className={`h-1 w-6 rounded-full bg-gradient-to-r ${cat.color}`}
+              />
+              <h3
+                className={`text-sm font-semibold uppercase tracking-widest bg-gradient-to-r ${cat.color} bg-clip-text text-transparent`}
+              >
+                {cat.category}
+              </h3>
+            </div>
+
+            <div className="flex flex-wrap gap-2.5">
+              {cat.skills.map((skill) => (
+                <motion.div
+                  key={skill.title}
+                  whileHover={{ scale: 1.06, y: -2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow cursor-default"
+                >
+                  <img
+                    src={skill.src}
+                    alt={skill.title}
+                    className="w-5 h-5 object-contain"
+                  />
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                    {skill.title}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

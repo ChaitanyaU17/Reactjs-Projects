@@ -1,110 +1,61 @@
 "use client";
 
+import { useState } from "react";
+import { FiEye, FiX } from "react-icons/fi";
 import Image from "next/image";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Card, CardContent } from "@/components/ui/card";
-import { RiLiveFill } from "react-icons/ri";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { FaGithub, FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
 import ContactMe from "@/components/ui/Contact";
 import Skills from "@/components/ui/skills";
-
-const projects = [
-  {
-    id: 1,
-    title: "CG Multiplex",
-    image: "/CGMultiplex thumbnail.png",
-    description:
-      "CGMultiplex is a comprehensive movie-related web application built with React, Redux, and Tailwind CSS. It provides detailed information about movies, TV shows, and entertainment industry professionals.",
-    liveDemo: "https://chipper-zuccutto-af5cce.netlify.app/",
-    github: "https://github.com/ChaitanyaU17/MovieApp",
-  },
-  {
-    id: 2,
-    title: "TrainWise",
-    image: "/trainwise thumbnail.png",
-    description:
-      "TrainWise is a MERN stack-based fitness trainer appointment booking platform featuring user authentication, appointment booking, profile management, and online payments. It includes dashboards for users, trainers, and admins.",
-    liveDemo: "https://train-wise-fitness-appointment-app-yzjx.vercel.app/",
-    github: "https://github.com/ChaitanyaU17/TrainWise-fitness-appointment-app",
-  },
-  {
-    id: 3,
-    title: "Foodie Restaurant Management Website",
-    image: "/foodie thumbnail.png",
-    description:
-      "Foodie is a front-end clone of Swiggy built with React, Redux, and Tailwind CSS. It features API calls for fetching real-time menus, state management for cart operations, and a responsive UI for smooth navigation.",
-    liveDemo: "https://shimmering-griffin-9ad94c.netlify.app/",
-    github: "https://github.com/ChaitanyaU17/Foodie_Restaurant-App",
-  },
-  {
-    id: 4,
-    title: "Air-Aware Real-Time Weather Update",
-    image: "/wheather thumbnail.png",
-    description:
-      "Air-Aware is a real-time weather and AQI tracking app offering weather updates, pollution protection tips, and environmental health education. Built with React, it ensures accurate and timely information.",
-    liveDemo: "https://reactjs-projects-gold.vercel.app/",
-    github: "https://github.com/ChaitanyaU17/Reactjs-Projects",
-  },
-  {
-    id: 5,
-    title: "Result Management System",
-    image: "/reusultmanagement thumbnail.png",
-    description:
-      "This MERN stack-based Result Management System simplifies student result tracking for educational institutions. Admins can upload and update results, while students can securely access their performance data.",
-    liveDemo: "https://resultmanagement.netlify.app/",
-    github:
-      "https://github.com/ChaitanyaU17/Internship-Projects/tree/main/Result-Management",
-  },
-  {
-    id: 6,
-    title: "Joblia - Job Listing Portal",
-    image: "/job portal thumbnail.png",
-    description:
-      "Joblia is a job portal connecting job seekers and recruiters. Users can search and apply for jobs, manage applications, and track their status. It includes authentication, filtering, and an employer dashboard.",
-    liveDemo: "https://warm-churros-ee1a88.netlify.app/",
-    github:
-      "https://github.com/ChaitanyaU17/Internship-Projects/tree/main/Job-Listing-Portal",
-  },
-  {
-    id: 7,
-    title: "Generics Ecommerce Website",
-    image: "/ecommerce thumbnail.png",
-    description:
-      "Generics is a React-based e-commerce app with Firebase authentication, dynamic routing, cart management, and profile features. It ensures secure user access and an optimized shopping experience.",
-    liveDemo: "https://sharpner-frontend-react-gx86.vercel.app/user-auth",
-    github:
-      "https://github.com/ChaitanyaU17/Sharpner_Frontend_React/tree/main/EcommerceProject",
-  },
-  {
-    id: 8,
-    title: "YouTube 2.0",
-    image: "/youtube thumbnail.png",
-    description:
-      "A YouTube clone built with React, Redux, and Tailwind CSS. It features dynamic search suggestions, live API fetching, real-time chat, and nested comments for an enhanced video streaming experience.",
-    liveDemo: "https://youtube-clone-brown-psi.vercel.app/",
-    github: "https://github.com/ChaitanyaU17/Youtube_2.0",
-  },
-];
+import Experience from "@/components/ui/Experience";
+import ProjectsSection from "@/components/ui/ProjectsSection";
+import Education from "@/components/ui/Education";
 
 export default function Home() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-  };
+  const [showProfileModal, setShowProfileModal] = useState(false);
+
   return (
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      <div className="mx-auto max-w-4xl px-4 py-10 ">
-        {/* py-20 */}
+      <div className="mx-auto max-w-4xl px-4 py-10">
+
+        <AnimatePresence>
+          {showProfileModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowProfileModal(false)}
+              className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+            >
+              <motion.div
+                initial={{ scale: 0.85, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.85, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative rounded-2xl overflow-hidden shadow-2xl max-w-sm w-full"
+              >
+                <Image
+                  src="/profile.jpeg"
+                  alt="Chaitanya Umbarkar"
+                  width={500}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
+                <button
+                  onClick={() => setShowProfileModal(false)}
+                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-colors"
+                >
+                  <FiX className="w-4 h-4" />
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <motion.header
           id="home"
           initial={{ opacity: 0, x: -100 }}
@@ -112,147 +63,166 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="flex items-center justify-between mb-12"
         >
-          <div className="w-35 h-35 rounded-full overflow-hidden">
-            {/* w-20 h-20 */}
-            <Image
-              src="/profile.jpeg"
-              className="cursor-pointer transition-all duration-300 hover:scale-110"
-              alt="Profile Picture"
-              width={200}
-              height={150}
-            />
-            {/* width={100} height={100} */}
+          <div className="relative group w-28 h-28 shrink-0">
+            <div className="w-28 h-28 rounded-full overflow-hidden">
+              <Image
+                src="/profile.jpeg"
+                alt="Profile Picture"
+                width={112}
+                height={112}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <button
+              onClick={() => setShowProfileModal(true)}
+              className="absolute inset-0 rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+            >
+              <FiEye className="w-5 h-5 text-white" />
+            </button>
           </div>
-
-          {/* <nav>
-            <ul className="flex space-x-6 text-lg font-medium text-gray-700 dark:text-white">
-              {[
-                { name: "Home", id: "home" },
-                { name: "My Expertise", id: "expertise" },
-                { name: "Education", id: "education" },
-                { name: "Projects", id: "projects" },
-                { name: "Contact", id: "contact" },
-              ].map((item) => (
-                <li key={item.id}>
-                  <Link
-                    href={`#${item.id}`}
-                    className="bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 text-transparent bg-clip-text transition hover:opacity-80 text-sm"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav> */}
 
           <ThemeToggle />
         </motion.header>
 
-        <main className="space-y-10">
-          <section className="space-y-10">
+        <main className="space-y-16">
+          <section>
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-1"
+              className="space-y-4"
             >
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
-                Chaitanya Umbarkar
-              </h1>
-              <p className="text-gray-600 dark:text-gray-400">
-                Full Stack Developer
-              </p>
-              <p className="text-gray-600 dark:text-gray-400">
-                Pune, Maharashtra
-              </p>
-              <p>
+              <div className="space-y-2">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+                  Chaitanya Umbarkar
+                </h1>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                    Full Stack Developer
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Open to Work
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-gray-500 dark:text-gray-400">
+                <span className="flex items-center gap-1.5">
+                  <svg
+                    className="w-3.5 h-3.5 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  Pune, Maharashtra
+                </span>
+
+                <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600 hidden sm:block" />
+
                 <a
                   href="mailto:chaitanyaumbarkar2002@gmail.com"
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-400 dark:hover:text-blue-400"
+                  className="flex items-center gap-1.5 hover:text-indigo-500 transition-colors"
                 >
+                  <svg
+                    className="w-3.5 h-3.5 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
                   chaitanyaumbarkar2002@gmail.com
                 </a>
-              </p>
-            </motion.div>
+              </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-3"
-            >
-              <h2 className="text-lg font-semibold ">
-                Crafting the Future, One Line of Code at a Time
-              </h2>
-              {/* <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl ">
-                Expert in MERN Stack with{" "}
-                <span className="text-black dark:text-white">React JS</span> and{" "}
-                <span className="text-black dark:text-white">Node JS</span>. and
-                specialize in designing and implementing large-scale distributed
-                systems. and deep expertise in{" "}
-                <span className="text-black dark:text-white">
-                  MongoDB, MySQL, JAVA
-                </span>
-                .
-              </p> */}
+              <div className="h-px bg-gradient-to-r from-gray-200 via-gray-300 to-transparent dark:from-gray-700 dark:via-gray-600" />
 
-              <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl">
-                I’m a passionate and detail-oriented Full-Stack Web Developer
-                specializing in the MERN stack, dedicated to building scalable,
-                user-centric web applications that solve real-world problems.
-                With a strong foundation in both front-end and back-end
-                development, I thrive on turning complex ideas into intuitive,
-                functional, and visually stunning digital experiences.
-              </p>
-              <p className="space-y-1 text-gray-600 text-sm dark:text-gray-400 max-w-2xl">
-                Driven by a love for innovation and problem-solving, I excel in
-                collaborative environments where creativity meets technology. My
-                goal is to create solutions that not only meet user needs but
-                also push the boundaries of what’s possible in web development.
-              </p>
-            </motion.div>
+              <div className="space-y-2">
+                <h2 className="text-base font-semibold text-gray-900 dark:text-white">
+                  I build things that work — and work well.
+                </h2>
+                <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl leading-relaxed">
+                  FullStack Developer with hands-on experience in the MERN
+                  stack, currently shipping production grade features at{" "}
+                  <span className="text-gray-900 dark:text-white font-medium">
+                    Nandhar Technologies
+                  </span>
+                  . I don't just write code I architect solutions that are
+                  fast, scalable, and built to last.
+                </p>
+                <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl leading-relaxed">
+                  From pixel perfect UIs to robust REST APIs, I have delivered
+                  across the full stack.
+                </p>
+              </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center gap-3"
-            >
-              <Button className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105">
-                <Link href="https://drive.google.com/file/d/1csDb2_4mwVPiBusDEx29j9siTpJAkWVK/view?usp=sharing">
-                  Resume
+              <div className="flex items-center gap-3 pt-1">
+                <Button
+                  asChild
+                  className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105"
+                >
+                  <Link
+                    href="https://drive.google.com/file/d/1sy4pMoaT_kT4h8T50NmOlx5ZsBWDmC39/view?usp=drive_link"
+                    target="_blank"
+                  >
+                    Resume
+                  </Link>
+                </Button>
+
+                <Link
+                  href="https://github.com/ChaitanyaU17"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <FaGithub className="w-6 h-6" />
                 </Link>
-              </Button>
 
-              <Link
-                href="https://github.com/ChaitanyaU17"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-              >
-                <FaGithub className="w-6 h-6" />
-              </Link>
+                <Link
+                  href="https://www.linkedin.com/in/chaitanya-umbarkar/"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <FaLinkedin className="w-6 h-6" />
+                </Link>
 
-              <Link
-                href="https://www.linkedin.com/in/chaitanya-umbarkar-32347023"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-              >
-                <FaLinkedin className="w-6 h-6" />
-              </Link>
-
-              <Link
-                href="https://x.com/CUmbarkar"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-              >
-                <FaTwitter className="w-6 h-6" />
-              </Link>
+                <Link
+                  href="https://x.com/CUmbarkar"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <FaSquareXTwitter className="w-6 h-6" />
+                </Link>
+              </div>
             </motion.div>
           </section>
 
           <motion.section
             id="expertise"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
           >
             <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
               My Expertise
@@ -262,176 +232,66 @@ export default function Home() {
 
           <motion.section
             id="experience"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
           >
             <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
               Experience
             </h2>
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <p className="text-xl">Web Developer Intern</p>
-                  <p className="text-blue-600 dark:text-blue-400">
-                    Zidio Development
-                  </p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    July 2024, September 2024
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
-                <p>
-                  During my internship at Zidio Development, I collaborated with
-                  a talented team of 7 interns to develop two impactful
-                  projects:
-                </p>
-
-                <p>
-                  <span className="text-gray-800 dark:text-white font-medium">
-                    • Job Listing Portal:
-                  </span>{" "}
-                  A dynamic platform designed to connect job seekers with
-                  opportunities, built with the MERN stack.
-                </p>
-                <p>
-                  <span className="text-gray-800 dark:text-white font-medium">
-                    • Result Management System:
-                  </span>{" "}
-                  A robust application streamlining academic result processing
-                  and management.
-                </p>
-                <p>
-                  This experience was a deep dive into team collaboration,
-                  problem-solving, and technical optimization. From planning and
-                  development to debugging and deployment, I gained hands-on
-                  experience in building scalable solutions while receiving
-                  invaluable mentorship from industry experts.
-                </p>
-                <p>
-                  Working on these projects not only honed my technical skills
-                  but also taught me the importance of clear communication,
-                  iterative improvement, and user-focused design. It was a
-                  rewarding journey that solidified my passion for creating
-                  impactful web applications.
-                </p>
-              </div>
-            </div>
+            <Experience />
           </motion.section>
 
           <motion.section
             id="education"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
           >
-            <div className="space-y-8">
-              <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
-                Education
-              </h2>
-
-              <div className="space-y-1.5">
-                <p className="font-medium">BE - Information Technology</p>
-                <p className="text-blue-600 dark:text-blue-400">
-                  Sandip Institute of Technology and Research Center, Nashik
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Jun 2019 - July 2023
-                </p>
-                <p className="font-medium">CGPA: 8.10</p>
-              </div>
-
-              <div className="space-y-1.5">
-                <p className="font-medium">XII</p>
-                <p className="text-blue-600 dark:text-blue-400">
-                  DVMH, Savitribai Phule University, Pune
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Jun 2018 - Jun 2019
-                </p>
-                <p className="font-medium">Percent: 66.92</p>
-              </div>
-
-              <div className="space-y-1.5">
-                <p className="font-medium">X</p>
-                <p className="text-blue-600 dark:text-blue-400">
-                  DVMH, Savitribai Phule University, Pune
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Jun 2016 - Jun 2017
-                </p>
-                <p className="font-medium">Percent: 76.80</p>
-              </div>
-            </div>
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Education
+            </h2>
+            <Education />
           </motion.section>
 
           <motion.section
             id="projects"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
           >
             <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
               Projects
             </h2>
-            <Slider {...settings}>
-              {projects.map((project) => (
-                <Card
-                  key={project.id}
-                  className="bg-gray-50 dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 transition-transform duration-300 hover:scale-105 cursor-pointer"
-                >
-                  <CardContent className="p-4">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="rounded-lg mb-4"
-                      width={800}
-                      height={600}
-                    />
-                    <h3 className="text-xl font-bold text-center">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
-                      {project.description}
-                    </p>
-
-                    <div className="flex items-center space-x-6">
-                      <Link
-                        href={project.liveDemo}
-                        className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors mt-2"
-                      >
-                        <RiLiveFill className="w-5 h-5" />
-                        <span>Live Demo</span>
-                      </Link>
-
-                      <Link
-                        href={project.github}
-                        className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors mt-2"
-                      >
-                        <FaGithub className="w-5 h-5" />
-                        <span>Github Code</span>
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </Slider>
+            <ProjectsSection />
           </motion.section>
+
           <motion.section
             id="contact"
-            initial={{ opacity: 0, y: 100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
           >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Contact Me
+            </h2>
             <ContactMe />
           </motion.section>
+
         </main>
-        <footer className="text-center text-gray-500 py-4 text-sm">
+
+        <footer className="text-center text-gray-500 py-8 text-sm">
           © {new Date().getFullYear()} Chaitanya Umbarkar. All rights reserved.
         </footer>
+
       </div>
     </div>
   );
