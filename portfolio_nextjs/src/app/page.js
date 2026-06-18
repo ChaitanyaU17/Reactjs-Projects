@@ -18,8 +18,9 @@ export default function Home() {
   const [showProfileModal, setShowProfileModal] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-      <div className="mx-auto max-w-4xl px-4 py-10">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-x-hidden">
+      <div className="mx-auto max-w-4xl px-4 py-10 overflow-x-hidden">
+
 
         <AnimatePresence>
           {showProfileModal && (
@@ -57,11 +58,11 @@ export default function Home() {
         </AnimatePresence>
 
         <motion.header
-          id="home"
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex items-center justify-between mb-12"
+            id="home"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex items-center justify-between mb-12"
         >
           <div className="relative group w-28 h-28 shrink-0">
             <div className="w-28 h-28 rounded-full overflow-hidden">
@@ -87,10 +88,10 @@ export default function Home() {
         <main className="space-y-16">
           <section>
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="space-y-4"
             >
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">

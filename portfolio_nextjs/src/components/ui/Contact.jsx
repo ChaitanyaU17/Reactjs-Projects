@@ -40,7 +40,7 @@ export default function ContactMe() {
   return (
     <section className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-        <div className="md:col-span-2 rounded-2xl bg-gradient-to-br from-rose-600 via-indigo-600 to-sky-600 p-6 space-y-6 text-white flex flex-col justify-between">
+        <div className="md:col-span-2 rounded-2xl bg-gradient-to-br from-rose-600 via-indigo-600 to-sky-600 p-6 space-y-6 text-white flex flex-col justify-between overflow-hidden relative">
           <div className="space-y-3">
             <h3 className="text-xl font-bold">Let's Talk</h3>
             <p className="text-sm text-white/80 leading-relaxed">

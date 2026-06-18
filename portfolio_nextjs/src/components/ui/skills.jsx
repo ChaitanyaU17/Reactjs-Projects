@@ -115,7 +115,7 @@ const skillCategories = [
         title: "GitHub",
       },
       {
-        src: "https://img.icons8.com/?size=100&id=EPbEfEa7o3WY&format=png&color=000000",
+        src: "https://img.icons8.com/?size=100&id=QEQQKirln6Tf&format=png&color=000000",
         title: "Postman",
       },
       {
@@ -191,18 +191,18 @@ export default function Skills() {
               </h3>
             </div>
 
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2 w-full">
               {cat.skills.map((skill) => (
                 <motion.div
                   key={skill.title}
                   whileHover={{ scale: 1.06, y: -2 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow cursor-default"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow cursor-default max-w-full"
                 >
                   <img
                     src={skill.src}
                     alt={skill.title}
-                    className="w-5 h-5 object-contain"
+                    className="w-5 h-5 object-contain shrink-0"
                   />
                   <span className="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
                     {skill.title}

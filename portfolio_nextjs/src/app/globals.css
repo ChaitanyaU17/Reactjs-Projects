@@ -11,8 +11,28 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 :root {
   --background: oklch(1 0 0);
@@ -130,10 +150,5 @@ html {
   }
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
   }
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
 }

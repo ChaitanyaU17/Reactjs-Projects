@@ -95,50 +95,66 @@ const projects = [
 
 export default function ProjectsSection() {
   const [current, setCurrent] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const scrollRef = useRef(null);
-  const dragStartX = useRef(0);
-  const dragScrollLeft = useRef(0);
+  const [direction, setDirection] = useState(0);
 
-  const goTo = (index) => {
-    setCurrent(index);
-    const container = scrollRef.current;
-    if (container) {
-      const thumb = container.children[index];
-      if (thumb) {
-        thumb.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "center",
-        });
-      }
-    }
-  };
+  // Touch refs
+  const touchStartX = useRef(null);
+  const touchStartY = useRef(null);
+
+  // Mouse drag refs for thumbnail strip
+  const scrollRef = useRef(null);
+  const dragStartX = useRef(null);
+  const dragScrollLeft = useRef(0);
+  const isDragging = useRef(false);
 
   const paginate = (dir) => {
-    const next =
+    setDirection(dir);
+    setCurrent((prev) =>
       dir === 1
-        ? current === projects.length - 1
-          ? 0
-          : current + 1
-        : current === 0
-        ? projects.length - 1
-        : current - 1;
-    goTo(next);
+        ? prev === projects.length - 1 ? 0 : prev + 1
+        : prev === 0 ? projects.length - 1 : prev - 1
+    );
   };
 
+  const goTo = (index) => {
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  };
+
+  // ── Native touch handlers ──
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+
+    const deltaX = touchStartX.current - e.changedTouches[0].clientX;
+    const deltaY = Math.abs(touchStartY.current - e.changedTouches[0].clientY);
+
+    // Only trigger if horizontal swipe is dominant
+    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > deltaY) {
+      paginate(deltaX > 0 ? 1 : -1);
+    }
+
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
+  // ── Thumbnail strip mouse drag ──
   const onMouseDown = (e) => {
-    setIsDragging(false);
+    isDragging.current = false;
     dragStartX.current = e.pageX - scrollRef.current.offsetLeft;
     dragScrollLeft.current = scrollRef.current.scrollLeft;
     scrollRef.current.style.cursor = "grabbing";
   };
 
   const onMouseMove = (e) => {
-    if (!dragStartX.current && dragStartX.current !== 0) return;
+    if (dragStartX.current === null) return;
     const x = e.pageX - scrollRef.current.offsetLeft;
     const walk = x - dragStartX.current;
-    if (Math.abs(walk) > 5) setIsDragging(true);
+    if (Math.abs(walk) > 5) isDragging.current = true;
     scrollRef.current.scrollLeft = dragScrollLeft.current - walk;
   };
 
@@ -147,20 +163,48 @@ export default function ProjectsSection() {
     if (scrollRef.current) scrollRef.current.style.cursor = "grab";
   };
 
+  const slideVariants = {
+    enter: (dir) => ({
+      x: dir > 0 ? 260 : -260,
+      opacity: 0,
+      scale: 0.97,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.35, ease: "easeOut" },
+    },
+    exit: (dir) => ({
+      x: dir > 0 ? -260 : 260,
+      opacity: 0,
+      scale: 0.97,
+      transition: { duration: 0.28, ease: "easeIn" },
+    }),
+  };
+
   const project = projects[current];
 
   return (
-    <div className="space-y-4">
-      <div className="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-lg">
-        <AnimatePresence mode="wait">
+    <div className="space-y-4 w-full">
+      {/* Main Card */}
+      <div
+        className="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-lg w-full"
+        // Touch events on the card
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        <AnimatePresence custom={direction} mode="wait">
           <motion.div
             key={current}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
             className="w-full"
           >
+            {/* Image */}
             <div className="relative w-full h-56 sm:h-72 overflow-hidden">
               <Image
                 src={project.image}
@@ -171,16 +215,19 @@ export default function ProjectsSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
 
+              {/* Counter */}
               <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white text-xs font-medium">
                 {current + 1} / {projects.length}
               </div>
 
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 sm:hidden flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white/80 text-xs">
-                <span>← Swipe to explore →</span>
+              {/* Mobile swipe hint */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 sm:hidden flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white/80 text-xs whitespace-nowrap">
+                ← swipe to explore →
               </div>
             </div>
 
-            <div className="p-6 space-y-4">
+            {/* Content */}
+            <div className="p-5 sm:p-6 space-y-4">
               <div className="space-y-1.5">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   {project.title}
@@ -190,6 +237,7 @@ export default function ProjectsSection() {
                 </p>
               </div>
 
+              {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
@@ -201,6 +249,7 @@ export default function ProjectsSection() {
                 ))}
               </div>
 
+              {/* Links */}
               <div className="flex items-center gap-3 pt-1">
                 <Link
                   href={project.liveDemo}
@@ -223,6 +272,7 @@ export default function ProjectsSection() {
           </motion.div>
         </AnimatePresence>
 
+        {/* Desktop arrows only */}
         <button
           onClick={() => paginate(-1)}
           className="hidden sm:flex absolute left-3 top-28 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-md items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform"
@@ -237,7 +287,8 @@ export default function ProjectsSection() {
         </button>
       </div>
 
-      <div className="flex items-center justify-center gap-2">
+      {/* Dot Indicators */}
+      <div className="flex items-center justify-center gap-2 flex-wrap">
         {projects.map((_, index) => (
           <button
             key={index}
@@ -251,26 +302,32 @@ export default function ProjectsSection() {
         ))}
       </div>
 
+      {/* Thumbnail Strip */}
       <div
         ref={scrollRef}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
         onMouseLeave={onMouseUp}
-        className="flex gap-2 overflow-x-auto pb-1 cursor-grab select-none scrollbar-hide"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        className="flex gap-2 overflow-x-auto pb-1 cursor-grab select-none w-full"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+        }}
       >
         {projects.map((proj, index) => (
           <button
             key={proj.id}
             onClick={() => {
-              if (!isDragging) goTo(index);
+              if (!isDragging.current) goTo(index);
             }}
-            className={`relative h-14 w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+            className={`relative flex-shrink-0 h-14 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
               index === current
                 ? "border-indigo-500 scale-105 shadow-md opacity-100"
                 : "border-transparent opacity-50 hover:opacity-80"
             }`}
+            style={{ width: "88px" }}
           >
             <Image
               src={proj.image}
