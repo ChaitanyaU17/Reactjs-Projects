@@ -1,0 +1,1998 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+components.json
+eslint.config.mjs
+jsconfig.json
+next.config.mjs
+package.json
+postcss.config.mjs
+public/CGMultiplex thumbnail.png
+public/ecommerce thumbnail.png
+public/foodie thumbnail.png
+public/job portal thumbnail.png
+public/profile.jpeg
+public/reusultmanagement thumbnail.png
+public/trainwise thumbnail.png
+public/wheather thumbnail.png
+public/youtube thumbnail.png
+README.md
+src/app/globals.css
+src/app/layout.js
+src/app/page.js
+src/components/ui/button.jsx
+src/components/ui/card.jsx
+src/components/ui/Contact.jsx
+src/components/ui/Education.jsx
+src/components/ui/Experience.jsx
+src/components/ui/ProjectsSection.jsx
+src/components/ui/skills.jsx
+src/components/ui/theme-toggle.jsx
+src/lib/utils.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path="components.json">
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": false,
+  "tailwind": {
+    "config": "",
+    "css": "src/app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "iconLibrary": "lucide"
+}
+</file>
+
+<file path="eslint.config.mjs">
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [...compat.extends("next/core-web-vitals")];
+
+export default eslintConfig;
+</file>
+
+<file path="jsconfig.json">
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+</file>
+
+<file path="next.config.mjs">
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default nextConfig;
+</file>
+
+<file path="package.json">
+{
+  "name": "portfolio_nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@radix-ui/react-slot": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.4.7",
+    "lightningcss": "^1.29.1",
+    "lucide-react": "^0.476.0",
+    "next": "15.2.0",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.2.0",
+    "react-slick": "^0.30.3",
+    "react-swipeable": "^7.0.2",
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.0",
+    "tailwindcss": "^4"
+  }
+}
+</file>
+
+<file path="postcss.config.mjs">
+const config = {
+  plugins: ["@tailwindcss/postcss"],
+};
+
+export default config;
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.87 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.87 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+</file>
+
+<file path="src/app/layout.js">
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "next-themes";
+
+const inter = Inter({subsets: ["latin"]})
+
+export const metadata = {
+  title: "Portfolio Website",
+  description: "Portfolio website made with next_js",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} antialiased`}
+      >
+        <ThemeProvider
+        attribute="class"
+        enableSystem
+        defaultTheme="system"
+        >
+        {children}
+        </ThemeProvider>  
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="src/app/page.js">
+"use client";
+
+import { useState } from "react";
+import { FiEye, FiX } from "react-icons/fi";
+import Image from "next/image";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { FaGithub, FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
+import ContactMe from "@/components/ui/Contact";
+import Skills from "@/components/ui/skills";
+import Experience from "@/components/ui/Experience";
+import ProjectsSection from "@/components/ui/ProjectsSection";
+import Education from "@/components/ui/Education";
+
+export default function Home() {
+  const [showProfileModal, setShowProfileModal] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-x-hidden">
+      <div className="mx-auto max-w-4xl px-4 py-10 overflow-x-hidden">
+
+
+        <AnimatePresence>
+          {showProfileModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowProfileModal(false)}
+              className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+            >
+              <motion.div
+                initial={{ scale: 0.85, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.85, opacity: 0 }}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative rounded-2xl overflow-hidden shadow-2xl max-w-sm w-full"
+              >
+                <Image
+                  src="/profile.jpeg"
+                  alt="Chaitanya Umbarkar"
+                  width={500}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
+                <button
+                  onClick={() => setShowProfileModal(false)}
+                  className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center text-white hover:bg-black/70 transition-colors"
+                >
+                  <FiX className="w-4 h-4" />
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <motion.header
+            id="home"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex items-center justify-between mb-12"
+        >
+          <div className="relative group w-28 h-28 shrink-0">
+            <div className="w-28 h-28 rounded-full overflow-hidden">
+              <Image
+                src="/profile.jpeg"
+                alt="Profile Picture"
+                width={112}
+                height={112}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <button
+              onClick={() => setShowProfileModal(true)}
+              className="absolute inset-0 rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+            >
+              <FiEye className="w-5 h-5 text-white" />
+            </button>
+          </div>
+
+          <ThemeToggle />
+        </motion.header>
+
+        <main className="space-y-16">
+          <section>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="space-y-4"
+            >
+              <div className="space-y-2">
+                <h1 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+                  Chaitanya Umbarkar
+                </h1>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                    Full Stack Developer
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    Open to Work
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-gray-500 dark:text-gray-400">
+                <span className="flex items-center gap-1.5">
+                  <svg
+                    className="w-3.5 h-3.5 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  Pune, Maharashtra
+                </span>
+
+                <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600 hidden sm:block" />
+
+                <a
+                  href="mailto:chaitanyaumbarkar2002@gmail.com"
+                  className="flex items-center gap-1.5 hover:text-indigo-500 transition-colors"
+                >
+                  <svg
+                    className="w-3.5 h-3.5 shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  chaitanyaumbarkar2002@gmail.com
+                </a>
+              </div>
+
+              <div className="h-px bg-gradient-to-r from-gray-200 via-gray-300 to-transparent dark:from-gray-700 dark:via-gray-600" />
+
+              <div className="space-y-2">
+                <h2 className="text-base font-semibold text-gray-900 dark:text-white">
+                  I build things that work — and work well.
+                </h2>
+                <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl leading-relaxed">
+                  FullStack Developer with hands-on experience in the MERN
+                  stack, currently shipping production grade features at{" "}
+                  <span className="text-gray-900 dark:text-white font-medium">
+                    Nandhar Technologies
+                  </span>
+                  . I dont just write code I architect solutions that are
+                  fast, scalable, and built to last.
+                </p>
+                <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl leading-relaxed">
+                  From pixel perfect UIs to robust REST APIs, I have delivered
+                  across the full stack.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3 pt-1">
+                <Button
+                  asChild
+                  className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105"
+                >
+                  <Link
+                    href="https://drive.google.com/file/d/1vvTqZdME58UaoEe2BvPia_hd9ZlLCSS1/view?usp=drive_link"
+                    target="_blank"
+                  >
+                    Resume
+                  </Link>
+                </Button>
+
+                <Link
+                  href="https://github.com/ChaitanyaU17"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <FaGithub className="w-6 h-6" />
+                </Link>
+
+                <Link
+                  href="https://www.linkedin.com/in/chaitanya-umbarkar/"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <FaLinkedin className="w-6 h-6" />
+                </Link>
+
+                <Link
+                  href="https://x.com/CUmbarkar"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <FaSquareXTwitter className="w-6 h-6" />
+                </Link>
+              </div>
+            </motion.div>
+          </section>
+
+          <motion.section
+            id="expertise"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              My Expertise
+            </h2>
+            <Skills />
+          </motion.section>
+
+          <motion.section
+            id="experience"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Experience
+            </h2>
+            <Experience />
+          </motion.section>
+
+          <motion.section
+            id="education"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Education
+            </h2>
+            <Education />
+          </motion.section>
+
+          <motion.section
+            id="projects"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Projects
+            </h2>
+            <ProjectsSection />
+          </motion.section>
+
+          <motion.section
+            id="contact"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl font-semibold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
+              Contact Me
+            </h2>
+            <ContactMe />
+          </motion.section>
+
+        </main>
+
+        <footer className="text-center text-gray-500 py-8 text-sm">
+          © {new Date().getFullYear()} Chaitanya Umbarkar. All rights reserved.
+        </footer>
+
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/ui/button.jsx">
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva } from "class-variance-authority";
+
+import { cn } from "@/lib/utils"
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  {
+    variants: {
+      variant: {
+        default:
+          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40",
+        outline:
+          "border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}) {
+  const Comp = asChild ? Slot : "button"
+
+  return (
+    (<Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props} />)
+  );
+}
+
+export { Button, buttonVariants }
+</file>
+
+<file path="src/components/ui/card.jsx">
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+function Card({
+  className,
+  ...props
+}) {
+  return (
+    (<div
+      data-slot="card"
+      className={cn("bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm", className )}
+      {...props} />)
+  );
+}
+
+function CardHeader({
+  className,
+  ...props
+}) {
+  return (
+    (<div
+      data-slot="card-header"
+      className={cn("flex flex-col gap-1.5 px-6", className)}
+      {...props} />)
+  );
+}
+
+function CardTitle({
+  className,
+  ...props
+}) {
+  return (
+    (<div
+      data-slot="card-title"
+      className={cn("leading-none font-semibold", className)}
+      {...props} />)
+  );
+}
+
+function CardDescription({
+  className,
+  ...props
+}) {
+  return (
+    (<div
+      data-slot="card-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props} />)
+  );
+}
+
+function CardContent({
+  className,
+  ...props
+}) {
+  return (<div data-slot="card-content" className={cn("px-6", className)} {...props} />);
+}
+
+function CardFooter({
+  className,
+  ...props
+}) {
+  return (
+    (<div
+      data-slot="card-footer"
+      className={cn("flex items-center px-6", className)}
+      {...props} />)
+  );
+}
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+</file>
+
+<file path="src/components/ui/Contact.jsx">
+"use client";
+
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
+import { FaUser, FaEnvelope, FaPhone, FaPaperPlane } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSquareXTwitter } from "react-icons/fa6";
+import Link from "next/link";
+
+export default function ContactMe() {
+  const form = useRef();
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setSending(true);
+    setError(false);
+
+    emailjs
+      .sendForm("service_pn0pyod", "template_22hvahe", form.current, {
+        publicKey: "A-O7VoAoqxnkrg88M",
+      })
+      .then(
+        () => {
+          setSending(false);
+          setSent(true);
+          form.current.reset();
+          setTimeout(() => setSent(false), 5000);
+        },
+        (err) => {
+          setSending(false);
+          setError(true);
+          console.log("FAILED...", err.text);
+        }
+      );
+  };
+
+  return (
+    <section className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        <div className="md:col-span-2 rounded-2xl bg-gradient-to-br from-rose-600 via-indigo-600 to-sky-600 p-6 space-y-6 text-white flex flex-col justify-between overflow-hidden relative">
+          <div className="space-y-3">
+            <h3 className="text-xl font-bold">Let's Talk</h3>
+            <p className="text-sm text-white/80 leading-relaxed">
+              Have a project in mind or want to collaborate? Feel free to reach
+              out — I'd love to hear from you.
+            </p>
+          </div>
+
+          <div className="space-y-4 text-sm">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                <FaEnvelope className="w-3.5 h-3.5" />
+              </div>
+              <a
+                href="mailto:chaitanyaumbarkar2002@gmail.com"
+                className="text-white/90 hover:text-white transition-colors break-all"
+              >
+                chaitanyaumbarkar2002@gmail.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+                <FaPhone className="w-3.5 h-3.5" />
+              </div>
+              <span className="text-white/90">+91 9579138912</span>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/60">
+              Find me on
+            </p>
+            <div className="flex items-center gap-3">
+              <Link
+                href="https://github.com/ChaitanyaU17"
+                target="_blank"
+                className="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              >
+                <FaGithub className="w-4 h-4" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/chaitanya-umbarkar/"
+                target="_blank"
+                className="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              >
+                <FaLinkedin className="w-4 h-4" />
+              </Link>
+              <Link
+                href="https://x.com/CUmbarkar"
+                target="_blank"
+                className="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+              >
+                <FaSquareXTwitter className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="absolute bottom-0 right-0 w-32 h-32 rounded-full bg-white/5 -mb-10 -mr-10 pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-20 h-20 rounded-full bg-white/5 -mb-4 -mr-4 pointer-events-none" />
+        </div>
+
+        <div
+          id="contact"
+          className="md:col-span-3 rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-6"
+        >
+          <form ref={form} onSubmit={sendEmail} className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="space-y-1.5">
+                <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                  First Name
+                </label>
+                <div className="relative">
+                  <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+                  <input
+                    type="text"
+                    name="user_firstname"
+                    placeholder="chaitanya"
+                    required
+                    className="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition"
+                  />
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                  Last Name
+                </label>
+                <div className="relative">
+                  <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+                  <input
+                    type="text"
+                    name="user_lastname"
+                    placeholder="umbarkar"
+                    required
+                    className="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                Email
+              </label>
+              <div className="relative">
+                <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="chaitanya@gmail.com"
+                  required
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                Phone
+              </label>
+              <div className="relative">
+                <FaPhone className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" />
+                <input
+                  type="tel"
+                  name="phone_number"
+                  placeholder="+91 00000 00000"
+                  required
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                Message
+              </label>
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Tell me about your project..."
+                required
+                className="w-full px-4 py-2.5 rounded-xl text-sm border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition resize-none"
+              />
+            </div>
+
+            <div className="flex items-center gap-2.5">
+              <input
+                type="checkbox"
+                required
+                id="terms"
+                className="w-4 h-4 rounded accent-indigo-600"
+              />
+              <label
+                htmlFor="terms"
+                className="text-xs text-gray-600 dark:text-gray-400"
+              >
+                I agree to the terms and conditions
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              disabled={sending}
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-rose-600 to-indigo-600 text-white text-sm font-semibold hover:opacity-90 disabled:opacity-60 transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              {sending ? (
+                <>
+                  <svg
+                    className="animate-spin w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v8z"
+                    />
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <FaPaperPlane className="w-3.5 h-3.5" />
+                  Send Message
+                </>
+              )}
+            </button>
+
+            {sent && (
+              <motion.p
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center text-sm text-emerald-600 dark:text-emerald-400 font-medium"
+              >
+                Message sent successfully!
+              </motion.p>
+            )}
+            {error && (
+              <motion.p
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center text-sm text-rose-600 dark:text-rose-400 font-medium"
+              >
+                Something went wrong. Please try again.
+              </motion.p>
+            )}
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/ui/Education.jsx">
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const educationData = [
+  {
+    id: 1,
+    degree: "Bachelor of Engineering – Information Technology",
+    institution: "Sandip Institute of Technology and Research Center, Nashik",
+    duration: "June 2019 – July 2023",
+    score: "CGPA: 8.10",
+    scoreType: "cgpa",
+    icon: "🎓",
+  },
+  {
+    id: 2,
+    degree: "XII – Higher Secondary Certificate",
+    institution: "DVMH, Savitribai Phule University, Pune",
+    duration: "June 2018 – June 2019",
+    score: "66.92%",
+    scoreType: "percent",
+    icon: "📘",
+  },
+  {
+    id: 3,
+    degree: "X – Secondary School Certificate",
+    institution: "DVMH, Savitribai Phule University, Pune",
+    duration: "June 2016 – June 2017",
+    score: "76.80%",
+    scoreType: "percent",
+    icon: "📗",
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+export default function Education() {
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      className="relative space-y-4"
+    >
+      <div className="absolute left-5 top-6 bottom-6 w-px bg-gradient-to-b from-rose-400 via-indigo-400 to-sky-400 hidden sm:block" />
+
+      {educationData.map((edu) => (
+        <motion.div
+          key={edu.id}
+          variants={cardVariants}
+          className="relative flex gap-4 sm:gap-6"
+        >
+          <div className="hidden sm:flex flex-col items-center shrink-0">
+            <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-900 border-2 border-indigo-400 dark:border-indigo-500 flex items-center justify-center text-base shadow-md z-10">
+              {edu.icon}
+            </div>
+          </div>
+
+          <div className="flex-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-5 space-y-3">
+            <div className="flex items-start justify-between flex-wrap gap-2">
+              <div className="space-y-1">
+                <h3 className="text-base font-semibold text-gray-900 dark:text-white leading-snug">
+                  {edu.degree}
+                </h3>
+                <p className="text-sm font-medium bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
+                  {edu.institution}
+                </p>
+              </div>
+
+              <span
+                className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold border ${
+                  edu.scoreType === "cgpa"
+                    ? "bg-indigo-50 dark:bg-indigo-900/30 border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300"
+                    : "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300"
+                }`}
+              >
+                {edu.score}
+              </span>
+            </div>
+
+            <div className="h-px bg-gradient-to-r from-gray-200 via-gray-300 to-transparent dark:from-gray-700 dark:via-gray-600" />
+            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <svg
+                className="w-3.5 h-3.5 shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <span>{edu.duration}</span>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  );
+}
+</file>
+
+<file path="src/components/ui/Experience.jsx">
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const experiences = [
+  {
+    id: 1,
+    role: "Associate Front-End Developer",
+    company: "Nandhar Technologies",
+    location: "Bengaluru, India",
+    duration: "June 2025 – Present",
+    type: "Full Time",
+    points: [
+      "Contributed to a mobile-first retail/POS platform for billing, inventory tracking, and customer/supplier management.",
+      "Built workflows for stock updates, expiry tracking, low-stock alerts, barcode scanning, and WhatsApp invoicing.",
+      "Developed features using TypeScript, React.js, Node.js, Express.js, MongoDB, AWS, and Material UI in an Agile environment.",
+    ],
+    techStack: ["TypeScript", "React.js", "Node.js", "Express.js", "MongoDB", "AWS", "Material UI"],
+  },
+  {
+    id: 2,
+    role: "Web Developer Intern",
+    company: "Zidio Development",
+    location: "Remote",
+    duration: "July 2024 – September 2024",
+    type: "Internship",
+    points: [
+      "Collaborated with a 7-member team to build Job Listing Portal and Student Result Management System, ensuring secure user authentication and data visualization.",
+      "Frontend: Developed UIs with React.js, Redux, and Tailwind CSS, improving component reusability by 30%.",
+      "Backend: Built REST APIs using Node.js/Express.js, integrated MongoDB for data storage, and optimized query performance by 20%.",
+    ],
+    techStack: ["React.js", "Redux", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+export default function Experience() {
+  return (
+    <section className="space-y-6">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="space-y-6"
+      >
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={exp.id}
+            variants={cardVariants}
+            className="relative rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-6 space-y-4"
+          >
+            <div className="flex items-start justify-between flex-wrap gap-3">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    {exp.role}
+                  </h3>
+                  {index === 0 && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Current
+                    </span>
+                  )}
+                  {index === 1 && (
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-400 border border-blue-200 dark:border-blue-800">
+                      Internship
+                    </span>
+                  )}
+                </div>
+
+                <p className="text-base font-medium bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
+                  {exp.company}
+                </p>
+                <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
+                  <span>{exp.location}</span>
+                  <span className="w-1 h-1 rounded-full bg-gray-400" />
+                  <span>{exp.duration}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="h-px bg-gradient-to-r from-gray-200 via-gray-300 to-transparent dark:from-gray-700 dark:via-gray-600" />
+            <ul className="space-y-2">
+              {exp.points.map((point, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400"
+                >
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-rose-500 to-indigo-500 shrink-0" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-wrap gap-2 pt-1">
+              {exp.techStack.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2.5 py-1 rounded-full text-xs font-medium bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/ui/ProjectsSection.jsx">
+"use client";
+
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { RiLiveFill } from "react-icons/ri";
+
+const projects = [
+  {
+    id: 1,
+    title: "CG Multiplex",
+    image: "/CGMultiplex thumbnail.png",
+    description:
+      "CGMultiplex is a comprehensive movie-related web application built with React, Redux, and Tailwind CSS. It provides detailed information about movies, TV shows, and entertainment industry professionals.",
+    tags: ["React", "Redux", "Tailwind CSS"],
+    liveDemo: "https://chipper-zuccutto-af5cce.netlify.app/",
+    github: "https://github.com/ChaitanyaU17/MovieApp",
+  },
+  {
+    id: 2,
+    title: "TrainWise",
+    image: "/trainwise thumbnail.png",
+    description:
+      "TrainWise is a MERN stack-based fitness trainer appointment booking platform featuring user authentication, appointment booking, profile management, and online payments.",
+    tags: ["MongoDB", "Express.js", "React", "Node.js"],
+    liveDemo: "https://train-wise-fitness-appointment-app-yzjx.vercel.app/",
+    github: "https://github.com/ChaitanyaU17/TrainWise-fitness-appointment-app",
+  },
+  {
+    id: 3,
+    title: "Foodie Restaurant Management",
+    image: "/foodie thumbnail.png",
+    description:
+      "Foodie is a front-end clone of Swiggy built with React, Redux, and Tailwind CSS. It features API calls for fetching real-time menus, state management for cart operations, and a responsive UI.",
+    tags: ["React", "Redux", "Tailwind CSS", "REST API"],
+    liveDemo: "https://shimmering-griffin-9ad94c.netlify.app/",
+    github: "https://github.com/ChaitanyaU17/Foodie_Restaurant-App",
+  },
+  {
+    id: 4,
+    title: "Air-Aware Weather Update",
+    image: "/wheather thumbnail.png",
+    description:
+      "Air-Aware is a real-time weather and AQI tracking app offering weather updates, pollution protection tips, and environmental health education built with React.",
+    tags: ["React", "REST API", "Tailwind CSS"],
+    liveDemo: "https://reactjs-projects-gold.vercel.app/",
+    github: "https://github.com/ChaitanyaU17/Reactjs-Projects",
+  },
+  {
+    id: 5,
+    title: "Result Management System",
+    image: "/reusultmanagement thumbnail.png",
+    description:
+      "MERN stack-based Result Management System that simplifies student result tracking. Admins can upload and update results while students securely access their performance data.",
+    tags: ["MongoDB", "Express.js", "React", "Node.js"],
+    liveDemo: "https://resultmanagement.netlify.app/",
+    github:
+      "https://github.com/ChaitanyaU17/Internship-Projects/tree/main/Result-Management",
+  },
+  {
+    id: 6,
+    title: "Joblia – Job Listing Portal",
+    image: "/job portal thumbnail.png",
+    description:
+      "Joblia connects job seekers and recruiters. Users can search and apply for jobs, manage applications, and track status. Includes authentication, filtering, and employer dashboard.",
+    tags: ["MongoDB", "Express.js", "React", "Node.js"],
+    liveDemo: "https://warm-churros-ee1a88.netlify.app/",
+    github:
+      "https://github.com/ChaitanyaU17/Internship-Projects/tree/main/Job-Listing-Portal",
+  },
+  {
+    id: 7,
+    title: "Generics Ecommerce Website",
+    image: "/ecommerce thumbnail.png",
+    description:
+      "React-based e-commerce app with Firebase authentication, dynamic routing, cart management, and profile features ensuring secure user access and optimized shopping experience.",
+    tags: ["React", "Firebase", "Redux"],
+    liveDemo: "https://sharpner-frontend-react-gx86.vercel.app/user-auth",
+    github:
+      "https://github.com/ChaitanyaU17/Sharpner_Frontend_React/tree/main/EcommerceProject",
+  },
+  {
+    id: 8,
+    title: "YouTube 2.0",
+    image: "/youtube thumbnail.png",
+    description:
+      "A YouTube clone with dynamic search suggestions, live API fetching, real-time chat, and nested comments for an enhanced video streaming experience.",
+    tags: ["React", "Redux", "Tailwind CSS", "REST API"],
+    liveDemo: "https://youtube-clone-brown-psi.vercel.app/",
+    github: "https://github.com/ChaitanyaU17/Youtube_2.0",
+  },
+];
+
+export default function ProjectsSection() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  // Touch refs
+  const touchStartX = useRef(null);
+  const touchStartY = useRef(null);
+
+  // Mouse drag refs for thumbnail strip
+  const scrollRef = useRef(null);
+  const dragStartX = useRef(null);
+  const dragScrollLeft = useRef(0);
+  const isDragging = useRef(false);
+
+  const paginate = (dir) => {
+    setDirection(dir);
+    setCurrent((prev) =>
+      dir === 1
+        ? prev === projects.length - 1 ? 0 : prev + 1
+        : prev === 0 ? projects.length - 1 : prev - 1
+    );
+  };
+
+  const goTo = (index) => {
+    setDirection(index > current ? 1 : -1);
+    setCurrent(index);
+  };
+
+  // ── Native touch handlers ──
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+
+    const deltaX = touchStartX.current - e.changedTouches[0].clientX;
+    const deltaY = Math.abs(touchStartY.current - e.changedTouches[0].clientY);
+
+    // Only trigger if horizontal swipe is dominant
+    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > deltaY) {
+      paginate(deltaX > 0 ? 1 : -1);
+    }
+
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
+
+  // ── Thumbnail strip mouse drag ──
+  const onMouseDown = (e) => {
+    isDragging.current = false;
+    dragStartX.current = e.pageX - scrollRef.current.offsetLeft;
+    dragScrollLeft.current = scrollRef.current.scrollLeft;
+    scrollRef.current.style.cursor = "grabbing";
+  };
+
+  const onMouseMove = (e) => {
+    if (dragStartX.current === null) return;
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = x - dragStartX.current;
+    if (Math.abs(walk) > 5) isDragging.current = true;
+    scrollRef.current.scrollLeft = dragScrollLeft.current - walk;
+  };
+
+  const onMouseUp = () => {
+    dragStartX.current = null;
+    if (scrollRef.current) scrollRef.current.style.cursor = "grab";
+  };
+
+  const slideVariants = {
+    enter: (dir) => ({
+      x: dir > 0 ? 260 : -260,
+      opacity: 0,
+      scale: 0.97,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.35, ease: "easeOut" },
+    },
+    exit: (dir) => ({
+      x: dir > 0 ? -260 : 260,
+      opacity: 0,
+      scale: 0.97,
+      transition: { duration: 0.28, ease: "easeIn" },
+    }),
+  };
+
+  const project = projects[current];
+
+  return (
+    <div className="space-y-4 w-full">
+      {/* Main Card */}
+      <div
+        className="relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 shadow-lg w-full"
+        // Touch events on the card
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        <AnimatePresence custom={direction} mode="wait">
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="w-full"
+          >
+            {/* Image */}
+            <div className="relative w-full h-56 sm:h-72 overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent" />
+
+              {/* Counter */}
+              <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white text-xs font-medium">
+                {current + 1} / {projects.length}
+              </div>
+
+              {/* Mobile swipe hint */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 sm:hidden flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm text-white/80 text-xs whitespace-nowrap">
+                ← swipe to explore →
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-5 sm:p-6 space-y-4">
+              <div className="space-y-1.5">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-2.5 py-1 rounded-full text-xs font-medium bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className="flex items-center gap-3 pt-1">
+                <Link
+                  href={project.liveDemo}
+                  target="_blank"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white text-sm font-medium hover:opacity-90 transition-opacity"
+                >
+                  <RiLiveFill className="w-4 h-4" />
+                  Live Demo
+                </Link>
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium hover:border-gray-400 dark:hover:border-gray-500 transition-colors"
+                >
+                  <FaGithub className="w-4 h-4" />
+                  GitHub
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Desktop arrows only */}
+        <button
+          onClick={() => paginate(-1)}
+          className="hidden sm:flex absolute left-3 top-28 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-md items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform"
+        >
+          <FaChevronLeft className="w-3.5 h-3.5" />
+        </button>
+        <button
+          onClick={() => paginate(1)}
+          className="hidden sm:flex absolute right-3 top-28 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-md items-center justify-center text-gray-700 dark:text-gray-300 hover:scale-110 transition-transform"
+        >
+          <FaChevronRight className="w-3.5 h-3.5" />
+        </button>
+      </div>
+
+      {/* Dot Indicators */}
+      <div className="flex items-center justify-center gap-2 flex-wrap">
+        {projects.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goTo(index)}
+            className={`transition-all duration-300 rounded-full ${
+              index === current
+                ? "w-6 h-2 bg-gradient-to-r from-rose-600 to-indigo-600"
+                : "w-2 h-2 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500"
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Thumbnail Strip */}
+      <div
+        ref={scrollRef}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseUp}
+        className="flex gap-2 overflow-x-auto pb-1 cursor-grab select-none w-full"
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
+        {projects.map((proj, index) => (
+          <button
+            key={proj.id}
+            onClick={() => {
+              if (!isDragging.current) goTo(index);
+            }}
+            className={`relative flex-shrink-0 h-14 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+              index === current
+                ? "border-indigo-500 scale-105 shadow-md opacity-100"
+                : "border-transparent opacity-50 hover:opacity-80"
+            }`}
+            style={{ width: "88px" }}
+          >
+            <Image
+              src={proj.image}
+              alt={proj.title}
+              fill
+              className="object-cover pointer-events-none"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/ui/skills.jsx">
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const skillCategories = [
+  {
+    category: "Programming Languages",
+    color: "from-rose-500 to-pink-500",
+    bgColor: "bg-rose-50 dark:bg-rose-950/20",
+    borderColor: "border-rose-200 dark:border-rose-800",
+    skills: [
+      {
+        src: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+        title: "JavaScript",
+      },
+      {
+        src: "https://img.icons8.com/?size=128&id=FRRACRKRsw2s&format=png",
+        title: "Java",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=uJM6fQYqDaZK&format=png&color=000000",
+        title: "TypeScript",
+      },
+    ],
+  },
+  {
+    category: "Frontend",
+    color: "from-indigo-500 to-violet-500",
+    bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
+    borderColor: "border-indigo-200 dark:border-indigo-800",
+    skills: [
+      {
+        src: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png",
+        title: "React.js",
+      },
+      {
+        src: "https://img.icons8.com/?size=96&id=jD-fJzVguBmw&format=png",
+        title: "Redux",
+      },
+      {
+        src: "https://cdn-icons-png.flaticon.com/128/3291/3291670.png",
+        title: "HTML",
+      },
+      {
+        src: "https://cdn-icons-png.flaticon.com/128/16845/16845736.png",
+        title: "CSS",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=WoopfRcDj3RF&format=png&color=000000",
+        title: "Tailwind CSS",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000",
+        title: "Material UI",
+      },
+    ],
+  },
+  {
+    category: "Backend",
+    color: "from-sky-500 to-cyan-500",
+    bgColor: "bg-sky-50 dark:bg-sky-950/20",
+    borderColor: "border-sky-200 dark:border-sky-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000",
+        title: "Node.js",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000",
+        title: "Express.js",
+      },
+      {
+        src: "https://img.icons8.com/?size=128&id=55497&format=png",
+        title: "REST APIs",
+      },
+    ],
+  },
+  {
+    category: "Database",
+    color: "from-emerald-500 to-teal-500",
+    bgColor: "bg-emerald-50 dark:bg-emerald-950/20",
+    borderColor: "border-emerald-200 dark:border-emerald-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000",
+        title: "MongoDB",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000",
+        title: "MySQL",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=59952&format=png&color=000000",
+        title: "SQL",
+      },
+      {
+        src: "https://img.icons8.com/?size=96&id=62452&format=png",
+        title: "Firebase",
+      },
+    ],
+  },
+  {
+    category: "Tools & Platforms",
+    color: "from-orange-500 to-amber-500",
+    bgColor: "bg-orange-50 dark:bg-orange-950/20",
+    borderColor: "border-orange-200 dark:border-orange-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
+        title: "Git",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=62856&format=png&color=000000",
+        title: "GitHub",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=QEQQKirln6Tf&format=png&color=000000",
+        title: "Postman",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=33039&format=png&color=000000",
+        title: "AWS",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=22813&format=png&color=000000",
+        title: "Cloudinary",
+      },
+    ],
+  },
+  {
+    category: "Core Concepts",
+    color: "from-purple-500 to-fuchsia-500",
+    bgColor: "bg-purple-50 dark:bg-purple-950/20",
+    borderColor: "border-purple-200 dark:border-purple-800",
+    skills: [
+      {
+        src: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000",
+        title: "Authentication",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=103461&format=png&color=000000",
+        title: "CRUD Operations",
+      },
+      {
+        src: "https://img.icons8.com/?size=100&id=55497&format=png",
+        title: "API Integration",
+      }
+    ],
+  },
+];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+};
+
+export default function Skills() {
+  return (
+    <section className="py-4 space-y-8">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="space-y-4"
+      >
+        {skillCategories.map((cat) => (
+          <motion.div
+            key={cat.category}
+            variants={cardVariants}
+            className={`rounded-xl border ${cat.borderColor} ${cat.bgColor} p-5`}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <div
+                className={`h-1 w-6 rounded-full bg-gradient-to-r ${cat.color}`}
+              />
+              <h3
+                className={`text-sm font-semibold uppercase tracking-widest bg-gradient-to-r ${cat.color} bg-clip-text text-transparent`}
+              >
+                {cat.category}
+              </h3>
+            </div>
+
+            <div className="flex flex-wrap gap-2 w-full">
+              {cat.skills.map((skill) => (
+                <motion.div
+                  key={skill.title}
+                  whileHover={{ scale: 1.06, y: -2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow cursor-default max-w-full"
+                >
+                  <img
+                    src={skill.src}
+                    alt={skill.title}
+                    className="w-5 h-5 object-contain shrink-0"
+                  />
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
+                    {skill.title}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/ui/theme-toggle.jsx">
+"use client";
+
+import { useTheme } from "next-themes";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { Button } from "./button";
+
+export const ThemeToggle = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      className="rounded-full"
+      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+    >
+        <FaSun className='absolute h-5 w-5 rotate-0 scale-100 transition-all dark:rotate-90 dark:scale-0'/>
+        <FaMoon className='absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100'/>
+    </Button>
+  );
+};
+</file>
+
+<file path="src/lib/utils.js">
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+</file>
+
+</files>

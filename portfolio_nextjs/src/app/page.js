@@ -183,7 +183,7 @@ export default function Home() {
                   className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105"
                 >
                   <Link
-                    href="https://drive.google.com/file/d/1sy4pMoaT_kT4h8T50NmOlx5ZsBWDmC39/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1vvTqZdME58UaoEe2BvPia_hd9ZlLCSS1/view?usp=drive_link"
                     target="_blank"
                   >
                     Resume

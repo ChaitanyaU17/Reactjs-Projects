@@ -2,151 +2,52 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { 
+  Code2, Layout, Server, Database, Wrench, Brain, Sparkles
+} from "lucide-react";
 
 const skillCategories = [
   {
+    category: "Frontend Development",
+    icon: Layout,
+    gradient: ["#FF6B6B", "#EE5A5A", "#FF8787"],
+    skills: ["React.js", "Redux", "HTML", "CSS", "Tailwind CSS", "Material UI"],
+    accentColor: "#FF6B6B",
+  },
+  {
+    category: "Backend Development",
+    icon: Server,
+    gradient: ["#845EF7", "#7048E8", "#9775FA"],
+    skills: ["Node.js", "Express.js", "REST APIs", "TypeScript"],
+    accentColor: "#845EF7",
+  },
+  {
+    category: "Database Management",
+    icon: Database,
+    gradient: ["#37D67A", "#2BC866", "#5AE898"],
+    accentColor: "#37D67A",
+    skills: ["MongoDB", "MySQL", "SQL", "Firebase"],
+  },
+  {
     category: "Programming Languages",
-    color: "from-rose-500 to-pink-500",
-    bgColor: "bg-rose-50 dark:bg-rose-950/20",
-    borderColor: "border-rose-200 dark:border-rose-800",
-    skills: [
-      {
-        src: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
-        title: "JavaScript",
-      },
-      {
-        src: "https://img.icons8.com/?size=128&id=FRRACRKRsw2s&format=png",
-        title: "Java",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=uJM6fQYqDaZK&format=png&color=000000",
-        title: "TypeScript",
-      },
-    ],
+    icon: Code2,
+    gradient: ["#FF9439", "#FF7B00", "#FFAB5E"],
+    skills: ["JavaScript", "Java", "TypeScript"],
+    accentColor: "#FF9439",
   },
   {
-    category: "Frontend",
-    color: "from-indigo-500 to-violet-500",
-    bgColor: "bg-indigo-50 dark:bg-indigo-950/20",
-    borderColor: "border-indigo-200 dark:border-indigo-800",
-    skills: [
-      {
-        src: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png",
-        title: "React.js",
-      },
-      {
-        src: "https://img.icons8.com/?size=96&id=jD-fJzVguBmw&format=png",
-        title: "Redux",
-      },
-      {
-        src: "https://cdn-icons-png.flaticon.com/128/3291/3291670.png",
-        title: "HTML",
-      },
-      {
-        src: "https://cdn-icons-png.flaticon.com/128/16845/16845736.png",
-        title: "CSS",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=WoopfRcDj3RF&format=png&color=000000",
-        title: "Tailwind CSS",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=7AFcZ2zirX6Y&format=png&color=000000",
-        title: "Material UI",
-      },
-    ],
+    category: "DevOps & Tools",
+    icon: Wrench,
+    gradient: ["#15C2C5", "#0DC1C4", "#4DD4D8"],
+    skills: ["Git", "GitHub", "Postman", "AWS", "Cloudinary"],
+    accentColor: "#15C2C5",
   },
   {
-    category: "Backend",
-    color: "from-sky-500 to-cyan-500",
-    bgColor: "bg-sky-50 dark:bg-sky-950/20",
-    borderColor: "border-sky-200 dark:border-sky-800",
-    skills: [
-      {
-        src: "https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000",
-        title: "Node.js",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=2ZOaTclOqD4q&format=png&color=000000",
-        title: "Express.js",
-      },
-      {
-        src: "https://img.icons8.com/?size=128&id=55497&format=png",
-        title: "REST APIs",
-      },
-    ],
-  },
-  {
-    category: "Database",
-    color: "from-emerald-500 to-teal-500",
-    bgColor: "bg-emerald-50 dark:bg-emerald-950/20",
-    borderColor: "border-emerald-200 dark:border-emerald-800",
-    skills: [
-      {
-        src: "https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000",
-        title: "MongoDB",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000",
-        title: "MySQL",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=59952&format=png&color=000000",
-        title: "SQL",
-      },
-      {
-        src: "https://img.icons8.com/?size=96&id=62452&format=png",
-        title: "Firebase",
-      },
-    ],
-  },
-  {
-    category: "Tools & Platforms",
-    color: "from-orange-500 to-amber-500",
-    bgColor: "bg-orange-50 dark:bg-orange-950/20",
-    borderColor: "border-orange-200 dark:border-orange-800",
-    skills: [
-      {
-        src: "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
-        title: "Git",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=62856&format=png&color=000000",
-        title: "GitHub",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=QEQQKirln6Tf&format=png&color=000000",
-        title: "Postman",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=33039&format=png&color=000000",
-        title: "AWS",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=22813&format=png&color=000000",
-        title: "Cloudinary",
-      },
-    ],
-  },
-  {
-    category: "Core Concepts",
-    color: "from-purple-500 to-fuchsia-500",
-    bgColor: "bg-purple-50 dark:bg-purple-950/20",
-    borderColor: "border-purple-200 dark:border-purple-800",
-    skills: [
-      {
-        src: "https://img.icons8.com/?size=100&id=13441&format=png&color=000000",
-        title: "Authentication",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=103461&format=png&color=000000",
-        title: "CRUD Operations",
-      },
-      {
-        src: "https://img.icons8.com/?size=100&id=55497&format=png",
-        title: "API Integration",
-      }
-    ],
+    category: "Core Fundamentals",
+    icon: Brain,
+    gradient: ["#E64980", "#C92A6B", "#F083A4"],
+    skills: ["Authentication", "CRUD", "API Integration"],
+    accentColor: "#E64980",
   },
 ];
 
@@ -154,65 +55,180 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.12,
     },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  hidden: { opacity: 0, y: 50, rotateX: 15 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    rotateX: 0,
+    transition: { 
+      duration: 0.6, 
+      ease: "easeOut"
+    }
+  },
+};
+
+const tagVariants = {
+  hidden: { opacity: 0, scale: 0.5, y: 20 },
+  visible: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    transition: { duration: 0.3, type: "spring", stiffness: 200 }
+  },
 };
 
 export default function Skills() {
   return (
-    <section className="py-4 space-y-8">
+    <section className="py-4 space-y-10">
+      {/* Section Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-center space-y-4"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose-500/10 via-indigo-500/10 to-sky-500/10 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
+          <Sparkles className="w-4 h-4 text-rose-500" />
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">My Stack</span>
+        </div>
+        <h2 className="text-4xl font-bold bg-gradient-to-r from-rose-500 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
+          Technologies I Work With
+        </h2>
+        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+          From frontend interfaces to backend architecture, here are the tools and technologies I use to build modern, scalable applications.
+        </p>
+      </motion.div>
+
+      {/* Skills Grid */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="space-y-4"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {skillCategories.map((cat) => (
           <motion.div
             key={cat.category}
             variants={cardVariants}
-            className={`rounded-xl border ${cat.borderColor} ${cat.bgColor} p-5`}
+            className="group relative"
           >
-            <div className="flex items-center gap-2 mb-4">
-              <div
-                className={`h-1 w-6 rounded-full bg-gradient-to-r ${cat.color}`}
-              />
-              <h3
-                className={`text-sm font-semibold uppercase tracking-widest bg-gradient-to-r ${cat.color} bg-clip-text text-transparent`}
-              >
-                {cat.category}
-              </h3>
-            </div>
+            {/* Outer glow */}
+            <div 
+              className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl dark:bg-gradient-to-r dark:from-gray-900/50"
+              style={{ 
+                background: `linear-gradient(135deg, ${cat.accentColor}30, transparent, ${cat.accentColor}20)` 
+              }}
+            />
 
-            <div className="flex flex-wrap gap-2 w-full">
-              {cat.skills.map((skill) => (
-                <motion.div
-                  key={skill.title}
-                  whileHover={{ scale: 1.06, y: -2 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow cursor-default max-w-full"
-                >
-                  <img
-                    src={skill.src}
-                    alt={skill.title}
-                    className="w-5 h-5 object-contain shrink-0"
-                  />
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap">
-                    {skill.title}
-                  </span>
-                </motion.div>
-              ))}
+            {/* Card */}
+            <div 
+              className="relative p-6 rounded-3xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95 border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-none"
+            >
+              {/* Gradient accent line */}
+              <div 
+                className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-current to-transparent opacity-30"
+                style={{ color: cat.accentColor }}
+              />
+
+              {/* Top section with icon */}
+              <div className="flex items-start justify-between mb-5">
+                <div className="flex items-center gap-4">
+                  <div 
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center relative"
+                    style={{
+                      background: `linear-gradient(135deg, ${cat.accentColor}20, ${cat.accentColor}10)`,
+                      border: `1px solid ${cat.accentColor}30`,
+                    }}
+                  >
+                    <cat.icon 
+                      className="w-7 h-7"
+                      style={{ color: cat.accentColor }}
+                    />
+                    {/* Icon glow */}
+                    <div 
+                      className="absolute inset-0 rounded-2xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500 dark:opacity-30"
+                      style={{ backgroundColor: cat.accentColor }}
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                      {cat.category}
+                    </h3>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                      {cat.skills.length} Technologies
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Skill tags */}
+              <div className="flex flex-wrap gap-2 mb-5">
+                {cat.skills.map((skill, i) => (
+                  <motion.span
+                    key={skill}
+                    variants={tagVariants}
+                    custom={i}
+                    className="px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 cursor-default bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300"
+                    whileHover={{
+                      background: `${cat.accentColor}20`,
+                      borderColor: `${cat.accentColor}40`,
+                      color: cat.accentColor,
+                      scale: 1.05,
+                    }}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </div>
+
+              {/* Corner decoration */}
+              <div 
+                className="absolute bottom-0 right-0 w-24 h-24 rounded-tl-full opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+                style={{ background: `radial-gradient(circle at bottom right, ${cat.accentColor}40, transparent)` }}
+              />
             </div>
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Bottom stats */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="flex flex-wrap justify-center gap-8 pt-8"
+      >
+        {[
+          { value: "1+", label: "Years Experience" },
+          { value: "15+", label: "Technologies" },
+          { value: "10+", label: "Projects Built" },
+        ].map((stat, i) => (
+          <div key={i} className="text-center">
+            <div className="text-3xl font-bold bg-gradient-to-r from-rose-500 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
+              {stat.value}
+            </div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </motion.div>
+
+      <style jsx global>{`
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(200%); }
+        }
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+      `}</style>
     </section>
   );
 }

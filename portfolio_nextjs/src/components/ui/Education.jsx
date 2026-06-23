@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { GraduationCap, Calendar, Award } from "lucide-react";
 
 const educationData = [
   {
@@ -11,7 +12,9 @@ const educationData = [
     duration: "June 2019 – July 2023",
     score: "CGPA: 8.10",
     scoreType: "cgpa",
+    scoreColor: "#845EF7",
     icon: "🎓",
+    accentColor: "#845EF7",
   },
   {
     id: 2,
@@ -20,7 +23,9 @@ const educationData = [
     duration: "June 2018 – June 2019",
     score: "66.92%",
     scoreType: "percent",
+    scoreColor: "#15C2C5",
     icon: "📘",
+    accentColor: "#15C2C5",
   },
   {
     id: 3,
@@ -29,7 +34,9 @@ const educationData = [
     duration: "June 2016 – June 2017",
     score: "76.80%",
     scoreType: "percent",
+    scoreColor: "#FF9439",
     icon: "📗",
+    accentColor: "#FF9439",
   },
 ];
 
@@ -41,75 +48,130 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, x: -50 },
+  visible: { 
+    opacity: 1, 
+    x: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
+  },
 };
 
 export default function Education() {
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
-      className="relative space-y-4"
-    >
-      <div className="absolute left-5 top-6 bottom-6 w-px bg-gradient-to-b from-rose-400 via-indigo-400 to-sky-400 hidden sm:block" />
+    <section className="py-4 space-y-10">
+      {/* Section Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="space-y-4"
+      >
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 border border-gray-200 dark:border-white/10">
+          <GraduationCap className="w-4 h-4 text-emerald-500" />
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Academic Background</span>
+        </div>
+      </motion.div>
 
-      {educationData.map((edu) => (
-        <motion.div
-          key={edu.id}
-          variants={cardVariants}
-          className="relative flex gap-4 sm:gap-6"
-        >
-          <div className="hidden sm:flex flex-col items-center shrink-0">
-            <div className="w-10 h-10 rounded-full bg-white dark:bg-gray-900 border-2 border-indigo-400 dark:border-indigo-500 flex items-center justify-center text-base shadow-md z-10">
+      {/* Education Cards */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        className="relative space-y-6"
+      >
+        {/* Timeline line */}
+        <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500 via-teal-500 to-cyan-500" />
+
+        {educationData.map((edu, index) => (
+          <motion.div
+            key={edu.id}
+            variants={cardVariants}
+            className="relative pl-16"
+          >
+            {/* Timeline dot */}
+            <div className="absolute left-6 top-8 w-4 h-4 rounded-full transform -translate-x-1/2 z-10">
+              <div 
+                className="w-full h-full rounded-full"
+                style={{ backgroundColor: edu.accentColor }}
+              />
+              <div 
+                className="absolute inset-0 rounded-full animate-ping"
+                style={{ backgroundColor: edu.accentColor, opacity: 0.3 }}
+              />
+            </div>
+
+            {/* Icon badge on timeline */}
+            <div 
+              className="absolute left-4 top-6 w-8 h-8 rounded-xl flex items-center justify-center text-lg z-20"
+              style={{
+                background: `linear-gradient(135deg, ${edu.accentColor}30, ${edu.accentColor}15)`,
+                border: `1px solid ${edu.accentColor}40`,
+              }}
+            >
               {edu.icon}
             </div>
-          </div>
 
-          <div className="flex-1 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-5 space-y-3">
-            <div className="flex items-start justify-between flex-wrap gap-2">
-              <div className="space-y-1">
-                <h3 className="text-base font-semibold text-gray-900 dark:text-white leading-snug">
-                  {edu.degree}
-                </h3>
-                <p className="text-sm font-medium bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
-                  {edu.institution}
-                </p>
+            {/* Card */}
+            <div className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95 border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-lg">
+              {/* Glow effect */}
+              <div 
+                className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl dark:block hidden"
+                style={{ 
+                  background: `linear-gradient(135deg, ${edu.accentColor}30, transparent, ${edu.accentColor}10)` 
+                }}
+              />
+
+              {/* Content */}
+              <div className="relative z-10 space-y-4">
+                {/* Header */}
+                <div className="flex items-start justify-between gap-4 flex-wrap">
+                  <div className="space-y-1 flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+                      {edu.degree}
+                    </h3>
+                    <div 
+                      className="text-base font-semibold bg-clip-text text-transparent"
+                      style={{ backgroundImage: `linear-gradient(135deg, ${edu.accentColor}, ${edu.accentColor}80)` }}
+                    >
+                      {edu.institution}
+                    </div>
+                  </div>
+                  
+                  {/* Score badge */}
+                  <div 
+                    className="px-4 py-2 rounded-2xl flex items-center gap-2"
+                    style={{
+                      background: `${edu.accentColor}15`,
+                      border: `1px solid ${edu.accentColor}30`,
+                    }}
+                  >
+                    <Award className="w-4 h-4" style={{ color: edu.accentColor }} />
+                    <span className="text-sm font-bold" style={{ color: edu.accentColor }}>
+                      {edu.score}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gray-200 dark:bg-gray-700" />
+
+                {/* Duration */}
+                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+                  <Calendar className="w-4 h-4" />
+                  <span>{edu.duration}</span>
+                </div>
               </div>
 
-              <span
-                className={`shrink-0 px-3 py-1 rounded-full text-xs font-semibold border ${
-                  edu.scoreType === "cgpa"
-                    ? "bg-indigo-50 dark:bg-indigo-900/30 border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300"
-                    : "bg-emerald-50 dark:bg-emerald-900/30 border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300"
-                }`}
-              >
-                {edu.score}
-              </span>
+              {/* Corner accent */}
+              <div 
+                className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-full opacity-10"
+                style={{ background: `radial-gradient(circle at bottom right, ${edu.accentColor}40, transparent)` }}
+              />
             </div>
-
-            <div className="h-px bg-gradient-to-r from-gray-200 via-gray-300 to-transparent dark:from-gray-700 dark:via-gray-600" />
-            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-              <svg
-                className="w-3.5 h-3.5 shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                />
-              </svg>
-              <span>{edu.duration}</span>
-            </div>
-          </div>
-        </motion.div>
-      ))}
-    </motion.div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
   );
 }
