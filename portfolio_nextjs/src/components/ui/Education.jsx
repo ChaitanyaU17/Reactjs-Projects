@@ -1,8 +1,97 @@
+// src/components/ui/Education.jsx
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, Award } from "lucide-react";
+import { Calendar, Award } from "lucide-react";
+
+const DegreeIcon = () => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+    <path
+      d="M24 4L44 14V18L24 28L4 18V14L24 4Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M12 22V34C12 34 16 40 24 40C32 40 36 34 36 34V22"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M44 18V28"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <circle cx="44" cy="30" r="2" fill="currentColor" />
+  </svg>
+);
+
+const HSCIcon = () => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+    <rect
+      x="6" y="6" width="36" height="36" rx="3"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+    />
+    <path
+      d="M14 16H34"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M14 22H28"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M14 28H24"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M28 30L30.5 33L35 27"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle cx="31.5" cy="31" r="7" stroke="currentColor" strokeWidth="1.5" fill="none" />
+  </svg>
+);
+
+const SSCIcon = () => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+    <path
+      d="M24 4L28.5 15H40L30.5 22L34 33L24 26L14 33L17.5 22L8 15H19.5L24 4Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M18 38H30"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M20 42H28"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
 
 const educationData = [
   {
@@ -11,9 +100,7 @@ const educationData = [
     institution: "Sandip Institute of Technology and Research Center, Nashik",
     duration: "June 2019 – July 2023",
     score: "CGPA: 8.10",
-    scoreType: "cgpa",
-    scoreColor: "#845EF7",
-    icon: "🎓",
+    Icon: DegreeIcon,
     accentColor: "#845EF7",
   },
   {
@@ -22,9 +109,7 @@ const educationData = [
     institution: "DVMH, Savitribai Phule University, Pune",
     duration: "June 2018 – June 2019",
     score: "66.92%",
-    scoreType: "percent",
-    scoreColor: "#15C2C5",
-    icon: "📘",
+    Icon: HSCIcon,
     accentColor: "#15C2C5",
   },
   {
@@ -33,114 +118,92 @@ const educationData = [
     institution: "DVMH, Savitribai Phule University, Pune",
     duration: "June 2016 – June 2017",
     score: "76.80%",
-    scoreType: "percent",
-    scoreColor: "#FF9439",
-    icon: "📗",
+    Icon: SSCIcon,
     accentColor: "#FF9439",
   },
 ];
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
+  visible: { transition: { staggerChildren: 0.15 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function Education() {
   return (
-    <section className="py-4 space-y-10">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="space-y-4"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 border border-gray-200 dark:border-white/10">
-          <GraduationCap className="w-4 h-4 text-emerald-500" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Academic Background</span>
-        </div>
-      </motion.div>
-
-      {/* Education Cards */}
+    <section className="py-2">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="relative space-y-6"
+        className="space-y-5"
       >
-        {/* Timeline line */}
-        <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500 via-teal-500 to-cyan-500" />
-
-        {educationData.map((edu, index) => (
-          <motion.div
-            key={edu.id}
-            variants={cardVariants}
-            className="relative pl-16"
-          >
-            {/* Timeline dot */}
-            <div className="absolute left-6 top-8 w-4 h-4 rounded-full transform -translate-x-1/2 z-10">
-              <div 
-                className="w-full h-full rounded-full"
-                style={{ backgroundColor: edu.accentColor }}
-              />
-              <div 
-                className="absolute inset-0 rounded-full animate-ping"
-                style={{ backgroundColor: edu.accentColor, opacity: 0.3 }}
-              />
-            </div>
-
-            {/* Icon badge on timeline */}
-            <div 
-              className="absolute left-4 top-6 w-8 h-8 rounded-xl flex items-center justify-center text-lg z-20"
-              style={{
-                background: `linear-gradient(135deg, ${edu.accentColor}30, ${edu.accentColor}15)`,
-                border: `1px solid ${edu.accentColor}40`,
-              }}
+        {educationData.map((edu) => {
+          const { Icon } = edu;
+          return (
+            <motion.div
+              key={edu.id}
+              variants={cardVariants}
+              className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.01]
+                bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95
+                border border-gray-100 dark:border-white/10
+                shadow-sm dark:shadow-lg"
             >
-              {edu.icon}
-            </div>
-
-            {/* Card */}
-            <div className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95 border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-lg">
-              {/* Glow effect */}
-              <div 
-                className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl dark:block hidden"
-                style={{ 
-                  background: `linear-gradient(135deg, ${edu.accentColor}30, transparent, ${edu.accentColor}10)` 
-                }}
+              {/* Top accent bar */}
+              <div
+                className="absolute top-0 left-0 right-0 h-0.5 opacity-60"
+                style={{ background: `linear-gradient(90deg, ${edu.accentColor}, transparent)` }}
               />
 
-              {/* Content */}
-              <div className="relative z-10 space-y-4">
-                {/* Header */}
+              {/* Glow on hover – dark only */}
+              <div
+                className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl hidden dark:block"
+                style={{ background: `linear-gradient(135deg, ${edu.accentColor}25, transparent)` }}
+              />
+
+              <div className="relative z-10">
                 <div className="flex items-start justify-between gap-4 flex-wrap">
-                  <div className="space-y-1 flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
-                      {edu.degree}
-                    </h3>
-                    <div 
-                      className="text-base font-semibold bg-clip-text text-transparent"
-                      style={{ backgroundImage: `linear-gradient(135deg, ${edu.accentColor}, ${edu.accentColor}80)` }}
+                  {/* Left: icon + text */}
+                  <div className="flex items-start gap-4">
+                    {/* SVG Icon badge */}
+                    <div
+                      className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      style={{
+                        background: `linear-gradient(135deg, ${edu.accentColor}25, ${edu.accentColor}10)`,
+                        border: `1.5px solid ${edu.accentColor}40`,
+                        color: edu.accentColor,
+                      }}
                     >
-                      {edu.institution}
+                      <Icon />
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="text-base font-bold text-gray-900 dark:text-white leading-snug">
+                        {edu.degree}
+                      </h3>
+                      <p
+                        className="text-sm font-semibold bg-clip-text text-transparent"
+                        style={{
+                          backgroundImage: `linear-gradient(135deg, ${edu.accentColor}, ${edu.accentColor}80)`,
+                        }}
+                      >
+                        {edu.institution}
+                      </p>
+                      <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 pt-0.5">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {edu.duration}
+                      </div>
                     </div>
                   </div>
-                  
+
                   {/* Score badge */}
-                  <div 
-                    className="px-4 py-2 rounded-2xl flex items-center gap-2"
+                  <div
+                    className="px-4 py-2 rounded-2xl flex items-center gap-2 self-start flex-shrink-0"
                     style={{
                       background: `${edu.accentColor}15`,
                       border: `1px solid ${edu.accentColor}30`,
@@ -152,25 +215,16 @@ export default function Education() {
                     </span>
                   </div>
                 </div>
-
-                {/* Divider */}
-                <div className="h-px bg-gray-200 dark:bg-gray-700" />
-
-                {/* Duration */}
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <Calendar className="w-4 h-4" />
-                  <span>{edu.duration}</span>
-                </div>
               </div>
 
               {/* Corner accent */}
-              <div 
-                className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-full opacity-10"
-                style={{ background: `radial-gradient(circle at bottom right, ${edu.accentColor}40, transparent)` }}
+              <div
+                className="absolute bottom-0 right-0 w-24 h-24 rounded-tl-full opacity-10"
+                style={{ background: `radial-gradient(circle at bottom right, ${edu.accentColor}60, transparent)` }}
               />
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </motion.div>
     </section>
   );

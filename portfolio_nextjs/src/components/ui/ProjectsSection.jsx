@@ -4,10 +4,7 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Github, ExternalLink, ChevronLeft, ChevronRight, 
-  Layers, Code2, Zap
-} from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Zap } from "lucide-react";
 
 const projects = [
   {
@@ -129,226 +126,129 @@ export default function ProjectsSection() {
   };
 
   const slideVariants = {
-    enter: (dir) => ({
-      x: dir > 0 ? 300 : -300,
-      opacity: 0,
-      scale: 0.95,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-    exit: (dir) => ({
-      x: dir > 0 ? -300 : 300,
-      opacity: 0,
-      scale: 0.95,
-      transition: { duration: 0.3, ease: "easeIn" },
-    }),
+    enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0, scale: 0.95 }),
+    center: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
+    exit: (dir) => ({ x: dir > 0 ? -300 : 300, opacity: 0, scale: 0.95, transition: { duration: 0.3, ease: "easeIn" } }),
   };
 
   const project = projects[current];
 
   return (
-    <section className="py-4 space-y-10">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="space-y-4"
+    <section className="py-2 space-y-6">
+      <div
+        className="relative overflow-hidden rounded-3xl"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose-500/10 via-pink-500/10 to-purple-500/10 border border-gray-200 dark:border-white/10">
-          <Layers className="w-4 h-4 text-rose-500" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Portfolio Showcase</span>
-        </div>
-      </motion.div>
-
-      {/* Project Card */}
-      <div className="space-y-6">
-        <div 
-          className="relative overflow-hidden rounded-3xl"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <AnimatePresence custom={direction} mode="wait">
-            <motion.div
-              key={current}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              className="relative"
-            >
-              {/* Glow effect - dark mode only */}
-              <div 
-                className="absolute -inset-1 rounded-3xl opacity-30 blur-xl hidden dark:block"
-                style={{ 
-                  background: `linear-gradient(135deg, ${project.accentColor}40, transparent, ${project.accentColor}20)` 
-                }}
-              />
-
-              {/* Card */}
-              <div 
-                className="relative rounded-3xl overflow-hidden transition-all duration-500 bg-white dark:bg-gradient-to-br dark:from-gray-900/95 dark:to-gray-950/98 border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl"
-              >
-                {/* Image */}
-                <div className="relative h-64 sm:h-80 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                    priority
-                  />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent dark:from-gray-900/90 dark:via-gray-900/40" />
-                  
-                  {/* Project counter */}
-                  <div 
-                    className="absolute top-4 right-4 px-4 py-2 rounded-full backdrop-blur-md text-sm font-bold border border-white/20"
-                    style={{
-                      background: `${project.accentColor}40`,
-                      color: "#FFFFFF",
-                    }}
-                  >
-                    {current + 1} / {projects.length}
-                  </div>
-
-                  {/* Mobile swipe hint */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:hidden flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md text-xs text-gray-300 border border-white/20">
-                    <Zap className="w-3 h-3" />
-                    Swipe to explore
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 sm:p-8 space-y-5">
-                  <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1.5 rounded-xl text-xs font-semibold"
-                        style={{
-                          background: `${project.accentColor}15`,
-                          border: `1px solid ${project.accentColor}30`,
-                          color: project.accentColor,
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex items-center gap-4 pt-2">
-                    <Link
-                      href={project.liveDemo}
-                      target="_blank"
-                      className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 text-white"
-                      style={{
-                        background: `linear-gradient(135deg, ${project.accentColor}, ${project.accentColor}CC)`,
-                      }}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </Link>
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/10"
-                    >
-                      <Github className="w-4 h-4" />
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Corner accent */}
-                <div 
-                  className="absolute bottom-0 right-0 w-48 h-48 rounded-tl-full opacity-20"
-                  style={{ background: `radial-gradient(circle at bottom right, ${project.accentColor}60, transparent)` }}
-                />
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation arrows */}
-          <button
-            onClick={() => paginate(-1)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hidden sm:flex bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700"
+        <AnimatePresence custom={direction} mode="wait">
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="relative"
           >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hidden sm:flex bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Dots navigation */}
-        <div className="flex items-center justify-center gap-2 flex-wrap">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goTo(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === current ? "w-8" : "w-2 hover:w-4"
-              }`}
-              style={{
-                background: index === current
-                  ? `linear-gradient(90deg, ${projects[index].accentColor}, ${projects[index].accentColor}80)`
-                  : "#D1D5DB",
-              }}
+            <div
+              className="absolute -inset-1 rounded-3xl opacity-30 blur-xl hidden dark:block"
+              style={{ background: `linear-gradient(135deg, ${project.accentColor}40, transparent, ${project.accentColor}20)` }}
             />
-          ))}
-        </div>
 
-        {/* Thumbnail strip */}
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-          {projects.map((proj, index) => (
-            <button
-              key={proj.id}
-              onClick={() => goTo(index)}
-              className={`relative flex-shrink-0 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
-                index === current
-                  ? "border-opacity-100 scale-105"
-                  : "border-opacity-30 hover:border-opacity-60"
-              }`}
-              style={{
-                width: "100px",
-                borderColor: index === current ? proj.accentColor : "#E5E7EB",
-              }}
-            >
-              <Image
-                src={proj.image}
-                alt={proj.title}
-                fill
-                className="object-cover"
+            <div className="relative rounded-3xl overflow-hidden bg-white dark:bg-gradient-to-br dark:from-gray-900/95 dark:to-gray-950/98 border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl">
+              <div className="relative h-64 sm:h-80 overflow-hidden">
+                <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 hover:scale-110" priority />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent" />
+                <div
+                  className="absolute top-4 right-4 px-4 py-2 rounded-full backdrop-blur-md text-sm font-bold border border-white/20 text-white"
+                  style={{ background: `${project.accentColor}40` }}
+                >
+                  {current + 1} / {projects.length}
+                </div>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:hidden flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md text-xs text-gray-300 border border-white/20">
+                  <Zap className="w-3 h-3" />
+                  Swipe to explore
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-8 space-y-5">
+                <div className="space-y-2">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{project.description}</p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-3 py-1.5 rounded-xl text-xs font-semibold"
+                      style={{ background: `${project.accentColor}15`, border: `1px solid ${project.accentColor}30`, color: project.accentColor }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-4 pt-2">
+                  <Link href={project.liveDemo} target="_blank"
+                    className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 text-white"
+                    style={{ background: `linear-gradient(135deg, ${project.accentColor}, ${project.accentColor}CC)` }}>
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </Link>
+                  <Link href={project.github} target="_blank"
+                    className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/10">
+                    <Github className="w-4 h-4" />
+                    GitHub
+                  </Link>
+                </div>
+              </div>
+
+              <div
+                className="absolute bottom-0 right-0 w-48 h-48 rounded-tl-full opacity-20"
+                style={{ background: `radial-gradient(circle at bottom right, ${project.accentColor}60, transparent)` }}
               />
-              {index === current && (
-                <div 
-                  className="absolute inset-0 opacity-30"
-                  style={{ backgroundColor: proj.accentColor }}
-                />
-              )}
-            </button>
-          ))}
-        </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        <button onClick={() => paginate(-1)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full hidden sm:flex items-center justify-center transition-all duration-300 hover:scale-110 bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button onClick={() => paginate(1)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full hidden sm:flex items-center justify-center transition-all duration-300 hover:scale-110 bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      <div className="flex items-center justify-center gap-2 flex-wrap">
+        {projects.map((_, index) => (
+          <button key={index} onClick={() => goTo(index)}
+            className="h-2 rounded-full transition-all duration-300"
+            style={{
+              width: index === current ? "2rem" : "0.5rem",
+              background: index === current
+                ? `linear-gradient(90deg, ${projects[index].accentColor}, ${projects[index].accentColor}80)`
+                : "#D1D5DB",
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+        {projects.map((proj, index) => (
+          <button key={proj.id} onClick={() => goTo(index)}
+            className="relative flex-shrink-0 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300"
+            style={{
+              width: "100px",
+              borderColor: index === current ? proj.accentColor : "#E5E7EB",
+              transform: index === current ? "scale(1.05)" : "scale(1)",
+            }}
+          >
+            <Image src={proj.image} alt={proj.title} fill className="object-cover" />
+            {index === current && (
+              <div className="absolute inset-0 opacity-30" style={{ backgroundColor: proj.accentColor }} />
+            )}
+          </button>
+        ))}
       </div>
     </section>
   );
