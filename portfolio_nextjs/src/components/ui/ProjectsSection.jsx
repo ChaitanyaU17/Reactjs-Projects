@@ -22,7 +22,7 @@ const projects = [
     title: "Workflow X",
     image: "/workflowx.png",
     description: "An automated consumer onboarding workflow platform featuring a visual drag-and-drop designer, role-based access controls, dynamic form building, and robust client-side schemas using Yup validation.",
-    tags: ["React", "Node.js", "Tailwind CSS", "Yup Schema"],
+    tags: ["React", "Node.js", "TypeScript", "Material UI"],
     liveDemo: "https://workflow-x274.onrender.com/",
     github: "https://github.com/ChaitanyaU17/workflow.git",
     accentColor: "#2563EB",
