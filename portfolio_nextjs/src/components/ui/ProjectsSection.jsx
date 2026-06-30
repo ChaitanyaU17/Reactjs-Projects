@@ -9,16 +9,6 @@ import { Github, ExternalLink, ChevronLeft, ChevronRight, Zap } from "lucide-rea
 const projects = [
   {
     id: 1,
-    title: "CG Multiplex",
-    image: "/CGMultiplex thumbnail.png",
-    description: "A comprehensive movie-related web application built with React, Redux, and Tailwind CSS. Provides detailed information about movies, TV shows, and entertainment industry professionals.",
-    tags: ["React", "Redux", "Tailwind CSS"],
-    liveDemo: "https://chipper-zuccutto-af5cce.netlify.app/",
-    github: "https://github.com/ChaitanyaU17/MovieApp",
-    accentColor: "#FF6B6B",
-  },
-  {
-    id: 2,
     title: "TrainWise",
     image: "/trainwise thumbnail.png",
     description: "A MERN stack-based fitness trainer appointment booking platform featuring user authentication, appointment booking, profile management, and online payments.",
@@ -28,7 +18,27 @@ const projects = [
     accentColor: "#37D67A",
   },
   {
+    id: 2,
+    title: "Workflow X",
+    image: "/workflowx.png",
+    description: "An automated consumer onboarding workflow platform featuring a visual drag-and-drop designer, role-based access controls, dynamic form building, and robust client-side schemas using Yup validation.",
+    tags: ["React", "Node.js", "Tailwind CSS", "Yup Schema"],
+    liveDemo: "https://workflow-x274.onrender.com/",
+    github: "https://github.com/ChaitanyaU17/workflow.git",
+    accentColor: "#2563EB",
+  },
+  {
     id: 3,
+    title: "CG Multiplex",
+    image: "/CGMultiplex thumbnail.png",
+    description: "A comprehensive movie-related web application built with React, Redux, and Tailwind CSS. Provides detailed information about movies, TV shows, and entertainment industry professionals.",
+    tags: ["React", "Redux", "Tailwind CSS"],
+    liveDemo: "https://chipper-zuccutto-af5cce.netlify.app/",
+    github: "https://github.com/ChaitanyaU17/MovieApp",
+    accentColor: "#FF6B6B",
+  },
+  {
+    id: 4,
     title: "Foodie Restaurant",
     image: "/foodie thumbnail.png",
     description: "A front-end clone of Swiggy built with React, Redux, and Tailwind CSS. Features API calls for fetching real-time menus, state management for cart operations, and a responsive UI.",
@@ -38,7 +48,7 @@ const projects = [
     accentColor: "#FF9439",
   },
   {
-    id: 4,
+    id: 5,
     title: "Air-Aware Weather",
     image: "/wheather thumbnail.png",
     description: "A real-time weather and AQI tracking app offering weather updates, pollution protection tips, and environmental health education built with React.",
@@ -48,7 +58,7 @@ const projects = [
     accentColor: "#15C2C5",
   },
   {
-    id: 5,
+    id: 6,
     title: "Result Management",
     image: "/reusultmanagement thumbnail.png",
     description: "A MERN stack-based Result Management System that simplifies student result tracking. Admins can upload and update results while students securely access their performance data.",
@@ -58,7 +68,7 @@ const projects = [
     accentColor: "#845EF7",
   },
   {
-    id: 6,
+    id: 7,
     title: "Joblia – Job Portal",
     image: "/job portal thumbnail.png",
     description: "Joblia connects job seekers and recruiters. Users can search and apply for jobs, manage applications, and track status. Includes authentication, filtering, and employer dashboard.",
@@ -68,7 +78,7 @@ const projects = [
     accentColor: "#E64980",
   },
   {
-    id: 7,
+    id: 8,
     title: "Ecommerce Website",
     image: "/ecommerce thumbnail.png",
     description: "React-based e-commerce app with Firebase authentication, dynamic routing, cart management, and profile features ensuring secure user access and optimized shopping experience.",
@@ -76,16 +86,6 @@ const projects = [
     liveDemo: "https://sharpner-frontend-react-gx86.vercel.app/user-auth",
     github: "https://github.com/ChaitanyaU17/Sharpner_Frontend_React/tree/main/EcommerceProject",
     accentColor: "#FF9439",
-  },
-  {
-    id: 8,
-    title: "YouTube 2.0",
-    image: "/youtube thumbnail.png",
-    description: "A YouTube clone with dynamic search suggestions, live API fetching, real-time chat, and nested comments for an enhanced video streaming experience.",
-    tags: ["React", "Redux", "Tailwind CSS", "REST API"],
-    liveDemo: "https://youtube-clone-brown-psi.vercel.app/",
-    github: "https://github.com/ChaitanyaU17/Youtube_2.0",
-    accentColor: "#FF6B6B",
   },
 ];
 
