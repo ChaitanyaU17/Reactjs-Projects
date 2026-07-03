@@ -154,17 +154,6 @@ export default function Education() {
                 border border-gray-100 dark:border-white/10
                 shadow-sm dark:shadow-lg"
             >
-              {/* Top accent bar */}
-              <div
-                className="absolute top-0 left-0 right-0 h-0.5 opacity-60"
-                style={{ background: `linear-gradient(90deg, ${edu.accentColor}, transparent)` }}
-              />
-
-              {/* Glow on hover – dark only */}
-              <div
-                className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl hidden dark:block"
-                style={{ background: `linear-gradient(135deg, ${edu.accentColor}25, transparent)` }}
-              />
 
               <div className="relative z-10">
                 <div className="flex items-start justify-between gap-4 flex-wrap">

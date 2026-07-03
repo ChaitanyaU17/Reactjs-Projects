@@ -68,15 +68,6 @@ export default function Experience() {
               border border-gray-100 dark:border-white/10
               shadow-sm dark:shadow-lg"
           >
-            <div
-              className="absolute top-0 left-0 right-0 h-0.5 opacity-60"
-              style={{ background: `linear-gradient(90deg, ${exp.accentColor}, transparent)` }}
-            />
-
-            <div
-              className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl hidden dark:block"
-              style={{ background: `linear-gradient(135deg, ${exp.accentColor}25, transparent)` }}
-            />
 
             <div className="relative z-10 space-y-4">
               <div className="flex flex-wrap items-start justify-between gap-3">

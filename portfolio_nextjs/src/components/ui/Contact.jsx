@@ -196,7 +196,7 @@ export default function ContactMe() {
             </div>
 
             <button type="submit" disabled={sending}
-              className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-rose-500 via-indigo-500 to-purple-500 text-white font-semibold hover:opacity-90 disabled:opacity-60 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg">
+              className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-rose-200 via-indigo-500 to-purple-500 text-white font-semibold hover:opacity-90 disabled:opacity-60 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg">
               {sending ? (
                 <><Loader2 className="w-5 h-5 animate-spin" />Sending...</>
               ) : (
