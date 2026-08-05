@@ -33,7 +33,7 @@ const projects = [
     image: "/CGMultiplex thumbnail.png",
     description: "A comprehensive movie-related web application built with React, Redux, and Tailwind CSS. Provides detailed information about movies, TV shows, and entertainment industry professionals.",
     tags: ["React", "Redux", "Tailwind CSS"],
-    liveDemo: "https://chipper-zuccutto-af5cce.netlify.app/",
+    liveDemo: "https://cgmultiplex.onrender.com",
     github: "https://github.com/ChaitanyaU17/MovieApp",
     accentColor: "#FF6B6B",
   },
