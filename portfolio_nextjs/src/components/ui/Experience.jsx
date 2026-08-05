@@ -44,8 +44,8 @@ const containerVariants = {
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
@@ -57,19 +57,17 @@ export default function Experience() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="space-y-5"
+        className="space-y-6"
       >
-        {experiences.map((exp, index) => (
+        {experiences.map((exp) => (
           <motion.div
             key={exp.id}
-            variants={cardVariants}
-            className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.01]
-              bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95
-              border border-gray-100 dark:border-white/10
-              shadow-sm dark:shadow-lg"
+            variants={itemVariants}
+            className="relative py-4 pr-4 transition-colors duration-300
+              border-b border-gray-200 last:border-b-0
+              dark:border-gray-800"
           >
-
-            <div className="relative z-10 space-y-4">
+            <div className="relative z-10 space-y-3">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div className="space-y-1">
                   <div className="flex flex-wrap items-center gap-2">
@@ -119,7 +117,7 @@ export default function Experience() {
                 </span>
               </div>
 
-              <div className="h-px bg-gray-100 dark:bg-gray-800" />
+              <div className="h-px bg-gray-100 dark:bg-gray-800 my-4" />
 
               <ul className="space-y-2">
                 {exp.points.map((point, i) => (
@@ -133,7 +131,7 @@ export default function Experience() {
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-2 pt-1">
+              <div className="flex flex-wrap gap-2 pt-3">
                 {exp.techStack.map((tech) => (
                   <span
                     key={tech}
@@ -144,11 +142,6 @@ export default function Experience() {
                 ))}
               </div>
             </div>
-
-            <div
-              className="absolute bottom-0 right-0 w-28 h-28 rounded-tl-full opacity-10"
-              style={{ background: `radial-gradient(circle at bottom right, ${exp.accentColor}60, transparent)` }}
-            />
           </motion.div>
         ))}
       </motion.div>

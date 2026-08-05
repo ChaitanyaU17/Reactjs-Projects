@@ -128,8 +128,8 @@ const containerVariants = {
   visible: { transition: { staggerChildren: 0.15 } },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
@@ -141,76 +141,64 @@ export default function Education() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="space-y-5"
+        className="space-y-6"
       >
         {educationData.map((edu) => {
           const { Icon } = edu;
           return (
             <motion.div
               key={edu.id}
-              variants={cardVariants}
-              className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.01]
-                bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95
-                border border-gray-100 dark:border-white/10
-                shadow-sm dark:shadow-lg"
+              variants={itemVariants}
+              className="relative py-4 pr-4 transition-colors duration-300
+                border-b border-gray-200 last:border-b-0
+                dark:border-gray-800"
             >
+              <div className="relative z-10 flex items-start gap-4">
+                {/* SVG Icon badge */}
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: `linear-gradient(135deg, ${edu.accentColor}25, ${edu.accentColor}10)`,
+                    border: `1.5px solid ${edu.accentColor}40`,
+                    color: edu.accentColor,
+                  }}
+                >
+                  <Icon />
+                </div>
 
-              <div className="relative z-10">
-                <div className="flex items-start justify-between gap-4 flex-wrap">
-                  {/* Left: icon + text */}
-                  <div className="flex items-start gap-4">
-                    {/* SVG Icon badge */}
+                <div className="flex-1 space-y-1">
+                  <div className="flex items-start justify-between flex-wrap gap-2">
+                    <h3 className="text-base font-bold text-gray-900 dark:text-white leading-snug">
+                      {edu.degree}
+                    </h3>
+                    {/* Score badge */}
                     <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      className="px-3 py-1.5 rounded-full flex items-center gap-1.5 self-start flex-shrink-0"
                       style={{
-                        background: `linear-gradient(135deg, ${edu.accentColor}25, ${edu.accentColor}10)`,
-                        border: `1.5px solid ${edu.accentColor}40`,
-                        color: edu.accentColor,
+                        background: `${edu.accentColor}15`,
+                        border: `1px solid ${edu.accentColor}30`,
                       }}
                     >
-                      <Icon />
-                    </div>
-
-                    <div className="space-y-1">
-                      <h3 className="text-base font-bold text-gray-900 dark:text-white leading-snug">
-                        {edu.degree}
-                      </h3>
-                      <p
-                        className="text-sm font-semibold bg-clip-text text-transparent"
-                        style={{
-                          backgroundImage: `linear-gradient(135deg, ${edu.accentColor}, ${edu.accentColor}80)`,
-                        }}
-                      >
-                        {edu.institution}
-                      </p>
-                      <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 pt-0.5">
-                        <Calendar className="w-3.5 h-3.5" />
-                        {edu.duration}
-                      </div>
+                      <Award className="w-3.5 h-3.5" style={{ color: edu.accentColor }} />
+                      <span className="text-xs font-bold" style={{ color: edu.accentColor }}>
+                        {edu.score}
+                      </span>
                     </div>
                   </div>
-
-                  {/* Score badge */}
-                  <div
-                    className="px-4 py-2 rounded-2xl flex items-center gap-2 self-start flex-shrink-0"
+                  <p
+                    className="text-sm font-semibold bg-clip-text text-transparent"
                     style={{
-                      background: `${edu.accentColor}15`,
-                      border: `1px solid ${edu.accentColor}30`,
+                      backgroundImage: `linear-gradient(135deg, ${edu.accentColor}, ${edu.accentColor}80)`,
                     }}
                   >
-                    <Award className="w-4 h-4" style={{ color: edu.accentColor }} />
-                    <span className="text-sm font-bold" style={{ color: edu.accentColor }}>
-                      {edu.score}
-                    </span>
+                    {edu.institution}
+                  </p>
+                  <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 pt-0.5">
+                    <Calendar className="w-3.5 h-3.5" />
+                    {edu.duration}
                   </div>
                 </div>
               </div>
-
-              {/* Corner accent */}
-              <div
-                className="absolute bottom-0 right-0 w-24 h-24 rounded-tl-full opacity-10"
-                style={{ background: `radial-gradient(circle at bottom right, ${edu.accentColor}60, transparent)` }}
-              />
             </motion.div>
           );
         })}

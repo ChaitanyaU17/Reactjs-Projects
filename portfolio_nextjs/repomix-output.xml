@@ -40,6 +40,34 @@ The content is organized as follows:
 </file_summary>
 
 <directory_structure>
+public/
+  CGMultiplex thumbnail.png
+  ecommerce thumbnail.png
+  foodie thumbnail.png
+  job portal thumbnail.png
+  profile.jpeg
+  reusultmanagement thumbnail.png
+  trainwise thumbnail.png
+  wheather thumbnail.png
+  workflowx.png
+  youtube thumbnail.png
+src/
+  app/
+    globals.css
+    layout.js
+    page.js
+  components/
+    ui/
+      button.jsx
+      card.jsx
+      Contact.jsx
+      Education.jsx
+      Experience.jsx
+      ProjectsSection.jsx
+      skills.jsx
+      theme-toggle.jsx
+  lib/
+    utils.js
 .gitignore
 components.json
 eslint.config.mjs
@@ -47,222 +75,11 @@ jsconfig.json
 next.config.mjs
 package.json
 postcss.config.mjs
-public/CGMultiplex thumbnail.png
-public/ecommerce thumbnail.png
-public/foodie thumbnail.png
-public/job portal thumbnail.png
-public/profile.jpeg
-public/reusultmanagement thumbnail.png
-public/trainwise thumbnail.png
-public/wheather thumbnail.png
-public/youtube thumbnail.png
 README.md
-src/app/globals.css
-src/app/layout.js
-src/app/page.js
-src/components/ui/button.jsx
-src/components/ui/card.jsx
-src/components/ui/Contact.jsx
-src/components/ui/Education.jsx
-src/components/ui/Experience.jsx
-src/components/ui/ProjectsSection.jsx
-src/components/ui/skills.jsx
-src/components/ui/theme-toggle.jsx
-src/lib/utils.js
 </directory_structure>
 
 <files>
 This section contains the contents of the repository's files.
-
-<file path=".gitignore">
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-</file>
-
-<file path="components.json">
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
-  "rsc": true,
-  "tsx": false,
-  "tailwind": {
-    "config": "",
-    "css": "src/app/globals.css",
-    "baseColor": "neutral",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
-  },
-  "iconLibrary": "lucide"
-}
-</file>
-
-<file path="eslint.config.mjs">
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [...compat.extends("next/core-web-vitals")];
-
-export default eslintConfig;
-</file>
-
-<file path="jsconfig.json">
-{
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
-}
-</file>
-
-<file path="next.config.mjs">
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
-</file>
-
-<file path="package.json">
-{
-  "name": "portfolio_nextjs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@radix-ui/react-slot": "^1.1.2",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.4.7",
-    "lightningcss": "^1.29.1",
-    "lucide-react": "^0.476.0",
-    "next": "15.2.0",
-    "next-themes": "^0.4.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.2.0",
-    "react-slick": "^0.30.3",
-    "react-swipeable": "^7.0.2",
-    "slick-carousel": "^1.8.1",
-    "tailwind-merge": "^3.0.2",
-    "tailwindcss-animate": "^1.0.7"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.0",
-    "tailwindcss": "^4"
-  }
-}
-</file>
-
-<file path="postcss.config.mjs">
-const config = {
-  plugins: ["@tailwindcss/postcss"],
-};
-
-export default config;
-</file>
-
-<file path="README.md">
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-</file>
 
 <file path="src/app/globals.css">
 @import "tailwindcss";
@@ -476,7 +293,6 @@ export default function Home() {
     <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-x-hidden">
       <div className="mx-auto max-w-4xl px-4 py-10 overflow-x-hidden">
 
-
         <AnimatePresence>
           {showProfileModal && (
             <motion.div
@@ -513,11 +329,11 @@ export default function Home() {
         </AnimatePresence>
 
         <motion.header
-            id="home"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center justify-between mb-12"
+          id="home"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex items-center justify-between mb-12"
         >
           <div className="relative group w-28 h-28 shrink-0">
             <div className="w-28 h-28 rounded-full overflow-hidden">
@@ -536,76 +352,44 @@ export default function Home() {
               <FiEye className="w-5 h-5 text-white" />
             </button>
           </div>
-
           <ThemeToggle />
         </motion.header>
 
         <main className="space-y-16">
           <section>
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-4"
             >
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold bg-gradient-to-r from-rose-600 via-indigo-500 to-sky-500 bg-clip-text text-transparent inline-block">
                   Chaitanya Umbarkar
                 </h1>
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 text-indigo-700 dark:text-indigo-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
                     Full Stack Developer
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-700 text-emerald-700 dark:text-emerald-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     Open to Work
-                  </span>
+  
                 </div>
               </div>
 
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-gray-500 dark:text-gray-400">
                 <span className="flex items-center gap-1.5">
-                  <svg
-                    className="w-3.5 h-3.5 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   Pune, Maharashtra
                 </span>
-
                 <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600 hidden sm:block" />
-
                 <a
                   href="mailto:chaitanyaumbarkar2002@gmail.com"
                   className="flex items-center gap-1.5 hover:text-indigo-500 transition-colors"
                 >
-                  <svg
-                    className="w-3.5 h-3.5 shrink-0"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   chaitanyaumbarkar2002@gmail.com
                 </a>
@@ -618,17 +402,12 @@ export default function Home() {
                   I build things that work — and work well.
                 </h2>
                 <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl leading-relaxed">
-                  FullStack Developer with hands-on experience in the MERN
-                  stack, currently shipping production grade features at{" "}
-                  <span className="text-gray-900 dark:text-white font-medium">
-                    Nandhar Technologies
-                  </span>
-                  . I dont just write code I architect solutions that are
-                  fast, scalable, and built to last.
+                  FullStack Developer with hands-on experience in the MERN stack, currently shipping production grade features at{" "}
+                  <span className="text-gray-900 dark:text-white font-medium">Nandhar Technologies</span>.
+                  I dont just write code I architect solutions that are fast, scalable, and built to last.
                 </p>
                 <p className="text-gray-600 text-sm dark:text-gray-400 max-w-2xl leading-relaxed">
-                  From pixel perfect UIs to robust REST APIs, I have delivered
-                  across the full stack.
+                  From pixel perfect UIs to robust REST APIs, I have delivered across the full stack.
                 </p>
               </div>
 
@@ -637,35 +416,17 @@ export default function Home() {
                   asChild
                   className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105"
                 >
-                  <Link
-                    href="https://drive.google.com/file/d/1vvTqZdME58UaoEe2BvPia_hd9ZlLCSS1/view?usp=drive_link"
-                    target="_blank"
-                  >
+                  <Link href="https://drive.google.com/file/d/1anhvtp1Uelq-MEzgRu_IQ3rrsFW3jWz0/view?usp=drive_link" target="_blank">
                     Resume
                   </Link>
                 </Button>
-
-                <Link
-                  href="https://github.com/ChaitanyaU17"
-                  target="_blank"
-                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
+                <Link href="https://github.com/ChaitanyaU17" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   <FaGithub className="w-6 h-6" />
                 </Link>
-
-                <Link
-                  href="https://www.linkedin.com/in/chaitanya-umbarkar/"
-                  target="_blank"
-                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
+                <Link href="https://www.linkedin.com/in/chaitanya-umbarkar/" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   <FaLinkedin className="w-6 h-6" />
                 </Link>
-
-                <Link
-                  href="https://x.com/CUmbarkar"
-                  target="_blank"
-                  className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
-                >
+                <Link href="https://x.com/CUmbarkar" target="_blank" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
                   <FaSquareXTwitter className="w-6 h-6" />
                 </Link>
               </div>
@@ -741,13 +502,11 @@ export default function Home() {
             </h2>
             <ContactMe />
           </motion.section>
-
         </main>
 
         <footer className="text-center text-gray-500 py-8 text-sm">
           © {new Date().getFullYear()} Chaitanya Umbarkar. All rights reserved.
         </footer>
-
       </div>
     </div>
   );
@@ -892,7 +651,7 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { Send, Mail, Phone, MapPin, Github, Linkedin, CheckCircle, AlertCircle, Loader2, Sparkles, Heart } from "lucide-react";
+import { Send, Mail, Phone, MapPin, Github, Linkedin, CheckCircle, AlertCircle, Loader2, Heart } from "lucide-react";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 
@@ -926,72 +685,46 @@ export default function ContactMe() {
   };
 
   return (
-    <section className="py-4 space-y-10">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="space-y-4"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose-500/10 via-pink-500/10 to-purple-500/10 border border-gray-200 dark:border-white/10">
-          <Sparkles className="w-4 h-4 text-rose-500" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Get In Touch</span>
-        </div>
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-rose-500 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
-          Let's Work Together
-        </h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-          Have a project in mind? I'd love to hear from you. Send me a message and let's create something amazing together.
-        </p>
-      </motion.div>
-
+    <section className="py-2">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        {/* Left Info Card */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="lg:col-span-2 relative p-8 rounded-3xl overflow-hidden"
-          style={{
-            background: "linear-gradient(145deg, rgba(244,114,182,0.08), rgba(139,92,246,0.08), rgba(6,182,212,0.08))",
-            border: "1px solid rgba(255,255,255,0.8)",
-          }}
+          className="lg:col-span-2 relative p-8 rounded-3xl overflow-hidden bg-gray-50 dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95 border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-lg"
         >
-          {/* Background glow - dark mode only */}
-          <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl opacity-20 dark:opacity-30"
+          <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl opacity-10 dark:opacity-20"
             style={{ background: "linear-gradient(135deg, #F472B6, #A855F7)" }}
           />
 
           <div className="relative z-10 space-y-6">
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Let's Talk</h3>
+            <div className="space-y-1">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Let's Talk</h3>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                 Feel free to reach out for collaborations, project inquiries, or just to say hello!
               </p>
             </div>
 
-            {/* Contact info */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               <a
                 href="mailto:chaitanyaumbarkar2002@gmail.com"
-                className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-rose-500 to-pink-500">
-                  <Mail className="w-5 h-5 text-white" />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-rose-500 to-pink-500 flex-shrink-0">
+                  <Mail className="w-4 h-4 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Email</p>
-                  <p className="text-sm font-medium text-gray-900 dark:text-white group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors truncate">
+                  <p className="text-xs font-medium text-gray-900 dark:text-white group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors truncate">
                     chaitanyaumbarkar2002@gmail.com
                   </p>
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-500">
-                  <Phone className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-500 flex-shrink-0">
+                  <Phone className="w-4 h-4 text-white" />
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Phone</p>
@@ -999,9 +732,9 @@ export default function ContactMe() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-500">
-                  <MapPin className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-500 flex-shrink-0">
+                  <MapPin className="w-4 h-4 text-white" />
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Location</p>
@@ -1010,44 +743,32 @@ export default function ContactMe() {
               </div>
             </div>
 
-            {/* Social links */}
             <div className="space-y-3">
-              <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Connect with me</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Connect</p>
               <div className="flex items-center gap-3">
-                <Link
-                  href="https://github.com/ChaitanyaU17"
-                  target="_blank"
-                  className="w-11 h-11 rounded-xl flex items-center justify-center bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                >
-                  <Github className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                <Link href="https://github.com/ChaitanyaU17" target="_blank"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                  <Github className="w-4 h-4 text-gray-700 dark:text-gray-300" />
                 </Link>
-                <Link
-                  href="https://www.linkedin.com/in/chaitanya-umbarkar/"
-                  target="_blank"
-                  className="w-11 h-11 rounded-xl flex items-center justify-center bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                >
-                  <Linkedin className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                <Link href="https://www.linkedin.com/in/chaitanya-umbarkar/" target="_blank"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                  <Linkedin className="w-4 h-4 text-gray-700 dark:text-gray-300" />
                 </Link>
-                <Link
-                  href="https://x.com/CUmbarkar"
-                  target="_blank"
-                  className="w-11 h-11 rounded-xl flex items-center justify-center bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                >
-                  <FaSquareXTwitter className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                <Link href="https://x.com/CUmbarkar" target="_blank"
+                  className="w-10 h-10 rounded-xl flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                  <FaSquareXTwitter className="w-4 h-4 text-gray-700 dark:text-gray-300" />
                 </Link>
               </div>
             </div>
 
-            {/* Decorative element */}
-            <div className="flex items-center gap-2 pt-4">
+            <div className="flex items-center gap-2 pt-2">
               <span className="text-xs text-gray-500 dark:text-gray-400">Made with</span>
-              <Heart className="w-4 h-4 text-rose-500 animate-pulse" />
+              <Heart className="w-3.5 h-3.5 text-rose-500 animate-pulse" />
               <span className="text-xs text-gray-500 dark:text-gray-400">by Chaitanya</span>
             </div>
           </div>
         </motion.div>
 
-        {/* Right Form Card */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -1055,7 +776,6 @@ export default function ContactMe() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="lg:col-span-3 relative p-8 rounded-3xl overflow-hidden bg-white dark:bg-gradient-to-br dark:from-gray-900/95 dark:to-gray-950/98 border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl"
         >
-          {/* Background glow - dark mode only */}
           <div className="absolute top-0 left-0 w-40 h-40 rounded-full blur-3xl opacity-10 dark:opacity-20"
             style={{ background: "linear-gradient(135deg, #6366F1, #8B5CF6)" }}
           />
@@ -1063,131 +783,78 @@ export default function ContactMe() {
           <form ref={form} onSubmit={sendEmail} className="relative z-10 space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="space-y-2">
-                <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                  First Name
-                </label>
+                <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">First Name</label>
                 <div className="relative group">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400 group-focus-within:text-indigo-500 transition-colors">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-500 transition-colors">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
-                  <input
-                    type="text"
-                    name="user_firstname"
-                    placeholder="Chaitanya"
-                    required
-                    className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
-                  />
+                  <input type="text" name="user_firstname" placeholder="Chaitanya" required
+                    className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300" />
                 </div>
               </div>
-
               <div className="space-y-2">
-                <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                  Last Name
-                </label>
+                <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">Last Name</label>
                 <div className="relative group">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400 group-focus-within:text-indigo-500 transition-colors">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-500 transition-colors">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </div>
-                  <input
-                    type="text"
-                    name="user_lastname"
-                    placeholder="Umbarkar"
-                    required
-                    className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
-                  />
+                  <input type="text" name="user_lastname" placeholder="Umbarkar" required
+                    className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300" />
                 </div>
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                Email Address
-              </label>
+              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">Email Address</label>
               <div className="relative group">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400 group-focus-within:text-indigo-500 transition-colors">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-500 transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
-                <input
-                  type="email"
-                  name="user_email"
-                  placeholder="chaitanya@example.com"
-                  required
-                  className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
-                />
+                <input type="email" name="user_email" placeholder="chaitanya@example.com" required
+                  className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                Phone Number
-              </label>
+              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">Phone Number</label>
               <div className="relative group">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400 group-focus-within:text-indigo-500 transition-colors">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-indigo-500 transition-colors">
                   <Phone className="w-4 h-4" />
                 </div>
-                <input
-                  type="tel"
-                  name="phone_number"
-                  placeholder="+91 00000 00000"
-                  required
-                  className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
-                />
+                <input type="tel" name="phone_number" placeholder="+91 00000 00000" required
+                  className="w-full pl-12 pr-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300" />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                Your Message
-              </label>
-              <textarea
-                name="message"
-                rows="4"
-                placeholder="Tell me about your project, ideas, or just say hello..."
-                required
-                className="w-full px-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300 resize-none"
-              />
+              <label className="text-xs font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wider">Your Message</label>
+              <textarea name="message" rows="4" placeholder="Tell me about your project, ideas, or just say hello..." required
+                className="w-full px-4 py-3.5 rounded-xl text-sm bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300 resize-none" />
             </div>
 
             <div className="flex items-center gap-3">
-              <input
-                type="checkbox"
-                required
-                id="terms"
-                className="w-4 h-4 rounded accent-indigo-500"
-              />
+              <input type="checkbox" required id="terms" className="w-4 h-4 rounded accent-indigo-500" />
               <label htmlFor="terms" className="text-xs text-gray-600 dark:text-gray-400">
                 I agree to the terms and conditions
               </label>
             </div>
 
-            <button
-              type="submit"
-              disabled={sending}
-              className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-rose-500 via-indigo-500 to-purple-500 text-white font-semibold hover:opacity-90 disabled:opacity-60 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg"
-            >
+            <button type="submit" disabled={sending}
+              className="w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-rose-200 via-indigo-500 to-purple-500 text-white font-semibold hover:opacity-90 disabled:opacity-60 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg">
               {sending ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  Sending...
-                </>
+                <><Loader2 className="w-5 h-5 animate-spin" />Sending...</>
               ) : (
-                <>
-                  <Send className="w-5 h-5" />
-                  Send Message
-                </>
+                <><Send className="w-5 h-5" />Send Message</>
               )}
             </button>
 
             {sent && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="flex items-center justify-center gap-2 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-500/20 border border-emerald-200 dark:border-emerald-500/30"
-              >
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+                className="flex items-center justify-center gap-2 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-500/20 border border-emerald-200 dark:border-emerald-500/30">
                 <CheckCircle className="w-5 h-5 text-emerald-500 dark:text-emerald-400" />
                 <span className="text-sm font-medium text-emerald-700 dark:text-emerald-400">
                   Message sent successfully! I'll get back to you soon.
@@ -1196,11 +863,8 @@ export default function ContactMe() {
             )}
 
             {error && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="flex items-center justify-center gap-2 p-4 rounded-xl bg-rose-50 dark:bg-rose-500/20 border border-rose-200 dark:border-rose-500/30"
-              >
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+                className="flex items-center justify-center gap-2 p-4 rounded-xl bg-rose-50 dark:bg-rose-500/20 border border-rose-200 dark:border-rose-500/30">
                 <AlertCircle className="w-5 h-5 text-rose-500 dark:text-rose-400" />
                 <span className="text-sm font-medium text-rose-700 dark:text-rose-400">
                   Something went wrong. Please try again.
@@ -1216,11 +880,100 @@ export default function ContactMe() {
 </file>
 
 <file path="src/components/ui/Education.jsx">
+// src/components/ui/Education.jsx
 "use client";
 
 import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, Award } from "lucide-react";
+import { Calendar, Award } from "lucide-react";
+
+const DegreeIcon = () => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+    <path
+      d="M24 4L44 14V18L24 28L4 18V14L24 4Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M12 22V34C12 34 16 40 24 40C32 40 36 34 36 34V22"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M44 18V28"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <circle cx="44" cy="30" r="2" fill="currentColor" />
+  </svg>
+);
+
+const HSCIcon = () => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+    <rect
+      x="6" y="6" width="36" height="36" rx="3"
+      stroke="currentColor"
+      strokeWidth="2"
+      fill="none"
+    />
+    <path
+      d="M14 16H34"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M14 22H28"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M14 28H24"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M28 30L30.5 33L35 27"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <circle cx="31.5" cy="31" r="7" stroke="currentColor" strokeWidth="1.5" fill="none" />
+  </svg>
+);
+
+const SSCIcon = () => (
+  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+    <path
+      d="M24 4L28.5 15H40L30.5 22L34 33L24 26L14 33L17.5 22L8 15H19.5L24 4Z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinejoin="round"
+      fill="none"
+    />
+    <path
+      d="M18 38H30"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M20 42H28"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
 
 const educationData = [
   {
@@ -1229,9 +982,7 @@ const educationData = [
     institution: "Sandip Institute of Technology and Research Center, Nashik",
     duration: "June 2019 – July 2023",
     score: "CGPA: 8.10",
-    scoreType: "cgpa",
-    scoreColor: "#845EF7",
-    icon: "🎓",
+    Icon: DegreeIcon,
     accentColor: "#845EF7",
   },
   {
@@ -1240,9 +991,7 @@ const educationData = [
     institution: "DVMH, Savitribai Phule University, Pune",
     duration: "June 2018 – June 2019",
     score: "66.92%",
-    scoreType: "percent",
-    scoreColor: "#15C2C5",
-    icon: "📘",
+    Icon: HSCIcon,
     accentColor: "#15C2C5",
   },
   {
@@ -1251,114 +1000,81 @@ const educationData = [
     institution: "DVMH, Savitribai Phule University, Pune",
     duration: "June 2016 – June 2017",
     score: "76.80%",
-    scoreType: "percent",
-    scoreColor: "#FF9439",
-    icon: "📗",
+    Icon: SSCIcon,
     accentColor: "#FF9439",
   },
 ];
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
+  visible: { transition: { staggerChildren: 0.15 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: { duration: 0.5, ease: "easeOut" }
-  },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function Education() {
   return (
-    <section className="py-4 space-y-10">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="space-y-4"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 border border-gray-200 dark:border-white/10">
-          <GraduationCap className="w-4 h-4 text-emerald-500" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Academic Background</span>
-        </div>
-      </motion.div>
-
-      {/* Education Cards */}
+    <section className="py-2">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="relative space-y-6"
+        className="space-y-5"
       >
-        {/* Timeline line */}
-        <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500 via-teal-500 to-cyan-500" />
-
-        {educationData.map((edu, index) => (
-          <motion.div
-            key={edu.id}
-            variants={cardVariants}
-            className="relative pl-16"
-          >
-            {/* Timeline dot */}
-            <div className="absolute left-6 top-8 w-4 h-4 rounded-full transform -translate-x-1/2 z-10">
-              <div 
-                className="w-full h-full rounded-full"
-                style={{ backgroundColor: edu.accentColor }}
-              />
-              <div 
-                className="absolute inset-0 rounded-full animate-ping"
-                style={{ backgroundColor: edu.accentColor, opacity: 0.3 }}
-              />
-            </div>
-
-            {/* Icon badge on timeline */}
-            <div 
-              className="absolute left-4 top-6 w-8 h-8 rounded-xl flex items-center justify-center text-lg z-20"
-              style={{
-                background: `linear-gradient(135deg, ${edu.accentColor}30, ${edu.accentColor}15)`,
-                border: `1px solid ${edu.accentColor}40`,
-              }}
+        {educationData.map((edu) => {
+          const { Icon } = edu;
+          return (
+            <motion.div
+              key={edu.id}
+              variants={cardVariants}
+              className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.01]
+                bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95
+                border border-gray-100 dark:border-white/10
+                shadow-sm dark:shadow-lg"
             >
-              {edu.icon}
-            </div>
 
-            {/* Card */}
-            <div className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95 border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-lg">
-              {/* Glow effect */}
-              <div 
-                className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl dark:block hidden"
-                style={{ 
-                  background: `linear-gradient(135deg, ${edu.accentColor}30, transparent, ${edu.accentColor}10)` 
-                }}
-              />
-
-              {/* Content */}
-              <div className="relative z-10 space-y-4">
-                {/* Header */}
+              <div className="relative z-10">
                 <div className="flex items-start justify-between gap-4 flex-wrap">
-                  <div className="space-y-1 flex-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
-                      {edu.degree}
-                    </h3>
-                    <div 
-                      className="text-base font-semibold bg-clip-text text-transparent"
-                      style={{ backgroundImage: `linear-gradient(135deg, ${edu.accentColor}, ${edu.accentColor}80)` }}
+                  {/* Left: icon + text */}
+                  <div className="flex items-start gap-4">
+                    {/* SVG Icon badge */}
+                    <div
+                      className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                      style={{
+                        background: `linear-gradient(135deg, ${edu.accentColor}25, ${edu.accentColor}10)`,
+                        border: `1.5px solid ${edu.accentColor}40`,
+                        color: edu.accentColor,
+                      }}
                     >
-                      {edu.institution}
+                      <Icon />
+                    </div>
+
+                    <div className="space-y-1">
+                      <h3 className="text-base font-bold text-gray-900 dark:text-white leading-snug">
+                        {edu.degree}
+                      </h3>
+                      <p
+                        className="text-sm font-semibold bg-clip-text text-transparent"
+                        style={{
+                          backgroundImage: `linear-gradient(135deg, ${edu.accentColor}, ${edu.accentColor}80)`,
+                        }}
+                      >
+                        {edu.institution}
+                      </p>
+                      <div className="flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-400 pt-0.5">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {edu.duration}
+                      </div>
                     </div>
                   </div>
-                  
+
                   {/* Score badge */}
-                  <div 
-                    className="px-4 py-2 rounded-2xl flex items-center gap-2"
+                  <div
+                    className="px-4 py-2 rounded-2xl flex items-center gap-2 self-start flex-shrink-0"
                     style={{
                       background: `${edu.accentColor}15`,
                       border: `1px solid ${edu.accentColor}30`,
@@ -1370,25 +1086,16 @@ export default function Education() {
                     </span>
                   </div>
                 </div>
-
-                {/* Divider */}
-                <div className="h-px bg-gray-200 dark:bg-gray-700" />
-
-                {/* Duration */}
-                <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <Calendar className="w-4 h-4" />
-                  <span>{edu.duration}</span>
-                </div>
               </div>
 
               {/* Corner accent */}
-              <div 
-                className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-full opacity-10"
-                style={{ background: `radial-gradient(circle at bottom right, ${edu.accentColor}40, transparent)` }}
+              <div
+                className="absolute bottom-0 right-0 w-24 h-24 rounded-tl-full opacity-10"
+                style={{ background: `radial-gradient(circle at bottom right, ${edu.accentColor}60, transparent)` }}
               />
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </motion.div>
     </section>
   );
@@ -1400,9 +1107,7 @@ export default function Education() {
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Briefcase, MapPin, Calendar, ChevronRight, Zap
-} from "lucide-react";
+import { MapPin, Calendar, ChevronRight, Zap } from "lucide-react";
 
 const experiences = [
   {
@@ -1441,180 +1146,114 @@ const experiences = [
 
 const containerVariants = {
   hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
+  visible: { transition: { staggerChildren: 0.15 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.5, ease: "easeOut" }
-  },
-};
-
-const pointVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: { 
-    opacity: 1, 
-    x: 0,
-    transition: { duration: 0.4 }
-  },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function Experience() {
   return (
-    <section className="py-4 space-y-10">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="space-y-4"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 border border-gray-200 dark:border-white/10">
-          <Briefcase className="w-4 h-4 text-indigo-500" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Career Path</span>
-        </div>
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-rose-500 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
-          Work Experience
-        </h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
-          My professional journey building real-world applications and growing as a developer.
-        </p>
-      </motion.div>
-
-      {/* Timeline */}
+    <section className="py-2">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="relative space-y-8"
+        className="space-y-5"
       >
-        {/* Timeline line */}
-        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-rose-500 via-indigo-500 to-sky-500" />
-
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.id}
             variants={cardVariants}
-            className={`relative flex flex-col md:flex-row gap-8 ${
-              index % 2 === 0 ? 'md:flex-row-reverse' : ''
-            }`}
+            className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.01]
+              bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95
+              border border-gray-100 dark:border-white/10
+              shadow-sm dark:shadow-lg"
           >
-            {/* Timeline dot */}
-            <div className="absolute left-8 md:left-1/2 top-8 w-4 h-4 rounded-full transform -translate-x-1/2 z-10">
-              <div 
-                className="w-full h-full rounded-full"
-                style={{ backgroundColor: exp.accentColor }}
-              />
-              <div 
-                className="absolute inset-0 rounded-full animate-ping"
-                style={{ backgroundColor: exp.accentColor, opacity: 0.3 }}
-              />
-            </div>
 
-            {/* Content card */}
-            <div className={`flex-1 ml-16 md:ml-0 ${index % 2 === 0 ? 'md:pr-12 md:text-left' : 'md:pl-12'}`}>
-              <div 
-                className="group relative p-6 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-[1.02] bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95 border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-lg"
-              >
-                {/* Glow effect */}
-                <div 
-                  className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl dark:block hidden"
-                  style={{ 
-                    background: `linear-gradient(135deg, ${exp.accentColor}30, transparent, ${exp.accentColor}10)` 
-                  }}
-                />
-
-                {/* Content */}
-                <div className="relative z-10 space-y-4">
-                  {/* Status badge */}
-                  <div className={`flex items-center gap-2 ${index % 2 === 0 ? 'md:justify-start' : ''}`}>
-                    {exp.status === 'current' && (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold"
+            <div className="relative z-10 space-y-4">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="space-y-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                      {exp.role}
+                    </h3>
+                    {exp.status === "current" && (
+                      <span
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold"
                         style={{
                           background: `${exp.accentColor}20`,
                           border: `1px solid ${exp.accentColor}40`,
                           color: exp.accentColor,
                         }}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: exp.accentColor }} />
+                        <span
+                          className="w-1.5 h-1.5 rounded-full animate-pulse"
+                          style={{ backgroundColor: exp.accentColor }}
+                        />
                         Current
                       </span>
                     )}
-                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10">
-                      {exp.type}
-                    </span>
                   </div>
-
-                  {/* Title & Company */}
-                  <div className={index % 2 === 0 ? 'md:text-left' : ''}>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.role}</h3>
-                    <div 
-                      className="text-lg font-semibold bg-clip-text text-transparent"
-                      style={{ backgroundImage: `linear-gradient(135deg, ${exp.accentColor}, ${exp.accentColor}80)` }}
-                    >
-                      {exp.company}
-                    </div>
-                  </div>
-
-                  {/* Location & Duration */}
-                  <div className={`flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400 ${index % 2 === 0 ? 'md:justify-start' : ''}`}>
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="w-4 h-4" />
-                      {exp.location}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="w-4 h-4" />
-                      {exp.duration}
-                    </span>
-                  </div>
-
-                  {/* Divider */}
-                  <div 
-                    className="h-px bg-gray-200 dark:bg-gray-700"
-                    style={{ opacity: index % 2 === 0 ? 1 : 0.5 }}
-                  />
-
-                  {/* Points */}
-                  <ul className={`space-y-2 ${index % 2 === 0 ? 'md:text-left' : ''}`}>
-                    {exp.points.map((point, i) => (
-                      <motion.li
-                        key={i}
-                        variants={pointVariants}
-                        custom={i}
-                        className="flex items-start gap-3 text-gray-600 dark:text-gray-300 text-sm"
-                      >
-                        {index % 2 === 0 ? <ChevronRight className="w-4 h-4 mt-0.5 flex-shrink-0 ml-auto" style={{ color: exp.accentColor }} /> : <Zap className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: exp.accentColor }} />}
-                        <span>{point}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-
-                  {/* Tech Stack */}
-                  <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? 'md:justify-start' : ''}`}>
-                    {exp.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 rounded-xl text-xs font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-white/20 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  <p
+                    className="text-base font-semibold bg-clip-text text-transparent"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, ${exp.accentColor}, ${exp.accentColor}80)`,
+                    }}
+                  >
+                    {exp.company}
+                  </p>
                 </div>
 
-                {/* Corner accent */}
-                <div 
-                  className="absolute bottom-0 right-0 w-32 h-32 rounded-tl-full opacity-10"
-                  style={{ background: `radial-gradient(circle at bottom right, ${exp.accentColor}40, transparent)` }}
-                />
+                <span className="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-white/10 self-start">
+                  {exp.type}
+                </span>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+                <span className="flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5" />
+                  {exp.location}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {exp.duration}
+                </span>
+              </div>
+
+              <div className="h-px bg-gray-100 dark:bg-gray-800" />
+
+              <ul className="space-y-2">
+                {exp.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-300">
+                    <ChevronRight
+                      className="w-4 h-4 mt-0.5 flex-shrink-0"
+                      style={{ color: exp.accentColor }}
+                    />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2 pt-1">
+                {exp.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 rounded-xl text-xs font-medium bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
+
+            <div
+              className="absolute bottom-0 right-0 w-28 h-28 rounded-tl-full opacity-10"
+              style={{ background: `radial-gradient(circle at bottom right, ${exp.accentColor}60, transparent)` }}
+            />
           </motion.div>
         ))}
       </motion.div>
@@ -1630,24 +1269,11 @@ import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Github, ExternalLink, ChevronLeft, ChevronRight, 
-  Layers, Code2, Zap
-} from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Zap } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "CG Multiplex",
-    image: "/CGMultiplex thumbnail.png",
-    description: "A comprehensive movie-related web application built with React, Redux, and Tailwind CSS. Provides detailed information about movies, TV shows, and entertainment industry professionals.",
-    tags: ["React", "Redux", "Tailwind CSS"],
-    liveDemo: "https://chipper-zuccutto-af5cce.netlify.app/",
-    github: "https://github.com/ChaitanyaU17/MovieApp",
-    accentColor: "#FF6B6B",
-  },
-  {
-    id: 2,
     title: "TrainWise",
     image: "/trainwise thumbnail.png",
     description: "A MERN stack-based fitness trainer appointment booking platform featuring user authentication, appointment booking, profile management, and online payments.",
@@ -1657,7 +1283,27 @@ const projects = [
     accentColor: "#37D67A",
   },
   {
+    id: 2,
+    title: "Workflow X",
+    image: "/workflowx.png",
+    description: "An automated consumer onboarding workflow platform featuring a visual drag-and-drop designer, role-based access controls, dynamic form building, and robust client-side schemas using Yup validation.",
+    tags: ["React", "Node.js", "TypeScript", "Material UI"],
+    liveDemo: "https://workflow-x274.onrender.com/",
+    github: "https://github.com/ChaitanyaU17/workflow.git",
+    accentColor: "#2563EB",
+  },
+  {
     id: 3,
+    title: "CG Multiplex",
+    image: "/CGMultiplex thumbnail.png",
+    description: "A comprehensive movie-related web application built with React, Redux, and Tailwind CSS. Provides detailed information about movies, TV shows, and entertainment industry professionals.",
+    tags: ["React", "Redux", "Tailwind CSS"],
+    liveDemo: "https://cgmultiplex.onrender.com",
+    github: "https://github.com/ChaitanyaU17/MovieApp",
+    accentColor: "#FF6B6B",
+  },
+  {
+    id: 4,
     title: "Foodie Restaurant",
     image: "/foodie thumbnail.png",
     description: "A front-end clone of Swiggy built with React, Redux, and Tailwind CSS. Features API calls for fetching real-time menus, state management for cart operations, and a responsive UI.",
@@ -1667,7 +1313,7 @@ const projects = [
     accentColor: "#FF9439",
   },
   {
-    id: 4,
+    id: 5,
     title: "Air-Aware Weather",
     image: "/wheather thumbnail.png",
     description: "A real-time weather and AQI tracking app offering weather updates, pollution protection tips, and environmental health education built with React.",
@@ -1677,7 +1323,7 @@ const projects = [
     accentColor: "#15C2C5",
   },
   {
-    id: 5,
+    id: 6,
     title: "Result Management",
     image: "/reusultmanagement thumbnail.png",
     description: "A MERN stack-based Result Management System that simplifies student result tracking. Admins can upload and update results while students securely access their performance data.",
@@ -1687,7 +1333,7 @@ const projects = [
     accentColor: "#845EF7",
   },
   {
-    id: 6,
+    id: 7,
     title: "Joblia – Job Portal",
     image: "/job portal thumbnail.png",
     description: "Joblia connects job seekers and recruiters. Users can search and apply for jobs, manage applications, and track status. Includes authentication, filtering, and employer dashboard.",
@@ -1697,7 +1343,7 @@ const projects = [
     accentColor: "#E64980",
   },
   {
-    id: 7,
+    id: 8,
     title: "Ecommerce Website",
     image: "/ecommerce thumbnail.png",
     description: "React-based e-commerce app with Firebase authentication, dynamic routing, cart management, and profile features ensuring secure user access and optimized shopping experience.",
@@ -1705,16 +1351,6 @@ const projects = [
     liveDemo: "https://sharpner-frontend-react-gx86.vercel.app/user-auth",
     github: "https://github.com/ChaitanyaU17/Sharpner_Frontend_React/tree/main/EcommerceProject",
     accentColor: "#FF9439",
-  },
-  {
-    id: 8,
-    title: "YouTube 2.0",
-    image: "/youtube thumbnail.png",
-    description: "A YouTube clone with dynamic search suggestions, live API fetching, real-time chat, and nested comments for an enhanced video streaming experience.",
-    tags: ["React", "Redux", "Tailwind CSS", "REST API"],
-    liveDemo: "https://youtube-clone-brown-psi.vercel.app/",
-    github: "https://github.com/ChaitanyaU17/Youtube_2.0",
-    accentColor: "#FF6B6B",
   },
 ];
 
@@ -1755,226 +1391,129 @@ export default function ProjectsSection() {
   };
 
   const slideVariants = {
-    enter: (dir) => ({
-      x: dir > 0 ? 300 : -300,
-      opacity: 0,
-      scale: 0.95,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-    exit: (dir) => ({
-      x: dir > 0 ? -300 : 300,
-      opacity: 0,
-      scale: 0.95,
-      transition: { duration: 0.3, ease: "easeIn" },
-    }),
+    enter: (dir) => ({ x: dir > 0 ? 300 : -300, opacity: 0, scale: 0.95 }),
+    center: { x: 0, opacity: 1, scale: 1, transition: { duration: 0.4, ease: "easeOut" } },
+    exit: (dir) => ({ x: dir > 0 ? -300 : 300, opacity: 0, scale: 0.95, transition: { duration: 0.3, ease: "easeIn" } }),
   };
 
   const project = projects[current];
 
   return (
-    <section className="py-4 space-y-10">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="space-y-4"
+    <section className="py-2 space-y-6">
+      <div
+        className="relative overflow-hidden rounded-3xl"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose-500/10 via-pink-500/10 to-purple-500/10 border border-gray-200 dark:border-white/10">
-          <Layers className="w-4 h-4 text-rose-500" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Portfolio Showcase</span>
-        </div>
-      </motion.div>
-
-      {/* Project Card */}
-      <div className="space-y-6">
-        <div 
-          className="relative overflow-hidden rounded-3xl"
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          <AnimatePresence custom={direction} mode="wait">
-            <motion.div
-              key={current}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              className="relative"
-            >
-              {/* Glow effect - dark mode only */}
-              <div 
-                className="absolute -inset-1 rounded-3xl opacity-30 blur-xl hidden dark:block"
-                style={{ 
-                  background: `linear-gradient(135deg, ${project.accentColor}40, transparent, ${project.accentColor}20)` 
-                }}
-              />
-
-              {/* Card */}
-              <div 
-                className="relative rounded-3xl overflow-hidden transition-all duration-500 bg-white dark:bg-gradient-to-br dark:from-gray-900/95 dark:to-gray-950/98 border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl"
-              >
-                {/* Image */}
-                <div className="relative h-64 sm:h-80 overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                    priority
-                  />
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent dark:from-gray-900/90 dark:via-gray-900/40" />
-                  
-                  {/* Project counter */}
-                  <div 
-                    className="absolute top-4 right-4 px-4 py-2 rounded-full backdrop-blur-md text-sm font-bold border border-white/20"
-                    style={{
-                      background: `${project.accentColor}40`,
-                      color: "#FFFFFF",
-                    }}
-                  >
-                    {current + 1} / {projects.length}
-                  </div>
-
-                  {/* Mobile swipe hint */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:hidden flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md text-xs text-gray-300 border border-white/20">
-                    <Zap className="w-3 h-3" />
-                    Swipe to explore
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 sm:p-8 space-y-5">
-                  <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1.5 rounded-xl text-xs font-semibold"
-                        style={{
-                          background: `${project.accentColor}15`,
-                          border: `1px solid ${project.accentColor}30`,
-                          color: project.accentColor,
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex items-center gap-4 pt-2">
-                    <Link
-                      href={project.liveDemo}
-                      target="_blank"
-                      className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 text-white"
-                      style={{
-                        background: `linear-gradient(135deg, ${project.accentColor}, ${project.accentColor}CC)`,
-                      }}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </Link>
-                    <Link
-                      href={project.github}
-                      target="_blank"
-                      className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/10"
-                    >
-                      <Github className="w-4 h-4" />
-                      GitHub
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Corner accent */}
-                <div 
-                  className="absolute bottom-0 right-0 w-48 h-48 rounded-tl-full opacity-20"
-                  style={{ background: `radial-gradient(circle at bottom right, ${project.accentColor}60, transparent)` }}
-                />
-              </div>
-            </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation arrows */}
-          <button
-            onClick={() => paginate(-1)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hidden sm:flex bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700"
+        <AnimatePresence custom={direction} mode="wait">
+          <motion.div
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            className="relative"
           >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hidden sm:flex bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-        </div>
-
-        {/* Dots navigation */}
-        <div className="flex items-center justify-center gap-2 flex-wrap">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goTo(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === current ? "w-8" : "w-2 hover:w-4"
-              }`}
-              style={{
-                background: index === current
-                  ? `linear-gradient(90deg, ${projects[index].accentColor}, ${projects[index].accentColor}80)`
-                  : "#D1D5DB",
-              }}
+            <div
+              className="absolute -inset-1 rounded-3xl opacity-30 blur-xl hidden dark:block"
+              style={{ background: `linear-gradient(135deg, ${project.accentColor}40, transparent, ${project.accentColor}20)` }}
             />
-          ))}
-        </div>
 
-        {/* Thumbnail strip */}
-        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
-          {projects.map((proj, index) => (
-            <button
-              key={proj.id}
-              onClick={() => goTo(index)}
-              className={`relative flex-shrink-0 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
-                index === current
-                  ? "border-opacity-100 scale-105"
-                  : "border-opacity-30 hover:border-opacity-60"
-              }`}
-              style={{
-                width: "100px",
-                borderColor: index === current ? proj.accentColor : "#E5E7EB",
-              }}
-            >
-              <Image
-                src={proj.image}
-                alt={proj.title}
-                fill
-                className="object-cover"
+            <div className="relative rounded-3xl overflow-hidden bg-white dark:bg-gradient-to-br dark:from-gray-900/95 dark:to-gray-950/98 border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-2xl">
+              <div className="relative h-64 sm:h-80 overflow-hidden">
+                <Image src={project.image} alt={project.title} fill className="object-cover transition-transform duration-500 hover:scale-110" priority />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent" />
+                <div
+                  className="absolute top-4 right-4 px-4 py-2 rounded-full backdrop-blur-md text-sm font-bold border border-white/20 text-white"
+                  style={{ background: `${project.accentColor}40` }}
+                >
+                  {current + 1} / {projects.length}
+                </div>
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:hidden flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md text-xs text-gray-300 border border-white/20">
+                  <Zap className="w-3 h-3" />
+                  Swipe to explore
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-8 space-y-5">
+                <div className="space-y-2">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{project.description}</p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-3 py-1.5 rounded-xl text-xs font-semibold"
+                      style={{ background: `${project.accentColor}15`, border: `1px solid ${project.accentColor}30`, color: project.accentColor }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-4 pt-2">
+                  <Link href={project.liveDemo} target="_blank"
+                    className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 text-white"
+                    style={{ background: `linear-gradient(135deg, ${project.accentColor}, ${project.accentColor}CC)` }}>
+                    <ExternalLink className="w-4 h-4" />
+                    Live Demo
+                  </Link>
+                  <Link href={project.github} target="_blank"
+                    className="flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-sm transition-all duration-300 hover:scale-105 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/10">
+                    <Github className="w-4 h-4" />
+                    GitHub
+                  </Link>
+                </div>
+              </div>
+
+              <div
+                className="absolute bottom-0 right-0 w-48 h-48 rounded-tl-full opacity-20"
+                style={{ background: `radial-gradient(circle at bottom right, ${project.accentColor}60, transparent)` }}
               />
-              {index === current && (
-                <div 
-                  className="absolute inset-0 opacity-30"
-                  style={{ backgroundColor: proj.accentColor }}
-                />
-              )}
-            </button>
-          ))}
-        </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        <button onClick={() => paginate(-1)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full hidden sm:flex items-center justify-center transition-all duration-300 hover:scale-110 bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        <button onClick={() => paginate(1)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full hidden sm:flex items-center justify-center transition-all duration-300 hover:scale-110 bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 shadow-lg text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-700">
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      <div className="flex items-center justify-center gap-2 flex-wrap">
+        {projects.map((_, index) => (
+          <button key={index} onClick={() => goTo(index)}
+            className="h-2 rounded-full transition-all duration-300"
+            style={{
+              width: index === current ? "2rem" : "0.5rem",
+              background: index === current
+                ? `linear-gradient(90deg, ${projects[index].accentColor}, ${projects[index].accentColor}80)`
+                : "#D1D5DB",
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+        {projects.map((proj, index) => (
+          <button key={proj.id} onClick={() => goTo(index)}
+            className="relative flex-shrink-0 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300"
+            style={{
+              width: "100px",
+              borderColor: index === current ? proj.accentColor : "#E5E7EB",
+              transform: index === current ? "scale(1.05)" : "scale(1)",
+            }}
+          >
+            <Image src={proj.image} alt={proj.title} fill className="object-cover" />
+            {index === current && (
+              <div className="absolute inset-0 opacity-30" style={{ backgroundColor: proj.accentColor }} />
+            )}
+          </button>
+        ))}
       </div>
     </section>
   );
@@ -1986,233 +1525,103 @@ export default function ProjectsSection() {
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Code2, Layout, Server, Database, Wrench, Brain, Sparkles
-} from "lucide-react";
+import {
+  SiReact, SiRedux, SiHtml5, SiCss3, SiTailwindcss,
+  SiMui, SiNodedotjs, SiExpress, SiTypescript,
+  SiMongodb, SiMysql, SiFirebase, SiJavascript,
+  SiGit, SiGithub, SiPostman, SiAmazon, SiCloudinary,
+  SiJsonwebtokens
+} from "react-icons/si";
+import { FaJava, FaDatabase } from "react-icons/fa";
+import { TbApi } from "react-icons/tb";
 
-const skillCategories = [
-  {
-    category: "Frontend Development",
-    icon: Layout,
-    gradient: ["#FF6B6B", "#EE5A5A", "#FF8787"],
-    skills: ["React.js", "Redux", "HTML", "CSS", "Tailwind CSS", "Material UI"],
-    accentColor: "#FF6B6B",
-  },
-  {
-    category: "Backend Development",
-    icon: Server,
-    gradient: ["#845EF7", "#7048E8", "#9775FA"],
-    skills: ["Node.js", "Express.js", "REST APIs", "TypeScript"],
-    accentColor: "#845EF7",
-  },
-  {
-    category: "Database Management",
-    icon: Database,
-    gradient: ["#37D67A", "#2BC866", "#5AE898"],
-    accentColor: "#37D67A",
-    skills: ["MongoDB", "MySQL", "SQL", "Firebase"],
-  },
-  {
-    category: "Programming Languages",
-    icon: Code2,
-    gradient: ["#FF9439", "#FF7B00", "#FFAB5E"],
-    skills: ["JavaScript", "Java", "TypeScript"],
-    accentColor: "#FF9439",
-  },
-  {
-    category: "DevOps & Tools",
-    icon: Wrench,
-    gradient: ["#15C2C5", "#0DC1C4", "#4DD4D8"],
-    skills: ["Git", "GitHub", "Postman", "AWS", "Cloudinary"],
-    accentColor: "#15C2C5",
-  },
-  {
-    category: "Core Fundamentals",
-    icon: Brain,
-    gradient: ["#E64980", "#C92A6B", "#F083A4"],
-    skills: ["Authentication", "CRUD", "API Integration"],
-    accentColor: "#E64980",
-  },
+const skills = [
+  { name: "React.js", icon: SiReact, color: "#61DAFB" },
+  { name: "Redux", icon: SiRedux, color: "#764ABC" },
+  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+  { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+  { name: "Material UI", icon: SiMui, color: "#007FFF" },
+
+  { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+  { name: "Express.js", icon: SiExpress, color: "#888888" },
+  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "REST APIs", icon: TbApi, color: "#FF6B6B" },
+
+  { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+  { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+
+  { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+  { name: "Java", icon: FaJava, color: "#ED8B00" },
+
+  { name: "Git", icon: SiGit, color: "#F05032" },
+  { name: "GitHub", icon: SiGithub, color: "#888888" },
+  { name: "Postman", icon: SiPostman, color: "#FF6C37" },
+  { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+  { name: "Cloudinary", icon: SiCloudinary, color: "#3448C5" },
+
+  { name: "Auth / JWT", icon: SiJsonwebtokens, color: "#D63AFF" },
+  { name: "SQL", icon: FaDatabase, color: "#15C2C5" },
 ];
 
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.045 },
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50, rotateX: 15 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    rotateX: 0,
-    transition: { 
-      duration: 0.6, 
-      ease: "easeOut"
-    }
-  },
-};
-
-const tagVariants = {
-  hidden: { opacity: 0, scale: 0.5, y: 20 },
-  visible: { 
-    opacity: 1, 
-    scale: 1, 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20, scale: 0.85 },
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: { duration: 0.3, type: "spring", stiffness: 200 }
+    scale: 1,
+    transition: { duration: 0.35, ease: "easeOut" },
   },
 };
 
 export default function Skills() {
   return (
-    <section className="py-4 space-y-10">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center space-y-4"
-      >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-rose-500/10 via-indigo-500/10 to-sky-500/10 border border-gray-200 dark:border-white/10 backdrop-blur-sm">
-          <Sparkles className="w-4 h-4 text-rose-500" />
-          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">My Stack</span>
-        </div>
-        <h2 className="text-4xl font-bold bg-gradient-to-r from-rose-500 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
-          Technologies I Work With
-        </h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-          From frontend interfaces to backend architecture, here are the tools and technologies I use to build modern, scalable applications.
-        </p>
-      </motion.div>
-
-      {/* Skills Grid */}
+    <section className="py-2">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="flex flex-wrap gap-3 justify-start"
       >
-        {skillCategories.map((cat) => (
-          <motion.div
-            key={cat.category}
-            variants={cardVariants}
-            className="group relative"
-          >
-            {/* Outer glow */}
-            <div 
-              className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl dark:bg-gradient-to-r dark:from-gray-900/50"
-              style={{ 
-                background: `linear-gradient(135deg, ${cat.accentColor}30, transparent, ${cat.accentColor}20)` 
+        {skills.map((skill) => {
+          const Icon = skill.icon;
+          return (
+            <motion.div
+              key={skill.name}
+              variants={itemVariants}
+              whileHover={{ scale: 1.08, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              className="group flex flex-col items-center gap-1.5 px-4 py-3 rounded-2xl cursor-default
+                bg-gray-50 dark:bg-white/5
+                border border-gray-200 dark:border-white/10
+                hover:border-gray-300 dark:hover:border-white/20
+                hover:bg-white dark:hover:bg-white/10
+                shadow-sm hover:shadow-md
+                transition-all duration-300 min-w-[72px]"
+              style={{
+                "--skill-color": skill.color,
               }}
-            />
-
-            {/* Card */}
-            <div 
-              className="relative p-6 rounded-3xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] bg-white dark:bg-gradient-to-br dark:from-gray-900/90 dark:to-gray-950/95 border border-gray-100 dark:border-white/10 shadow-sm dark:shadow-none"
             >
-              {/* Gradient accent line */}
-              <div 
-                className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-current to-transparent opacity-30"
-                style={{ color: cat.accentColor }}
+              <Icon
+                className="w-7 h-7 transition-transform duration-300 group-hover:scale-110"
+                style={{ color: skill.color }}
               />
-
-              {/* Top section with icon */}
-              <div className="flex items-start justify-between mb-5">
-                <div className="flex items-center gap-4">
-                  <div 
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center relative"
-                    style={{
-                      background: `linear-gradient(135deg, ${cat.accentColor}20, ${cat.accentColor}10)`,
-                      border: `1px solid ${cat.accentColor}30`,
-                    }}
-                  >
-                    <cat.icon 
-                      className="w-7 h-7"
-                      style={{ color: cat.accentColor }}
-                    />
-                    {/* Icon glow */}
-                    <div 
-                      className="absolute inset-0 rounded-2xl blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500 dark:opacity-30"
-                      style={{ backgroundColor: cat.accentColor }}
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-                      {cat.category}
-                    </h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                      {cat.skills.length} Technologies
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Skill tags */}
-              <div className="flex flex-wrap gap-2 mb-5">
-                {cat.skills.map((skill, i) => (
-                  <motion.span
-                    key={skill}
-                    variants={tagVariants}
-                    custom={i}
-                    className="px-3 py-1.5 rounded-xl text-xs font-semibold transition-all duration-300 cursor-default bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300"
-                    whileHover={{
-                      background: `${cat.accentColor}20`,
-                      borderColor: `${cat.accentColor}40`,
-                      color: cat.accentColor,
-                      scale: 1.05,
-                    }}
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-
-              {/* Corner decoration */}
-              <div 
-                className="absolute bottom-0 right-0 w-24 h-24 rounded-tl-full opacity-10 group-hover:opacity-20 transition-opacity duration-500"
-                style={{ background: `radial-gradient(circle at bottom right, ${cat.accentColor}40, transparent)` }}
-              />
-            </div>
-          </motion.div>
-        ))}
+              <span className="text-[11px] font-medium text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors text-center leading-tight whitespace-nowrap">
+                {skill.name}
+              </span>
+            </motion.div>
+          );
+        })}
       </motion.div>
-
-      {/* Bottom stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="flex flex-wrap justify-center gap-8 pt-8"
-      >
-        {[
-          { value: "1+", label: "Years Experience" },
-          { value: "15+", label: "Technologies" },
-          { value: "10+", label: "Projects Built" },
-        ].map((stat, i) => (
-          <div key={i} className="text-center">
-            <div className="text-3xl font-bold bg-gradient-to-r from-rose-500 via-indigo-500 to-sky-500 bg-clip-text text-transparent">
-              {stat.value}
-            </div>
-            <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">{stat.label}</div>
-          </div>
-        ))}
-      </motion.div>
-
-      <style jsx global>{`
-        @keyframes shimmer {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(200%); }
-        }
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
-      `}</style>
     </section>
   );
 }
@@ -2249,6 +1658,196 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
+</file>
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path="components.json">
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": true,
+  "tsx": false,
+  "tailwind": {
+    "config": "",
+    "css": "src/app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "iconLibrary": "lucide"
+}
+</file>
+
+<file path="eslint.config.mjs">
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import { FlatCompat } from "@eslint/eslintrc";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [...compat.extends("next/core-web-vitals")];
+
+export default eslintConfig;
+</file>
+
+<file path="jsconfig.json">
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
+</file>
+
+<file path="next.config.mjs">
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default nextConfig;
+</file>
+
+<file path="package.json">
+{
+  "name": "portfolio_nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@radix-ui/react-slot": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.4.7",
+    "lightningcss": "^1.29.1",
+    "lucide-react": "^0.476.0",
+    "next": "15.2.0",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.2.0",
+    "react-slick": "^0.30.3",
+    "react-swipeable": "^7.0.2",
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.0",
+    "tailwindcss": "^4"
+  }
+}
+</file>
+
+<file path="postcss.config.mjs">
+const config = {
+  plugins: ["@tailwindcss/postcss"],
+};
+
+export default config;
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 </file>
 
 </files>
