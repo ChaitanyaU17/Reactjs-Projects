@@ -144,7 +144,7 @@ export default function Home() {
                   asChild
                   className="rounded-full bg-gradient-to-r from-rose-600 to-indigo-600 text-white transition-transform hover:scale-105"
                 >
-                  <Link href="https://drive.google.com/file/d/1anhvtp1Uelq-MEzgRu_IQ3rrsFW3jWz0/view?usp=drive_link" target="_blank">
+                  <Link href="https://drive.google.com/file/d/1XMu5LK4kHxcKvliKGGjbJEi4bDr6BgkK/view?usp=drive_link" target="_blank">
                     Resume
                   </Link>
                 </Button>
